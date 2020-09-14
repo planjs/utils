@@ -1,4 +1,4 @@
-export type PromiseFN = () => Promise<any>;
+export type PromiseFN = () => Promise<void>;
 
 export interface BaseRetryOpts {
   /**

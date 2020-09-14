@@ -1,3 +1,5 @@
+export { default as isPromise } from './isPromise';
+
 export { default as delay } from './delay';
 export { default as immediate } from './immediate';
 
@@ -13,7 +15,12 @@ export { default as retry } from './retry';
 export { default as until } from './until';
 
 export { default as asyncPool } from './asyncPool';
+export { default as PromiseQueue } from './queue';
 export { default as singleLock } from './singleLock';
 
 export { default as settleAll } from './settleAll';
 export { default as mapLimit } from './mapLimit';
+
+export { default as pIf } from './pIf';
+
+export { default as promisify } from './promisify';
