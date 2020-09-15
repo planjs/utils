@@ -9,8 +9,6 @@ export interface AsyncPoolOpts {
 
 /**
  * 异步池，放入需要执行的异步任务，总并行执行任务不超过设置的最大并发数量
- * eg：小程序首页并发数控制，串行执行任务
- * 简单实现，插队还未实现
  * @param options
  */
 function asyncPool(options: AsyncPoolOpts) {

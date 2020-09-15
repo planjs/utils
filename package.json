@@ -59,5 +59,10 @@
     "babel-jest": "^26.3.0",
     "ts-jest": "^26.3.0",
     "husky": "^4.2.5"
+  },
+  "dependencies": {
+    "@types/lodash": "4.14.161",
+    "eventemitter3": "4.0.7",
+    "lodash": "4.17.20"
   }
 }
