@@ -1,3 +1,6 @@
+/**
+ * 自增ID
+ */
 const increment_id = (): (() => number) => {
   let id = 0;
   return () => id++;
