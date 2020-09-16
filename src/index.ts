@@ -1,11 +1,8 @@
-import lodash from 'lodash';
-import EventEmitter from 'eventemitter3';
+import EventEmitter from './event_emitter';
 
-export { lodash };
-export { EventEmitter };
-export const eventEmitter = new EventEmitter();
+const eventEmitter = new EventEmitter();
 
+export { EventEmitter, eventEmitter };
 export * from './promise';
-
 export { default as noop } from './noop';
 export { default as uuid } from './uuid';

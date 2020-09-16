@@ -2,6 +2,17 @@
   "name": "utils",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/planjs/utils#readme",
+  "bugs": {
+    "url": "https://github.com/planjs/utils/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/planjs/utils.git"
+  },
+  "license": "ISC",
+  "author": "fupeng",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "tsc",
@@ -9,17 +20,6 @@
     "release": "./scripts/release.sh",
     "test": "jest -u"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/planjs/utils.git"
-  },
-  "keywords": [],
-  "author": "fupeng",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/planjs/utils/issues"
-  },
-  "homepage": "https://github.com/planjs/utils#readme",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
@@ -30,6 +30,20 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
+    "@planjs/fabric": "^0.0.2",
+    "babel-jest": "^26.3.0",
+    "commitizen": "^4.2.1",
+    "conventional-changelog-cli": "^2.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.2.13",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
   },
   "publishConfig": {
     "access": "public"
@@ -45,24 +59,5 @@
       "git add"
     ]
   },
-  "sideEffects": false,
-  "devDependencies": {
-    "@planjs/fabric": "^0.0.2",
-    "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^9.1.2",
-    "commitizen": "^4.2.1",
-    "conventional-changelog-cli": "^2.1.0",
-    "cz-conventional-changelog": "^3.3.0",
-    "lint-staged": "^10.2.13",
-    "typescript": "^4.0.2",
-    "jest": "^26.4.2",
-    "babel-jest": "^26.3.0",
-    "ts-jest": "^26.3.0",
-    "husky": "^4.2.5"
-  },
-  "dependencies": {
-    "@types/lodash": "4.14.161",
-    "eventemitter3": "4.0.7",
-    "lodash": "4.17.20"
-  }
+  "sideEffects": false
 }
