@@ -27,14 +27,6 @@
     "declarationDir": "typings",
     "lib": ["ESNext", "DOM"]
   },
-  "exclude": [
-    "__tests__",
-    "node_modules",
-    "dist",
-    "tests",
-    "jest",
-    "**/*.test.ts",
-    "**/*.spec.ts",
-    "typings"
-  ]
+  "include": ["./src"],
+  "exclude": ["__tests__"]
 }

@@ -4,3 +4,4 @@ dist/
 lib/
 typings/
 tsconfig.tsbuildinfo
+/coverage/

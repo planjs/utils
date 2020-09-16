@@ -60,7 +60,7 @@ async function mapLimit<V>(input: any, limit: number, iteratee: any): Promise<V[
     }
   };
 
-  const allExecutors = [];
+  const allExecutors: Promise<any>[] = [];
   for (let j = 0; j < limit; ++j) {
     allExecutors.push(execute());
   }
