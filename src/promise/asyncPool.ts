@@ -28,8 +28,10 @@ function asyncPool(options: AsyncPoolOpts) {
   }
 
   function executor(fn: PromiseFN) {
-    next();
-    return new Promise((resolve, reject) => queue.push(() => fn().then(resolve, reject)));
+    return new Promise((resolve, reject) => {
+      queue.push(() => fn().then(resolve, reject));
+      next();
+    });
   }
 
   function clear() {

@@ -13,7 +13,7 @@ type Callback6Rest<T1, T2, T3, T4, T5, T6> = (
   ...rest: any[]
 ) => any;
 
-class EventEmitter {
+class Event {
   private callbacks: Record<string, unknown> = {};
   static eventSplitter = /\s+/;
 
@@ -46,7 +46,7 @@ class EventEmitter {
     if (!callback) {
       return this;
     }
-    eventName = eventName.split(EventEmitter.eventSplitter);
+    eventName = eventName.split(Event.eventSplitter);
     const calls = this.callbacks;
     while ((event = eventName.shift())) {
       list = calls[event];
@@ -86,7 +86,7 @@ class EventEmitter {
       this.callbacks = {};
       return this;
     }
-    events = events ? events.split(EventEmitter.eventSplitter) : Object.keys(calls);
+    events = events ? events.split(Event.eventSplitter) : Object.keys(calls);
     while ((event = events.shift())) {
       node = calls[event];
       delete calls[event];
@@ -135,7 +135,7 @@ class EventEmitter {
     if (!(calls = this.callbacks)) {
       return this;
     }
-    events = events.split(EventEmitter.eventSplitter);
+    events = events.split(Event.eventSplitter);
     const rest = [].slice.call(arguments, 1);
     while ((event = events.shift())) {
       if ((node = calls[event])) {
@@ -149,4 +149,4 @@ class EventEmitter {
   }
 }
 
-export default EventEmitter;
+export default Event;

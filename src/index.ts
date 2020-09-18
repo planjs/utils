@@ -1,8 +1,8 @@
-import EventEmitter from './event_emitter';
+import Event from './event';
 
-const eventEmitter = new EventEmitter();
+const eventCenter = new Event();
 
-export { EventEmitter, eventEmitter };
+export { Event, eventCenter };
 export * from './promise';
 export { default as noop } from './noop';
 export { default as uuid } from './uuid';

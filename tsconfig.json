@@ -27,6 +27,5 @@
     "declarationDir": "typings",
     "lib": ["ESNext", "DOM"]
   },
-  "include": ["./src"],
-  "exclude": ["__tests__"]
+  "include": ["./src", "__tests__"]
 }
