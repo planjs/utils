@@ -1,8 +1,12 @@
 {
   "name": "@planjs/utils",
   "version": "1.0.3",
-  "description": "",
-  "keywords": [],
+  "description": "Common tools collection",
+  "keywords": [
+    "es6",
+    "promise",
+    "uuid"
+  ],
   "homepage": "https://github.com/planjs/utils#readme",
   "bugs": {
     "url": "https://github.com/planjs/utils/issues"
@@ -13,8 +17,14 @@
   },
   "license": "ISC",
   "author": "fupeng",
+  "files": [
+    "lib",
+    "docs",
+    "typings"
+  ],
   "main": "dist/index.js",
   "scripts": {
+    "doc": "typedoc",
     "prepare": "tsc -p tsconfig-build.json",
     "prepublishOnly": "npm run release",
     "release": "./scripts/release.sh",
@@ -44,6 +54,8 @@
     "lint-staged": "^10.2.13",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.3.0",
+    "typedoc": "^0.19.1",
+    "typedoc-plugin-markdown": "^3.0.0",
     "typescript": "^4.0.2"
   },
   "publishConfig": {
