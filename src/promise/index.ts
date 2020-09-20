@@ -1,4 +1,4 @@
-export { default as isPromise } from './isPromise';
+export { default as isPromise } from './is-promise';
 
 export { default as defer } from './defer';
 
@@ -8,7 +8,7 @@ export { default as immediate } from './immediate';
 export { default as timeout } from './timeout';
 export { default as padding } from './padding';
 
-export { default as transformErrors } from './transformErrors';
+export { default as transformErrors } from './transform-errors';
 export { default as invert } from './invert';
 
 export { default as memoize } from './memoize';
@@ -16,11 +16,11 @@ export { default as memoize } from './memoize';
 export { default as retry } from './retry';
 export { default as until } from './until';
 
-export { default as asyncPool } from './asyncPool';
-export { default as singleLock } from './singleLock';
+export { default as asyncPool } from './async-pool';
+export { default as singleLock } from './single-lock';
 
-export { default as settleAll } from './settleAll';
-export { default as mapLimit } from './mapLimit';
+export { default as settleAll } from './settle-all';
+export { default as mapLimit } from './map-limit';
 
 export { default as pIf } from './pIf';
 

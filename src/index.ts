@@ -6,3 +6,4 @@ export { Event, eventCenter };
 export * from './promise';
 export { default as noop } from './noop';
 export { default as uuid } from './uuid';
+export * from './regex_constant';
