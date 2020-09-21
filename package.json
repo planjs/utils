@@ -17,12 +17,14 @@
   },
   "license": "ISC",
   "author": "fupeng",
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "typings": "typings/index.d.ts",
   "files": [
     "lib",
     "docs",
     "typings"
   ],
-  "main": "dist/index.js",
   "scripts": {
     "doc": "typedoc",
     "prepare": "tsc -p tsconfig-build.json",
@@ -35,6 +37,25 @@
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,json,css,scss}": [
+      "prettier --write",
+      "git add"
+    ],
+    "package.json": [
+      "npx sort-package-json",
+      "git add"
+    ]
   },
   "config": {
     "commitizen": {
@@ -60,25 +81,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "package.json": [
-      "npx sort-package-json",
-      "git add"
-    ],
-    "*.{js,ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{json,json,css,scss}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "sideEffects": false
+  }
 }
