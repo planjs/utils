@@ -17,13 +17,14 @@ function asyncPool(options: AsyncPoolOpts) {
 
   function next() {
     if (currentAsyncOperations < options.maxConcurrency) {
-      currentAsyncOperations++;
       const pop = queue.pop();
-      pop &&
+      if (pop) {
+        currentAsyncOperations++;
         pop().finally(() => {
           currentAsyncOperations--;
           next();
         });
+      }
     }
   }
 
