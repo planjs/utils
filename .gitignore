@@ -1,7 +1,8 @@
 .idea/
 node_modules/
-dist/
-lib/
+/dist/
+/lib/
+/es/
 typings/
 *.tsbuildinfo
 /coverage/
