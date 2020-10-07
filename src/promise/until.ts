@@ -1,5 +1,5 @@
 import { BaseRetryOpts } from './interfaces';
-import { delay } from '.';
+import delay from './delay';
 
 /**
  * promise resolve 没有值的情况重试,每次失败reject都会报错

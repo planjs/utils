@@ -1,4 +1,4 @@
-import { delay } from '.';
+import delay from './delay';
 
 /**
  * 延迟promise返回结果

@@ -1,5 +1,5 @@
 import { BaseRetryOpts } from './interfaces';
-import { delay } from '.';
+import delay from './delay';
 
 export interface RetryOpts extends BaseRetryOpts {
   /**
