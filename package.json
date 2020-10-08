@@ -17,16 +17,15 @@
   },
   "license": "ISC",
   "author": "fupeng",
-  "sideEffects": false,
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "typings": "typings/index.d.ts",
   "files": [
     "lib",
     "es",
     "docs",
     "typings"
   ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "typings/index.d.ts",
   "scripts": {
     "dev": "stan-builder -w",
     "doc": "typedoc",
@@ -40,6 +39,32 @@
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@planjs/fabric": "^0.0.4",
+    "babel-jest": "^26.3.0",
+    "commitizen": "^4.2.1",
+    "conventional-changelog-cli": "^2.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.2.13",
+    "stan-builder": "^0.0.8",
+    "standard-version": "^9.0.0",
+    "ts-jest": "^26.3.0",
+    "typedoc": "^0.19.1",
+    "typedoc-plugin-markdown": "^3.0.0",
+    "typescript": "^4.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "commitlint": {
     "extends": [
@@ -60,30 +85,5 @@
       "git add"
     ]
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^9.1.2",
-    "@planjs/fabric": "^0.0.4",
-    "babel-jest": "^26.3.0",
-    "commitizen": "^4.2.1",
-    "conventional-changelog-cli": "^2.1.0",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^4.2.5",
-    "jest": "^26.4.2",
-    "lint-staged": "^10.2.13",
-    "stan-builder": "^0.0.8",
-    "standard-version": "^9.0.0",
-    "ts-jest": "^26.3.0",
-    "typedoc": "^0.19.1",
-    "typedoc-plugin-markdown": "^3.0.0",
-    "typescript": "^4.0.2"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+  "sideEffects": false
 }
