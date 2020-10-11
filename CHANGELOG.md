@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/planjs/utils/compare/stable-1.0.6...stable-1.0.8) (2020-10-11)
+
+
+### Bug Fixes
+
+* circular dependency ([26575fb](https://github.com/planjs/utils/commit/26575fb17c9aa7221b91de2d164c484e5aae48c8))
+* slash export ([12d8746](https://github.com/planjs/utils/commit/12d874607cfb3a54f9a253900645f37de0edf2fb))
+
 ### [1.0.7](https://github.com/planjs/utils/compare/stable-1.0.4...stable-1.0.7) (2020-10-07)
 
 
