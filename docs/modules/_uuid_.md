@@ -16,7 +16,7 @@
 
 ▸ **uuid**(): string
 
-*Defined in [uuid.ts:5](https://github.com/planjs/utils/blob/73a4845/src/uuid.ts#L5)*
+*Defined in [uuid.ts:5](https://github.com/planjs/utils/blob/af978cc/src/uuid.ts#L5)*
 
 生成uuid
 https://cythilya.github.io/2017/03/12/uuid/

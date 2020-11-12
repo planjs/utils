@@ -1,14 +1,14 @@
 **@planjs/utils**
 
-[Globals](../README.md) / "promise/isPromise"
+[Globals](../README.md) / "promise/is-promise"
 
-# Module: "promise/isPromise"
+# Module: "promise/is-promise"
 
 ## Index
 
 ### Functions
 
-* [isPromise](_promise_ispromise_.md#ispromise)
+* [isPromise](_promise_is_promise_.md#ispromise)
 
 ## Functions
 
@@ -16,7 +16,7 @@
 
 ▸ **isPromise**\<T, S>(`obj`: PromiseLike\<T> \| S): obj is PromiseLike\<T>
 
-*Defined in [promise/isPromise.ts:5](https://github.com/planjs/utils/blob/73a4845/src/promise/isPromise.ts#L5)*
+*Defined in [promise/is-promise.ts:5](https://github.com/planjs/utils/blob/af978cc/src/promise/is-promise.ts#L5)*
 
 是否为promise
 

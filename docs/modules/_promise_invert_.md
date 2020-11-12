@@ -16,7 +16,7 @@
 
 ▸ **invert**(`promise`: Promise\<any>, `message?`: undefined \| string): Promise\<any>
 
-*Defined in [promise/invert.ts:6](https://github.com/planjs/utils/blob/73a4845/src/promise/invert.ts#L6)*
+*Defined in [promise/invert.ts:6](https://github.com/planjs/utils/blob/af978cc/src/promise/invert.ts#L6)*
 
 成功就报错，取反的情况
 

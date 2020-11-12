@@ -16,7 +16,7 @@
 
 ▸ **delay**\<T>(`delayTimeMs`: number, `value`: T): Promise\<T>
 
-*Defined in [promise/delay.ts:7](https://github.com/planjs/utils/blob/73a4845/src/promise/delay.ts#L7)*
+*Defined in [promise/delay.ts:7](https://github.com/planjs/utils/blob/af978cc/src/promise/delay.ts#L7)*
 
 等待一段时间，返回一个promise
 
@@ -39,7 +39,7 @@ Name | Type | Description |
 
 ▸ **delay**\<T>(`delayTimeMs`: number): Promise\<void>
 
-*Defined in [promise/delay.ts:8](https://github.com/planjs/utils/blob/73a4845/src/promise/delay.ts#L8)*
+*Defined in [promise/delay.ts:8](https://github.com/planjs/utils/blob/af978cc/src/promise/delay.ts#L8)*
 
 #### Type parameters:
 

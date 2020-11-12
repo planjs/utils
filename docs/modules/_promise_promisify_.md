@@ -20,7 +20,7 @@
 
 ▸ **promisify**\<Options, PromisifyResult>(`func`: (_: Options) => void): (Anonymous function)
 
-*Defined in [promise/promisify.ts:10](https://github.com/planjs/utils/blob/73a4845/src/promise/promisify.ts#L10)*
+*Defined in [promise/promisify.ts:10](https://github.com/planjs/utils/blob/af978cc/src/promise/promisify.ts#L10)*
 
 promise化 success fail 参数的api
 

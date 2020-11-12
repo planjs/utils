@@ -26,7 +26,7 @@
 
 *Inherited from [BaseRetryOpts](_promise_interfaces_.baseretryopts.md).[delayMs](_promise_interfaces_.baseretryopts.md#delayms)*
 
-*Defined in [promise/interfaces.ts:12](https://github.com/planjs/utils/blob/73a4845/src/promise/interfaces.ts#L12)*
+*Defined in [promise/interfaces.ts:12](https://github.com/planjs/utils/blob/af978cc/src/promise/interfaces.ts#L12)*
 
 重试间隔
 
@@ -36,7 +36,7 @@ ___
 
 • `Optional` **isRetryable**: undefined \| (err: Error) => boolean
 
-*Defined in [promise/retry.ts:9](https://github.com/planjs/utils/blob/73a4845/src/promise/retry.ts#L9)*
+*Defined in [promise/retry.ts:9](https://github.com/planjs/utils/blob/af978cc/src/promise/retry.ts#L9)*
 
 如果有些错误符合预期，可以跳过
 
@@ -50,7 +50,7 @@ ___
 
 *Inherited from [BaseRetryOpts](_promise_interfaces_.baseretryopts.md).[maxAttempts](_promise_interfaces_.baseretryopts.md#maxattempts)*
 
-*Defined in [promise/interfaces.ts:8](https://github.com/planjs/utils/blob/73a4845/src/promise/interfaces.ts#L8)*
+*Defined in [promise/interfaces.ts:8](https://github.com/planjs/utils/blob/af978cc/src/promise/interfaces.ts#L8)*
 
 最大等待次数
 不设置则一直运行

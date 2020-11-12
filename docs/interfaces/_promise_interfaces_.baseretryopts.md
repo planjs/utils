@@ -23,7 +23,7 @@
 
 • `Optional` **delayMs**: undefined \| number
 
-*Defined in [promise/interfaces.ts:12](https://github.com/planjs/utils/blob/73a4845/src/promise/interfaces.ts#L12)*
+*Defined in [promise/interfaces.ts:12](https://github.com/planjs/utils/blob/af978cc/src/promise/interfaces.ts#L12)*
 
 重试间隔
 
@@ -33,7 +33,7 @@ ___
 
 • `Optional` **maxAttempts**: undefined \| number
 
-*Defined in [promise/interfaces.ts:8](https://github.com/planjs/utils/blob/73a4845/src/promise/interfaces.ts#L8)*
+*Defined in [promise/interfaces.ts:8](https://github.com/planjs/utils/blob/af978cc/src/promise/interfaces.ts#L8)*
 
 最大等待次数
 不设置则一直运行

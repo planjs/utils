@@ -30,7 +30,7 @@
 
 ### asyncPool
 
-Re-exports: [asyncPool](_promise_asyncpool_.md#asyncpool)
+Re-exports: [asyncPool](_promise_async_pool_.md#asyncpool)
 
 ___
 
@@ -60,13 +60,13 @@ ___
 
 ### isPromise
 
-Re-exports: [isPromise](_promise_ispromise_.md#ispromise)
+Re-exports: [isPromise](_promise_is_promise_.md#ispromise)
 
 ___
 
 ### mapLimit
 
-Re-exports: [mapLimit](_promise_maplimit_.md#maplimit)
+Re-exports: [mapLimit](_promise_map_limit_.md#maplimit)
 
 ___
 
@@ -102,13 +102,13 @@ ___
 
 ### settleAll
 
-Re-exports: [settleAll](_promise_settleall_.md#settleall)
+Re-exports: [settleAll](_promise_settle_all_.md#settleall)
 
 ___
 
 ### singleLock
 
-Re-exports: [singleLock](_promise_singlelock_.md#singlelock)
+Re-exports: [singleLock](_promise_single_lock_.md#singlelock)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 ### transformErrors
 
-Re-exports: [transformErrors](_promise_transformerrors_.md#transformerrors)
+Re-exports: [transformErrors](_promise_transform_errors_.md#transformerrors)
 
 ___
 

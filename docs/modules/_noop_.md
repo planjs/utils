@@ -16,6 +16,6 @@
 
 ▸ **noop**(): void
 
-*Defined in [noop.ts:1](https://github.com/planjs/utils/blob/73a4845/src/noop.ts#L1)*
+*Defined in [noop.ts:1](https://github.com/planjs/utils/blob/af978cc/src/noop.ts#L1)*
 
 **Returns:** void

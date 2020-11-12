@@ -16,7 +16,7 @@
 
 ▸ **until**\<T>(`fn`: T, `retryOpts`: [BaseRetryOpts](../interfaces/_promise_interfaces_.baseretryopts.md)): T
 
-*Defined in [promise/until.ts:10](https://github.com/planjs/utils/blob/73a4845/src/promise/until.ts#L10)*
+*Defined in [promise/until.ts:10](https://github.com/planjs/utils/blob/af978cc/src/promise/until.ts#L10)*
 
 promise resolve 没有值的情况重试,每次失败reject都会报错
 一定次数内重试获取获取一些异步的值

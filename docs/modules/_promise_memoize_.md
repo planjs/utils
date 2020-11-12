@@ -20,7 +20,7 @@
 
 Ƭ  **ThenReturn**\<T>: T *extends* Promise\<*infer* U> ? U : T *extends* (...args: any[]) => Promise\<*infer* V> ? V : T
 
-*Defined in [promise/memoize.ts:1](https://github.com/planjs/utils/blob/73a4845/src/promise/memoize.ts#L1)*
+*Defined in [promise/memoize.ts:1](https://github.com/planjs/utils/blob/af978cc/src/promise/memoize.ts#L1)*
 
 #### Type parameters:
 
@@ -34,7 +34,7 @@ Name |
 
 ▸ **memoize**\<FnType>(`fn`: FnType, `harsher`: (...args: Parameters\<FnType>) => any, `timeoutMs?`: undefined \| number): FnType & { clear: () => void ; reset: (...args: Parameters\<FnType>) => void  }
 
-*Defined in [promise/memoize.ts:13](https://github.com/planjs/utils/blob/73a4845/src/promise/memoize.ts#L13)*
+*Defined in [promise/memoize.ts:13](https://github.com/planjs/utils/blob/af978cc/src/promise/memoize.ts#L13)*
 
 缓存promise结果，支持超时时间
 

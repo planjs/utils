@@ -20,4 +20,4 @@
 
 Ƭ  **PromiseFN**: () => Promise\<void>
 
-*Defined in [promise/interfaces.ts:1](https://github.com/planjs/utils/blob/73a4845/src/promise/interfaces.ts#L1)*
+*Defined in [promise/interfaces.ts:1](https://github.com/planjs/utils/blob/af978cc/src/promise/interfaces.ts#L1)*

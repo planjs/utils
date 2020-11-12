@@ -21,7 +21,7 @@
 
 ▸ `Optional`**fail**(`res?`: any): void
 
-*Defined in [promise/promisify.ts:3](https://github.com/planjs/utils/blob/73a4845/src/promise/promisify.ts#L3)*
+*Defined in [promise/promisify.ts:3](https://github.com/planjs/utils/blob/af978cc/src/promise/promisify.ts#L3)*
 
 #### Parameters:
 
@@ -37,7 +37,7 @@ ___
 
 ▸ `Optional`**success**(`res?`: any): void
 
-*Defined in [promise/promisify.ts:2](https://github.com/planjs/utils/blob/73a4845/src/promise/promisify.ts#L2)*
+*Defined in [promise/promisify.ts:2](https://github.com/planjs/utils/blob/af978cc/src/promise/promisify.ts#L2)*
 
 #### Parameters:
 

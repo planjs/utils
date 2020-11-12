@@ -32,7 +32,7 @@
 
 \+ **new Event**(`opts?`: undefined \| { callbacks: Record\<string, unknown>  }): [Event](_event_.event.md)
 
-*Defined in [event.ts:18](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L18)*
+*Defined in [event.ts:18](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L18)*
 
 #### Parameters:
 
@@ -48,7 +48,7 @@ Name | Type |
 
 • `Private` **callbacks**: Record\<string, unknown>
 
-*Defined in [event.ts:17](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L17)*
+*Defined in [event.ts:17](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L17)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 ▪ `Static` **eventSplitter**: RegExp = /\s+/
 
-*Defined in [event.ts:18](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L18)*
+*Defined in [event.ts:18](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L18)*
 
 ## Methods
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **off**(`events?`: any, `callback?`: any, `context?`: any): this
 
-*Defined in [event.ts:80](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L80)*
+*Defined in [event.ts:80](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L80)*
 
 如果什么都不传就off全部事件
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **on**\<T>(`event`: string, `callback`: [Callback1](../modules/_event_.md#callback1)\<T>, `context?`: any): this
 
-*Defined in [event.ts:28](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L28)*
+*Defined in [event.ts:28](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L28)*
 
 #### Type parameters:
 
@@ -104,7 +104,7 @@ Name | Type |
 
 ▸ **on**\<T1, T2>(`event`: string, `callback`: [Callback2](../modules/_event_.md#callback2)\<T1, T2>, `context?`: any): this
 
-*Defined in [event.ts:29](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L29)*
+*Defined in [event.ts:29](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L29)*
 
 #### Type parameters:
 
@@ -125,7 +125,7 @@ Name | Type |
 
 ▸ **on**\<T1, T2, T3>(`event`: string, `callback`: [Callback3](../modules/_event_.md#callback3)\<T1, T2, T3>, `context?`: any): this
 
-*Defined in [event.ts:30](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L30)*
+*Defined in [event.ts:30](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L30)*
 
 #### Type parameters:
 
@@ -147,7 +147,7 @@ Name | Type |
 
 ▸ **on**\<T1, T2, T3, T4>(`event`: string, `callback`: [Callback4](../modules/_event_.md#callback4)\<T1, T2, T3, T4>, `context?`: any): this
 
-*Defined in [event.ts:31](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L31)*
+*Defined in [event.ts:31](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L31)*
 
 #### Type parameters:
 
@@ -170,7 +170,7 @@ Name | Type |
 
 ▸ **on**\<T1, T2, T3, T4, T5>(`event`: string, `callback`: [Callback5](../modules/_event_.md#callback5)\<T1, T2, T3, T4, T5>, `context?`: any): this
 
-*Defined in [event.ts:32](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L32)*
+*Defined in [event.ts:32](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L32)*
 
 #### Type parameters:
 
@@ -194,7 +194,7 @@ Name | Type |
 
 ▸ **on**\<T1, T2, T3, T4, T5, T6>(`event`: string, `callback`: [Callback6Rest](../modules/_event_.md#callback6rest)\<T1, T2, T3, T4, T5, T6>, `context?`: any): this
 
-*Defined in [event.ts:38](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L38)*
+*Defined in [event.ts:38](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L38)*
 
 #### Type parameters:
 
@@ -223,7 +223,7 @@ ___
 
 ▸ **once**(`events`: any, `callback`: any, `context?`: any): this
 
-*Defined in [event.ts:65](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L65)*
+*Defined in [event.ts:65](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L65)*
 
 #### Parameters:
 
@@ -241,7 +241,7 @@ ___
 
 ▸ **trigger**(`event`: string): this
 
-*Defined in [event.ts:108](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L108)*
+*Defined in [event.ts:108](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L108)*
 
 #### Parameters:
 
@@ -253,7 +253,7 @@ Name | Type |
 
 ▸ **trigger**\<T1>(`event`: string, `arg`: T1): this
 
-*Defined in [event.ts:109](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L109)*
+*Defined in [event.ts:109](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L109)*
 
 #### Type parameters:
 
@@ -272,7 +272,7 @@ Name | Type |
 
 ▸ **trigger**\<T1, T2>(`event`: string, `arg1`: T1, `arg2`: T2): this
 
-*Defined in [event.ts:110](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L110)*
+*Defined in [event.ts:110](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L110)*
 
 #### Type parameters:
 
@@ -293,7 +293,7 @@ Name | Type |
 
 ▸ **trigger**\<T1, T2, T3>(`event`: string, `arg1`: T1, `arg2`: T2, `arg3`: T3): this
 
-*Defined in [event.ts:111](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L111)*
+*Defined in [event.ts:111](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L111)*
 
 #### Type parameters:
 
@@ -316,7 +316,7 @@ Name | Type |
 
 ▸ **trigger**\<T1, T2, T3, T4>(`event`: string, `arg1`: T1, `arg2`: T2, `arg3`: T3, `arg4`: T4): this
 
-*Defined in [event.ts:112](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L112)*
+*Defined in [event.ts:112](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L112)*
 
 #### Type parameters:
 
@@ -341,7 +341,7 @@ Name | Type |
 
 ▸ **trigger**\<T1, T2, T3, T4, T5>(`event`: string, `arg1`: T1, `arg2`: T2, `arg3`: T3, `arg4`: T4, `arg5`: T5): this
 
-*Defined in [event.ts:113](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L113)*
+*Defined in [event.ts:113](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L113)*
 
 #### Type parameters:
 
@@ -368,7 +368,7 @@ Name | Type |
 
 ▸ **trigger**\<T1, T2, T3, T4, T5, T6>(`event`: string, `arg1`: T1, `arg2`: T2, `arg3`: T3, `arg4`: T4, `arg5`: T5, `arg6`: T6, ...`rest`: any[]): this
 
-*Defined in [event.ts:122](https://github.com/planjs/utils/blob/73a4845/src/event.ts#L122)*
+*Defined in [event.ts:122](https://github.com/planjs/utils/blob/af978cc/src/event.ts#L122)*
 
 #### Type parameters:
 

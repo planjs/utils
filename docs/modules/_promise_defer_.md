@@ -16,7 +16,7 @@
 
 ▸ **defer**\<T>(): object
 
-*Defined in [promise/defer.ts:1](https://github.com/planjs/utils/blob/73a4845/src/promise/defer.ts#L1)*
+*Defined in [promise/defer.ts:1](https://github.com/planjs/utils/blob/af978cc/src/promise/defer.ts#L1)*
 
 #### Type parameters:
 

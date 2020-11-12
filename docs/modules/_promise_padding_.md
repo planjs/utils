@@ -16,7 +16,7 @@
 
 ▸ **padding**\<T>(`promise`: T, `paddingMs`: number): Promise\<T>
 
-*Defined in [promise/padding.ts:8](https://github.com/planjs/utils/blob/73a4845/src/promise/padding.ts#L8)*
+*Defined in [promise/padding.ts:8](https://github.com/planjs/utils/blob/af978cc/src/promise/padding.ts#L8)*
 
 延迟promise返回结果
 

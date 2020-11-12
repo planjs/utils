@@ -16,7 +16,7 @@
 
 ▸ **pIf**\<ValueType, DoIfReturnType, DoElseReturnType>(`condition`: boolean \| (value: ValueType) => boolean \| PromiseLike\<boolean>, `doIf`: (value: ValueType) => DoIfReturnType \| PromiseLike\<DoIfReturnType>, `doElse?`: undefined \| (value: ValueType) => DoElseReturnType \| PromiseLike\<DoElseReturnType>): function
 
-*Defined in [promise/pIf.ts:7](https://github.com/planjs/utils/blob/73a4845/src/promise/pIf.ts#L7)*
+*Defined in [promise/pIf.ts:7](https://github.com/planjs/utils/blob/af978cc/src/promise/pIf.ts#L7)*
 
 promise 链式条件判断
 

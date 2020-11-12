@@ -1,14 +1,14 @@
 **@planjs/utils**
 
-[Globals](../README.md) / "promise/singleLock"
+[Globals](../README.md) / "promise/single-lock"
 
-# Module: "promise/singleLock"
+# Module: "promise/single-lock"
 
 ## Index
 
 ### Functions
 
-* [singleLock](_promise_singlelock_.md#singlelock)
+* [singleLock](_promise_single_lock_.md#singlelock)
 
 ## Functions
 
@@ -16,7 +16,7 @@
 
 ▸ **singleLock**\<T>(): object
 
-*Defined in [promise/singleLock.ts:7](https://github.com/planjs/utils/blob/73a4845/src/promise/singleLock.ts#L7)*
+*Defined in [promise/single-lock.ts:7](https://github.com/planjs/utils/blob/af978cc/src/promise/single-lock.ts#L7)*
 
 获取一个锁
 

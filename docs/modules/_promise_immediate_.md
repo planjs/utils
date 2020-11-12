@@ -16,7 +16,7 @@
 
 ▸ **immediate**\<T>(`value`: T): Promise\<T>
 
-*Defined in [promise/immediate.ts:5](https://github.com/planjs/utils/blob/73a4845/src/promise/immediate.ts#L5)*
+*Defined in [promise/immediate.ts:5](https://github.com/planjs/utils/blob/af978cc/src/promise/immediate.ts#L5)*
 
 推迟执行promise
 
@@ -36,7 +36,7 @@ Name | Type | Description |
 
 ▸ **immediate**\<T>(): Promise\<void>
 
-*Defined in [promise/immediate.ts:6](https://github.com/planjs/utils/blob/73a4845/src/promise/immediate.ts#L6)*
+*Defined in [promise/immediate.ts:6](https://github.com/planjs/utils/blob/af978cc/src/promise/immediate.ts#L6)*
 
 #### Type parameters:
 

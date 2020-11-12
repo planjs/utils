@@ -11,6 +11,7 @@ export const REG_TEL_PHONE = /^\d{3}-\d{8}$|^\d{4}-\d{7,8}$/;
 /**
  * email
  */
+// eslint-disable-next-line
 export const REG_EMAIL = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 /**
@@ -31,6 +32,7 @@ export const REG_URI_WITH_PORT = /^((ht|f)tps?:\/\/)?[\w-]+(\.[\w-]+)+:\d{1,5}\/
 /**
  * 网址(url,支持端口和"?+参数"和"#+参数)
  */
+// eslint-disable-next-line
 export const REG_URI = /^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w.,@?^=%&:\/~+#-]*[\w@?^=%&\/~+#-])?$/;
 
 /**
@@ -51,11 +53,13 @@ export const REG_VERSION = /^\d+(?:\.\d+){2}$/;
 /**
  * linux文件夹路径
  */
+// eslint-disable-next-line
 export const REG_LINUX_FOLDER_PATH = /^\/(?:[^\/]+\/)*$/;
 
 /**
  * linux文件路径
  */
+// eslint-disable-next-line
 export const REG_LINUX_FILE_PATH = /^\/(?:[^\/]+\/)*[^\/]+$/;
 
 /**
