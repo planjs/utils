@@ -10,8 +10,6 @@ npm i @planjs/utils
 
 ## Usage
 
-[DOC](./docs/README.md)
-
 ```javascript
 import { delay, retry } from '@planjs/utils';
 
