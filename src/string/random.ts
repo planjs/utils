@@ -43,10 +43,23 @@ export function getRandomString(
   len: number,
   types: Array<keyof typeof randomFunc> = ['lower', 'upper', 'number', 'symbol'],
 ) {
-  return Array(len)
-    .fill(undefined)
-    .map((_, index) => index % types.length)
-    .reduce((acc, i) => {
-      return (acc += randomFunc[types[i]]());
-    }, '');
+  return shuffle(
+    Array(len)
+      .fill(undefined)
+      .map((_, index) => index % types.length),
+  ).reduce((acc, i) => {
+    return (acc += randomFunc[types[i]]());
+  }, '');
+}
+
+/**
+ * 随机排列数组
+ * @param a {array}
+ */
+export function shuffle<T = any>(a: T[]): T[] {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
