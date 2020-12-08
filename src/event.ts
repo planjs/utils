@@ -136,6 +136,7 @@ class Event {
       return this;
     }
     events = events.split(Event.eventSplitter);
+    // eslint-disable-next-line prefer-rest-params
     const rest = [].slice.call(arguments, 1);
     while ((event = events.shift())) {
       if ((node = calls[event])) {

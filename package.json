@@ -28,12 +28,12 @@
     "typings"
   ],
   "scripts": {
-    "dev": "stan-builder -w",
     "doc": "typedoc",
     "lint:fix": "eslint --fix --ext js,ts src",
     "prepare": "stan-builder",
     "prepublishOnly": "npm run release",
     "release": "./scripts/release.sh",
+    "start": "stan-builder -w",
     "test": "jest -u"
   },
   "husky": {
@@ -69,7 +69,7 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^11.0.0",
-    "@planjs/fabric": "^0.0.4",
+    "@planjs/fabric": "^0.0.71",
     "babel-jest": "^26.3.0",
     "commitizen": "^4.2.1",
     "conventional-changelog-cli": "^2.1.0",
@@ -77,7 +77,7 @@
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "lint-staged": "^10.2.13",
-    "stan-builder": "^0.4.0",
+    "stan-builder": "^0.4.2",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.3.0",
     "typedoc": "^0.19.1",

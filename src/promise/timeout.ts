@@ -12,6 +12,7 @@ function timeout<T extends Function>(fn: T, expirationTime: number, errorMessage
       new Promise((_: Function, reject: Function): void => {
         setTimeout((): void => reject(new Error(errorMessage)), expirationTime);
       }) as Promise<never>,
+      // eslint-disable-next-line prefer-rest-params
       fn.apply(this, arguments),
     ]);
   } as any) as T;
