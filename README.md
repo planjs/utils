@@ -1,6 +1,6 @@
 # utils
 
-> Common tools collection
+> Common tools collection [doc](https://planjs.github.io/utils/)
 
 ## Installation
 
