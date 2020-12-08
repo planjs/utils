@@ -1663,10 +1663,10 @@ pre code {
 .tsd-breadcrumb {
   margin: 0;
   padding: 0;
-  color: gray;
+  color: #707070;
 }
 .tsd-breadcrumb a {
-  color: gray;
+  color: #707070;
   text-decoration: none;
 }
 .tsd-breadcrumb a:hover {
@@ -1737,8 +1737,8 @@ dl.tsd-comment-tags dt {
   padding: 1px 5px;
   margin: 0 10px 0 0;
   border-radius: 4px;
-  border: 1px solid gray;
-  color: gray;
+  border: 1px solid #707070;
+  color: #707070;
   font-size: 0.8em;
   font-weight: normal;
 }
@@ -1915,35 +1915,35 @@ footer .tsd-legend {
   color: #9600ff;
 }
 .tsd-index-panel .tsd-parent-kind-interface a {
-  color: #7da01f;
+  color: #647f1b;
 }
 .tsd-index-panel .tsd-parent-kind-enum a {
-  color: #c90;
+  color: #937210;
 }
 .tsd-index-panel .tsd-parent-kind-class a {
-  color: #4da6ff;
+  color: #0672de;
 }
 .tsd-index-panel .tsd-kind-module a {
   color: #9600ff;
 }
 .tsd-index-panel .tsd-kind-interface a {
-  color: #7da01f;
+  color: #647f1b;
 }
 .tsd-index-panel .tsd-kind-enum a {
-  color: #c90;
+  color: #937210;
 }
 .tsd-index-panel .tsd-kind-class a {
-  color: #4da6ff;
+  color: #0672de;
 }
 .tsd-index-panel .tsd-is-private a {
-  color: gray;
+  color: #707070;
 }
 .tsd-flag {
   display: inline-block;
   padding: 1px 5px;
   border-radius: 4px;
   color: #fff;
-  background-color: gray;
+  background-color: #707070;
   text-indent: 0;
   font-size: 14px;
   font-weight: normal;
@@ -2021,7 +2021,7 @@ footer .tsd-legend {
 .tsd-navigation.primary li.label span {
   display: block;
   padding: 20px 0 6px 5px;
-  color: gray;
+  color: #707070;
 }
 .tsd-navigation.primary li.globals + li > span,
 .tsd-navigation.primary li.globals + li > a {
@@ -2201,7 +2201,7 @@ footer .tsd-legend {
   top: 10px;
 }
 #tsd-search .results span.parent {
-  color: gray;
+  color: #707070;
   font-weight: normal;
 }
 #tsd-search.has-focus {
@@ -2251,7 +2251,7 @@ footer .tsd-legend {
   left: 20px;
 }
 .tsd-signature-symbol {
-  color: gray;
+  color: #707070;
   font-weight: normal;
 }
 .tsd-signature-type {
@@ -2345,11 +2345,11 @@ ul.tsd-type-parameters .tsd-comment {
 }
 .tsd-sources {
   font-size: 14px;
-  color: gray;
+  color: #707070;
   margin: 0 0 1em 0;
 }
 .tsd-sources a {
-  color: gray;
+  color: #707070;
   text-decoration: underline;
 }
 .tsd-sources ul,

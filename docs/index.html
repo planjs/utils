@@ -53,7 +53,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="index.html">Globals</a>
+					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
 			<h1>@planjs/utils</h1>
@@ -63,145 +63,250 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Modules</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-module"><a href="modules/_event_.html" class="tsd-kind-icon">&quot;event&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_index_.html" class="tsd-kind-icon">&quot;index&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_noop_.html" class="tsd-kind-icon">&quot;noop&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_async_pool_.html" class="tsd-kind-icon">&quot;promise/async-<wbr>pool&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_defer_.html" class="tsd-kind-icon">&quot;promise/defer&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_delay_.html" class="tsd-kind-icon">&quot;promise/delay&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_immediate_.html" class="tsd-kind-icon">&quot;promise/immediate&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_index_.html" class="tsd-kind-icon">&quot;promise/index&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_interfaces_.html" class="tsd-kind-icon">&quot;promise/interfaces&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_invert_.html" class="tsd-kind-icon">&quot;promise/invert&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_is_promise_.html" class="tsd-kind-icon">&quot;promise/is-<wbr>promise&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_map_limit_.html" class="tsd-kind-icon">&quot;promise/map-<wbr>limit&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_memoize_.html" class="tsd-kind-icon">&quot;promise/memoize&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_pif_.html" class="tsd-kind-icon">&quot;promise/p<wbr>If&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_padding_.html" class="tsd-kind-icon">&quot;promise/padding&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_promisify_.html" class="tsd-kind-icon">&quot;promise/promisify&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_retry_.html" class="tsd-kind-icon">&quot;promise/retry&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_sequence_chain_.html" class="tsd-kind-icon">&quot;promise/sequence-<wbr>chain&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_settle_all_.html" class="tsd-kind-icon">&quot;promise/settle-<wbr>all&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_single_lock_.html" class="tsd-kind-icon">&quot;promise/single-<wbr>lock&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_timeout_.html" class="tsd-kind-icon">&quot;promise/timeout&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_transform_errors_.html" class="tsd-kind-icon">&quot;promise/transform-<wbr>errors&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_promise_until_.html" class="tsd-kind-icon">&quot;promise/until&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_regex_constant_.html" class="tsd-kind-icon">&quot;regex_<wbr>constant&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_shallow_equal_.html" class="tsd-kind-icon">&quot;shallow-<wbr>equal&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_slash_.html" class="tsd-kind-icon">&quot;slash&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_string_index_.html" class="tsd-kind-icon">&quot;string/index&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_string_random_.html" class="tsd-kind-icon">&quot;string/random&quot;</a></li>
-								<li class="tsd-kind-module"><a href="modules/_uuid_.html" class="tsd-kind-icon">&quot;uuid&quot;</a></li>
-							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
+			<div class="tsd-panel tsd-typography">
+				<a href="#utils" id="utils" style="color: inherit; text-decoration: none;">
+					<h1>utils</h1>
+				</a>
+				<blockquote>
+					<p>Common tools collection</p>
+				</blockquote>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<pre><code class="language-bash">npm i @planjs/utils</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { delay, retry } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@planjs/utils&#x27;</span>;
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">await</span> delay(<span class="hljs-number">100</span>);
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetchData</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;testing&#x27;</span>));
+  }
+  <span class="hljs-keyword">await</span> retry(fetchData, { <span class="hljs-attr">maxAttempts</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">delayMs</span>: <span class="hljs-number">500</span> })();
+}
+
+init();</code></pre>
+			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals current ">
-						<a href="index.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_event_.html">&quot;event&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_index_.html">&quot;index&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_noop_.html">&quot;noop&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_async_pool_.html">&quot;promise/async-<wbr>pool&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_defer_.html">&quot;promise/defer&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_delay_.html">&quot;promise/delay&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_immediate_.html">&quot;promise/immediate&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_index_.html">&quot;promise/index&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_interfaces_.html">&quot;promise/interfaces&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_invert_.html">&quot;promise/invert&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_is_promise_.html">&quot;promise/is-<wbr>promise&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_map_limit_.html">&quot;promise/map-<wbr>limit&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_memoize_.html">&quot;promise/memoize&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_pif_.html">&quot;promise/p<wbr>If&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_padding_.html">&quot;promise/padding&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_promisify_.html">&quot;promise/promisify&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_retry_.html">&quot;promise/retry&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_sequence_chain_.html">&quot;promise/sequence-<wbr>chain&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_settle_all_.html">&quot;promise/settle-<wbr>all&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_single_lock_.html">&quot;promise/single-<wbr>lock&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_timeout_.html">&quot;promise/timeout&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_transform_errors_.html">&quot;promise/transform-<wbr>errors&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_promise_until_.html">&quot;promise/until&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_regex_constant_.html">&quot;regex_<wbr>constant&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_shallow_equal_.html">&quot;shallow-<wbr>equal&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_slash_.html">&quot;slash&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_string_index_.html">&quot;string/index&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_string_random_.html">&quot;string/random&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_uuid_.html">&quot;uuid&quot;</a>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/event.html" class="tsd-kind-icon">Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/asyncpoolopts.html" class="tsd-kind-icon">Async<wbr>Pool<wbr>Opts</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/baseretryopts.html" class="tsd-kind-icon">Base<wbr>Retry<wbr>Opts</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/likewxapi.html" class="tsd-kind-icon">LikeWXApi</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/retryopts.html" class="tsd-kind-icon">Retry<wbr>Opts</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/settledpromises.html" class="tsd-kind-icon">Settled<wbr>Promises</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#callback1" class="tsd-kind-icon">Callback1</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#callback2" class="tsd-kind-icon">Callback2</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#callback3" class="tsd-kind-icon">Callback3</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#callback4" class="tsd-kind-icon">Callback4</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#callback5" class="tsd-kind-icon">Callback5</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#callback6rest" class="tsd-kind-icon">Callback6<wbr>Rest</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#promisefn" class="tsd-kind-icon">PromiseFN</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#thenreturn" class="tsd-kind-icon">Then<wbr>Return</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_bank_card_num" class="tsd-kind-icon">REG_<wbr>BANK_<wbr>CARD_<wbr>NUM</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_cn_name" class="tsd-kind-icon">REG_<wbr>CN_<wbr>NAME</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_decimal" class="tsd-kind-icon">REG_<wbr>DECIMAL</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_email" class="tsd-kind-icon">REG_<wbr>EMAIL</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_english" class="tsd-kind-icon">REG_<wbr>ENGLISH</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_en_name" class="tsd-kind-icon">REG_<wbr>EN_<wbr>NAME</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_id_card" class="tsd-kind-icon">REG_<wbr>ID_<wbr>CARD</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_imei" class="tsd-kind-icon">REG_<wbr>IMEI</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_ipv4" class="tsd-kind-icon">REG_<wbr>IPV4</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_ipv6" class="tsd-kind-icon">REG_<wbr>IPV6</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_linux_file_path" class="tsd-kind-icon">REG_<wbr>LINUX_<wbr>FILE_<wbr>PATH</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_linux_folder_path" class="tsd-kind-icon">REG_<wbr>LINUX_<wbr>FOLDER_<wbr>PATH</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_md532" class="tsd-kind-icon">REG_<wbr>MD532</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_number" class="tsd-kind-icon">REG_<wbr>NUMBER</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_phone_loose" class="tsd-kind-icon">REG_<wbr>PHONE_<wbr>LOOSE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_postal_codei" class="tsd-kind-icon">REG_<wbr>POSTAL_<wbr>CODEi</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_rgb" class="tsd-kind-icon">REG_<wbr>RGB</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_subnet_mask" class="tsd-kind-icon">REG_<wbr>SUBNET_<wbr>MASK</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_tel_phone" class="tsd-kind-icon">REG_<wbr>TEL_<wbr>PHONE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_unified_social_credit_code" class="tsd-kind-icon">REG_<wbr>UNIFIED_<wbr>SOCIAL_<wbr>CREDIT_<wbr>CODE</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_uri" class="tsd-kind-icon">REG_<wbr>URI</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_uri_with_port" class="tsd-kind-icon">REG_<wbr>URI_<wbr>WITH_<wbr>PORT</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_version" class="tsd-kind-icon">REG_<wbr>VERSION</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_windows_file_path" class="tsd-kind-icon">REG_<wbr>WINDOWS_<wbr>FILE_<wbr>PATH</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#reg_windows_folder_path" class="tsd-kind-icon">REG_<wbr>WINDOWS_<wbr>FOLDER_<wbr>PATH</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#eventcenter" class="tsd-kind-icon">event<wbr>Center</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#asyncpool" class="tsd-kind-icon">async<wbr>Pool</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#defer" class="tsd-kind-icon">defer</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#delay" class="tsd-kind-icon">delay</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getrandomlower" class="tsd-kind-icon">get<wbr>Random<wbr>Lower</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getrandomnumber" class="tsd-kind-icon">get<wbr>Random<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getrandomstring" class="tsd-kind-icon">get<wbr>Random<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getrandomsymbol" class="tsd-kind-icon">get<wbr>Random<wbr>Symbol</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getrandomupper" class="tsd-kind-icon">get<wbr>Random<wbr>Upper</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#immediate" class="tsd-kind-icon">immediate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#invert" class="tsd-kind-icon">invert</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#ispromise" class="tsd-kind-icon">is<wbr>Promise</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#maplimit" class="tsd-kind-icon">map<wbr>Limit</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#memoize" class="tsd-kind-icon">memoize</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#noop" class="tsd-kind-icon">noop</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#pif" class="tsd-kind-icon">p<wbr>If</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#padding" class="tsd-kind-icon">padding</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#promisify" class="tsd-kind-icon">promisify</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#retry" class="tsd-kind-icon">retry</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#sequencechain" class="tsd-kind-icon">sequence<wbr>Chain</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#settleall" class="tsd-kind-icon">settle<wbr>All</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#shallowequal" class="tsd-kind-icon">shallow<wbr>Equal</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#shuffle" class="tsd-kind-icon">shuffle</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#singlelock" class="tsd-kind-icon">single<wbr>Lock</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#slash" class="tsd-kind-icon">slash</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#timeout" class="tsd-kind-icon">timeout</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#transformerrors" class="tsd-kind-icon">transform<wbr>Errors</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#until" class="tsd-kind-icon">until</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#uuid" class="tsd-kind-icon">uuid</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#randomfunc" class="tsd-kind-icon">random<wbr>Func</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -212,19 +317,18 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
 			</ul>
 		</div>
 	</div>
