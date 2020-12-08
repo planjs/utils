@@ -1,3 +1,5 @@
+import { shuffle } from './array';
+
 /**
  * 获取随机小写英文单词
  */
@@ -36,8 +38,8 @@ const randomFunc = {
 
 /**
  * 生成一定长度随机数
- * @param len
- * @param types
+ * @param len 长度
+ * @param types 随机字符串需要包含的字符
  */
 export function getRandomString(
   len: number,
@@ -47,19 +49,15 @@ export function getRandomString(
     Array(len)
       .fill(undefined)
       .map((_, index) => index % types.length),
-  ).reduce((acc, i) => {
-    return (acc += randomFunc[types[i]]());
-  }, '');
+  ).reduce((acc, i) => (acc += randomFunc[types[i]]()), '');
 }
 
 /**
- * 随机排列数组
- * @param a {array}
+ * 生成不重复字符串
+ * @returns {string}
  */
-export function shuffle<T = any>(a: T[]): T[] {
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
+export function createUniqueString() {
+  const timestamp = +new Date() + '';
+  const randomNum = parseInt(String((1 + Math.random()) * 65536)) + '';
+  return (+(randomNum + timestamp)).toString(32);
 }
