@@ -1,32 +1,32 @@
-function _setScrollTop(value) {
-  window.scrollTo(0, value);
-  return value;
-}
-
-function _getScrollTop() {
-  return (
-    (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop
-  );
-}
-
-const _requestAnimFrame = (function () {
-  return (
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    // @ts-ignore
-    window.mozRequestAnimationFrame ||
-    function (callback) {
-      window.setTimeout(callback, 1000 / 60);
-    }
-  );
-})();
-
 /**
  * 时间内，滚动条平滑滚到指定位置
  * @param to
  * @param duration
  */
 function smoothScrolling(to, duration) {
+  function _setScrollTop(value) {
+    window.scrollTo(0, value);
+    return value;
+  }
+
+  function _getScrollTop() {
+    return (
+      (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop
+    );
+  }
+
+  const _requestAnimFrame = (function () {
+    return (
+      window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      // @ts-ignore
+      window.mozRequestAnimationFrame ||
+      function (callback) {
+        window.setTimeout(callback, 1000 / 60);
+      }
+    );
+  })();
+
   if (duration < 0) {
     _setScrollTop(to);
     return;
