@@ -1,6 +1,6 @@
 {
   "name": "@planjs/utils",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Common tools collection",
   "keywords": [
     "es6",
@@ -17,15 +17,16 @@
   },
   "license": "ISC",
   "author": "fupeng",
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "typings/index.d.ts",
   "files": [
     "lib",
     "es",
     "docs",
     "typings"
   ],
-  "main": "lib/index.js",
-  "module": "es/index.js",
-  "typings": "typings/index.d.ts",
   "scripts": {
     "doc": "typedoc",
     "lint:fix": "eslint --fix --ext js,ts src",
@@ -40,6 +41,25 @@
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,json,css,scss}": [
+      "prettier --write",
+      "git add"
+    ],
+    "package.json": [
+      "npx sort-package-json",
+      "git add"
+    ]
   },
   "config": {
     "commitizen": {
@@ -65,25 +85,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{json,json,css,scss}": [
-      "prettier --write",
-      "git add"
-    ],
-    "package.json": [
-      "npx sort-package-json",
-      "git add"
-    ]
-  },
-  "sideEffects": false
+  }
 }
