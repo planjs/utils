@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.16](https://github.com/planjs/utils/compare/stable-1.0.15...stable-1.0.16) (2020-12-09)
+
 ### [1.0.15](https://github.com/planjs/utils/compare/stable-1.0.14...stable-1.0.15) (2020-12-09)
 
 ### [1.0.14](https://github.com/planjs/utils/compare/stable-1.0.13...stable-1.0.14) (2020-12-09)
