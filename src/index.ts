@@ -9,10 +9,10 @@ export * from './random';
 export * from './string';
 export * from './blob';
 export * from './array';
+export * from './dom';
 export * from './bom';
+export * from './things';
 export * from './regex_constant';
 
 export { default as noop } from './noop';
-export { default as uuid } from './uuid';
 export { default as slash } from './slash';
-export { default as shallowEqual } from './shallow-equal';

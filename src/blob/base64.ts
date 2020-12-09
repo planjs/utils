@@ -46,7 +46,7 @@ function _byteLength(_b64: string, validLen: number, placeHoldersLen: number) {
  * base64 转换成 Uint8Array
  * @param b64
  */
-export function toByteArray(b64: string) {
+export function b64ToByteArray(b64: string) {
   let tmp;
   const lens = getLens(b64);
   const validLen = lens[0];
@@ -111,7 +111,7 @@ function encodeChunk(uint8: number[], start: number, end: number) {
  * Uint8Array to base64
  * @param uint8
  */
-export function fromByteArray(uint8: number[]) {
+export function byteArrayToB64(uint8: number[]) {
   let tmp;
   const len = uint8.length;
   const extraBytes = len % 3; // if we have 1 byte left, pad 2 bytes

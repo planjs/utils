@@ -127,3 +127,14 @@ export const REG_RGB = /^#?([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/;
  * 邮政编码(中国)
  */
 export const REG_POSTAL_CODEi = /^(0[1-7]|1[0-356]|2[0-7]|3[0-6]|4[0-7]|5[1-7]|6[1-7]|7[0-5]|8[013-6])\d{4}$/;
+
+/**
+ * 判断是否是base64
+ */
+export const REG_BASE64 = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
+
+/**
+ * 判断是否data url
+ */
+// eslint-disable-next-line
+export const REG_DATA_URL = /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i;
