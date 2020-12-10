@@ -1,5 +1,5 @@
-import singleLock from '../promise/single-lock';
 import { dataUrl2Blob } from './blob';
+import { imgToBlobUrl } from './img-to-blob';
 
 /**
  * 下载文件
@@ -48,23 +48,7 @@ export function canvasDownloadImage(
     quality?: any;
   },
 ) {
-  const { lock, exit, unLock } = singleLock();
-  const image = new Image();
-  image.setAttribute('crossOrigin', 'anonymous');
-  image.onload = function () {
-    const canvas = document.createElement('canvas');
-    canvas.width = image.width;
-    canvas.height = image.height;
-    const ctx = canvas.getContext('2d');
-    ctx!.drawImage(image, 0, 0, image.width, image.height);
-    const url = canvas.toDataURL(opt?.type ?? 'image/png', opt?.quality);
-    if (url) {
-      unLock(downloadFile(dataUrl2Blob(url), fileName));
-    } else {
-      exit(new Error('Export image is empty'));
-    }
-  };
-  image.onerror = exit;
-  image.src = path;
-  return lock();
+  return imgToBlobUrl(path, opt).then((res) => {
+    downloadFile(res, fileName);
+  });
 }

@@ -3,7 +3,7 @@
  * @param to
  * @param duration
  */
-function smoothScrolling(to, duration) {
+function windowSmoothScrolling(to, duration) {
   function _setScrollTop(value) {
     window.scrollTo(0, value);
     return value;
@@ -49,8 +49,8 @@ function smoothScrolling(to, duration) {
       return;
     }
 
-    smoothScrolling(to, duration - 16);
+    windowSmoothScrolling(to, duration - 16);
   });
 }
 
-export default smoothScrolling;
+export default windowSmoothScrolling;

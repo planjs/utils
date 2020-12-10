@@ -1,4 +1,4 @@
-import { isBrowser } from '../is-client';
+import { isBrowser } from '../is/is-platform';
 
 /**
  * 等待一段时间，返回一个promise

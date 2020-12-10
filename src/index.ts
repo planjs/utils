@@ -4,6 +4,8 @@ const eventCenter = new Event();
 
 export { Event, eventCenter };
 
+export * from './constant';
+export * from './is';
 export * from './promise';
 export * from './random';
 export * from './string';

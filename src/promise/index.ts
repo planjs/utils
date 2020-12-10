@@ -1,5 +1,3 @@
-export { default as isPromise } from './is-promise';
-
 export { default as defer } from './defer';
 
 export { default as delay } from './delay';
