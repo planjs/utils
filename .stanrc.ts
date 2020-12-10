@@ -1,12 +1,6 @@
-export default [
-  {
-    bundler: 'babel',
-    esm: true,
-    runtimeHelpers: true,
-  },
-  {
-    bundler: 'babel',
-    cjs: true,
-    runtimeHelpers: false,
-  },
-];
+export default {
+  bundler: 'babel',
+  esm: true,
+  cjs: true,
+  runtimeHelpers: true,
+};
