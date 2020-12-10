@@ -48,7 +48,5 @@ export function canvasDownloadImage(
     quality?: any;
   },
 ) {
-  return imgToBlobUrl(path, opt).then((res) => {
-    downloadFile(res, fileName);
-  });
+  return imgToBlobUrl(path, opt).then((res) => downloadFile(res, fileName));
 }
