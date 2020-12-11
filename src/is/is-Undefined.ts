@@ -10,7 +10,7 @@ function isUndefined(value): value is undefined {
  * 是否为undefined字符串
  * @param value
  */
-export function isUndefined1(value): value is undefined {
+export function isUndefinedStr(value): value is undefined {
   return value === 'undefined';
 }
 

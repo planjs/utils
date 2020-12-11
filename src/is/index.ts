@@ -6,12 +6,14 @@ export { default as isError } from './is-Error';
 export { default as isNaN } from './is-NaN';
 export { default as isNil } from './is-Nil';
 export { default as isDef } from './is-Def';
-export { default as isUndefined, isUndefined1 } from './is-Undefined';
+export { default as isUndefined, isUndefinedStr } from './is-Undefined';
 export { default as isNull } from './is-Null';
+export { default as isObject, isObjectLike, isPlanObject } from './is-Object';
 export { default as isRegExp } from './is-RegExp';
 export { default as isArray, isArrayLike } from './is-Array';
 export { default as isPrimitive } from './is-Primitive';
 export { default as isPromise } from './is-Promise';
+export { default as isWindow } from './is-Window';
 
 export { default as isFile } from './is-File';
 export { default as isPrototype } from './is-Prototype';
