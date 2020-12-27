@@ -2,8 +2,8 @@
  * 判断是 null
  * @param value
  */
-function isNil(value): value is null {
+function isNull(value): value is null {
   return value === null;
 }
 
-export default isNil;
+export default isNull;

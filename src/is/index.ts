@@ -8,6 +8,8 @@ export { default as isNil } from './is-Nil';
 export { default as isDef } from './is-Def';
 export { default as isUndefined, isUndefined1 } from './is-Undefined';
 export { default as isNull } from './is-Null';
+export { default as isString } from './is-String';
+export { default as isNumber } from './is-Number';
 export { default as isRegExp } from './is-RegExp';
 export { default as isArray, isArrayLike } from './is-Array';
 export { default as isPrimitive } from './is-Primitive';
