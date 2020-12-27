@@ -60,7 +60,7 @@
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "lint-staged": "^10.2.13",
-    "stan-builder": "^0.4.2",
+    "stan-builder": "^0.4.5",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.3.0",
     "typedoc": "^0.19.1",
