@@ -13,6 +13,7 @@ export * from './blob';
 export * from './array';
 export * from './dom';
 export * from './bom';
+export * from './date';
 export * from './things';
 export * from './regex_constant';
 

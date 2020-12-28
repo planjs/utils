@@ -9461,10 +9461,10 @@ stack-utils@^2.0.2:
   dependencies:
     escape-string-regexp "^2.0.0"
 
-stan-builder@^0.4.2:
-  version "0.4.2"
-  resolved "https://registry.npm.taobao.org/stan-builder/download/stan-builder-0.4.2.tgz#2ebda24a965ac823db9bf8a0c5d3b668ad003feb"
-  integrity sha1-Lr2iSpZayCPbm/igxdO2aK0AP+s=
+stan-builder@^0.4.5:
+  version "0.4.5"
+  resolved "https://registry.npm.taobao.org/stan-builder/download/stan-builder-0.4.5.tgz#06d332ee524d783f6893ce9b51f0b34b22457dc3"
+  integrity sha1-BtMy7lJNeD9ok86bUfCzSyJFfcM=
   dependencies:
     "@babel/code-frame" "^7.10.4"
     "@babel/core" "^7.11.6"

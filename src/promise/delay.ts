@@ -7,6 +7,7 @@ import { isBrowser } from '../is/is-platform';
  * @param value
  */
 async function delay<T>(delayTimeMs: number, value: T): Promise<T>;
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function delay<T>(delayTimeMs: number): Promise<void>;
 async function delay<T>(delayTime: number, value?: T): Promise<void | T> {
   if (delayTime <= 17 && isBrowser()) {
