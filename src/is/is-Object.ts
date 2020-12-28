@@ -5,7 +5,7 @@ import isWindow from './is-Window';
  * null 不是对象
  * @param value
  */
-function isObject(value): value is object {
+function isObject<T extends object>(value: unknown): value is { [P in keyof T]?: unknown } {
   return value === Object(value);
 }
 
@@ -15,7 +15,7 @@ function isObject(value): value is object {
  * isObjectLike(Function) => false
  * isObjectLike(null) => false
  */
-export function isObjectLike(value): value is object {
+export function isObjectLike<T>(value: unknown): value is T {
   return typeof value === 'object' && value !== null;
 }
 
@@ -23,7 +23,9 @@ export function isObjectLike(value): value is object {
  * 判断是否 plan object 通过 "{}" 或者 "new Object" 创建的
  * @param value
  */
-export function isPlanObject(value): value is object {
+export function isPlanObject<T extends object>(
+  value: unknown,
+): value is { [P in keyof T]?: unknown } {
   if (!isObject(value) || (value as HTMLElement).nodeType || isWindow(value)) {
     return false;
   }
