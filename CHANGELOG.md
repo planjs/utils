@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.25](https://github.com/planjs/utils/compare/stable-1.0.24...stable-1.0.25) (2020-12-28)
+
+
+### Bug Fixes
+
+* is-Object typings ([15a99da](https://github.com/planjs/utils/commit/15a99da2363b64d40dc27fb3ec5e59ceaf736759))
+
 ### [1.0.24](https://github.com/planjs/utils/compare/stable-1.0.23...stable-1.0.24) (2020-12-28)
 
 ### [1.0.23](https://github.com/planjs/utils/compare/stable-1.0.20...stable-1.0.23) (2020-12-28)
