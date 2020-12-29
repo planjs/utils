@@ -18,4 +18,3 @@ export * from './things';
 export * from './regex_constant';
 
 export { default as noop } from './noop';
-export { default as slash } from './things/slash';
