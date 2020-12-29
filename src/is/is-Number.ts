@@ -5,7 +5,7 @@ import getType from './get-type';
  * @param value
  */
 function isNumber(value: any): value is number {
-  return getType(value) === 'string';
+  return getType(value) === 'number';
 }
 
 export default isNumber;
