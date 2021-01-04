@@ -107,6 +107,8 @@ export default function upload<T>(option: UploadRequestOption<T>) {
     xhr.withCredentials = true;
   }
 
+  xhr.open(option.method, option.action, true);
+
   const headers = option.headers || {};
   if (headers['X-Requested-With'] !== null) {
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
