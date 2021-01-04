@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.27](https://github.com/planjs/utils/compare/stable-1.0.26...stable-1.0.27) (2021-01-04)
+
+
+### Bug Fixes
+
+* **bom:** xhr upload ([a7b2f74](https://github.com/planjs/utils/commit/a7b2f7443d004c39e690682ae9d1c58405e13623))
+
 ### [1.0.26](https://github.com/planjs/utils/compare/stable-1.0.25...stable-1.0.26) (2020-12-29)
 
 
