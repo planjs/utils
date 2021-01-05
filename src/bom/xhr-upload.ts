@@ -21,7 +21,7 @@ export interface UploadRequestOption<T = any> {
   onProgress?: (event: UploadProgressEvent) => void;
   onError?: (event: UploadRequestError | ProgressEvent, body?: T) => void;
   onSuccess?: (body: T, xhr: XMLHttpRequest) => void;
-  onabort?: (event: UploadRequestError | ProgressEvent) => void;
+  onAbort?: (event: UploadRequestError | ProgressEvent) => void;
   data?: object;
   filename?: string;
   file: File;
@@ -97,7 +97,7 @@ export default function upload<T>(option: UploadRequestOption<T>) {
   };
 
   xhr.onabort = function error(e) {
-    option.onabort?.(e);
+    option.onAbort?.(e);
   };
 
   xhr.onload = function onload() {
