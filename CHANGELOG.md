@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.29](https://github.com/planjs/utils/compare/stable-1.0.28...stable-1.0.29) (2021-01-05)
+
+
+### Bug Fixes
+
+* **xhr-uploader:** add abort event ([353702b](https://github.com/planjs/utils/commit/353702b8b8be6775fa87656212ed3c8b90a8aefe))
+* **xhr-uploader:** rename abort event ([f894582](https://github.com/planjs/utils/commit/f894582d6f63fd90bd6f4b6f98c4751c4b65d30a))
+
 ### [1.0.28](https://github.com/planjs/utils/compare/stable-1.0.27...stable-1.0.28) (2021-01-04)
 
 ### [1.0.27](https://github.com/planjs/utils/compare/stable-1.0.26...stable-1.0.27) (2021-01-04)
