@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.30](https://github.com/planjs/utils/compare/stable-1.0.29...stable-1.0.30) (2021-01-06)
+
+
+### Bug Fixes
+
+* is-Number & is-String ([b9d83b8](https://github.com/planjs/utils/commit/b9d83b807bfa9fa6d63727fe01b0f8ce19366a0b))
+* **is:** number & string  lowerCase ([1093fe5](https://github.com/planjs/utils/commit/1093fe5d0caf84e303ed1099ce7c0e4a1bf5bc1f))
+
 ### [1.0.29](https://github.com/planjs/utils/compare/stable-1.0.28...stable-1.0.29) (2021-01-05)
 
 
