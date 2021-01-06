@@ -5,7 +5,7 @@ import getType from './get-type';
  * @param value
  */
 function isString(value: any): value is string {
-  return getType(value).toLowerCase() === 'string';
+  return getType(value) === 'String';
 }
 
 export default isString;
