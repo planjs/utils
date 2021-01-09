@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>UploadRequestError | @planjs/utils</title>
+	<title>OauthClientOptions | @planjs/utils</title>
 	<meta name="description" content="Documentation for @planjs/utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,26 +56,29 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="uploadrequesterror.html">UploadRequestError</a>
+					<a href="oauthclientoptions.html">OauthClientOptions</a>
 				</li>
 			</ul>
-			<h1>Interface UploadRequestError</h1>
+			<h1>Interface OauthClientOptions&lt;K&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="uploadrequesterror.html#error" class="tsd-signature-type">Error</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">UploadRequestError</span>
-							</li>
-						</ul>
+						<span class="target">OauthClientOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -86,13 +89,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="uploadrequesterror.html#error" class="tsd-kind-icon">Error</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="uploadrequesterror.html#message" class="tsd-kind-icon">message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="uploadrequesterror.html#method" class="tsd-kind-icon">method</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="uploadrequesterror.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="uploadrequesterror.html#stack" class="tsd-kind-icon">stack</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="uploadrequesterror.html#status" class="tsd-kind-icon">status</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="uploadrequesterror.html#url" class="tsd-kind-icon">url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="oauthclientoptions.html#consumerkeys" class="tsd-kind-icon">consumer<wbr>Keys</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="oauthclientoptions.html#mode" class="tsd-kind-icon">mode</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="oauthclientoptions.html#qsparseargs" class="tsd-kind-icon">qs<wbr>Parse<wbr>Args</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="oauthclientoptions.html#qsstringifyargs" class="tsd-kind-icon">qs<wbr>Stringify<wbr>Args</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="oauthclientoptions.html#url" class="tsd-kind-icon">url</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,77 +102,86 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="error" class="tsd-anchor"></a>
-					<h3>Error</h3>
-					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ErrorConstructor</span></div>
+					<a name="consumerkeys" class="tsd-anchor"></a>
+					<h3>consumer<wbr>Keys</h3>
+					<div class="tsd-signature tsd-kind-icon">consumer<wbr>Keys<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:984</li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/91eb828/src/things/oauth-client.ts#L13">src/things/oauth-client.ts:13</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="message" class="tsd-anchor"></a>
-					<h3>message</h3>
-					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="uploadrequesterror.html">UploadRequestError</a>.<a href="uploadrequesterror.html#message">message</a></p>
-						<ul>
-							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:974</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>回调参数
+							eg： wx code,state</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="method" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> method</h3>
-					<div class="tsd-signature tsd-kind-icon">method<span class="tsd-signature-symbol">:</span> <a href="../globals.html#uploadrequestmethod" class="tsd-signature-type">UploadRequestMethod</a></div>
+					<a name="mode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> mode</h3>
+					<div class="tsd-signature tsd-kind-icon">mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"hash"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"history"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/91eb828/src/bom/xhr-upload.ts#L16">src/bom/xhr-upload.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/91eb828/src/things/oauth-client.ts#L18">src/things/oauth-client.ts:18</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="uploadrequesterror.html">UploadRequestError</a>.<a href="uploadrequesterror.html#name">name</a></p>
-						<ul>
-							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:973</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="stack" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> stack</h3>
-					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="uploadrequesterror.html">UploadRequestError</a>.<a href="uploadrequesterror.html#stack">stack</a></p>
-						<ul>
-							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:975</li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>参数是放hash还是history
+							如果没有传递，则都会判断</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="status" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> status</h3>
-					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<a name="qsparseargs" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> qs<wbr>Parse<wbr>Args</h3>
+					<div class="tsd-signature tsd-kind-icon">qs<wbr>Parse<wbr>Args<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ParseOptions</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/91eb828/src/bom/xhr-upload.ts#L15">src/bom/xhr-upload.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/91eb828/src/things/oauth-client.ts#L22">src/things/oauth-client.ts:22</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>query-string parse 格式化参数</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="qsstringifyargs" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> qs<wbr>Stringify<wbr>Args</h3>
+					<div class="tsd-signature tsd-kind-icon">qs<wbr>Stringify<wbr>Args<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">StringifyOptions</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/91eb828/src/things/oauth-client.ts#L26">src/things/oauth-client.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>query-string stringify 格式化参数</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="url" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> url</h3>
-					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">URL</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/91eb828/src/bom/xhr-upload.ts#L17">src/bom/xhr-upload.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/91eb828/src/things/oauth-client.ts#L8">src/things/oauth-client.ts:8</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>url</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>window.location.href</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -187,29 +197,23 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
-						<a href="uploadrequesterror.html" class="tsd-kind-icon">Upload<wbr>Request<wbr>Error</a>
+					<li class="current tsd-kind-interface tsd-has-type-parameter">
+						<a href="oauthclientoptions.html" class="tsd-kind-icon">Oauth<wbr>Client<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="uploadrequesterror.html#error" class="tsd-kind-icon">Error</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="uploadrequesterror.html#message" class="tsd-kind-icon">message</a>
+								<a href="oauthclientoptions.html#consumerkeys" class="tsd-kind-icon">consumer<wbr>Keys</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="uploadrequesterror.html#method" class="tsd-kind-icon">method</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="uploadrequesterror.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="uploadrequesterror.html#stack" class="tsd-kind-icon">stack</a>
+								<a href="oauthclientoptions.html#mode" class="tsd-kind-icon">mode</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="uploadrequesterror.html#status" class="tsd-kind-icon">status</a>
+								<a href="oauthclientoptions.html#qsparseargs" class="tsd-kind-icon">qs<wbr>Parse<wbr>Args</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="uploadrequesterror.html#url" class="tsd-kind-icon">url</a>
+								<a href="oauthclientoptions.html#qsstringifyargs" class="tsd-kind-icon">qs<wbr>Stringify<wbr>Args</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="oauthclientoptions.html#url" class="tsd-kind-icon">url</a>
 							</li>
 						</ul>
 					</li>
