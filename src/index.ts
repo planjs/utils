@@ -14,7 +14,6 @@ export * from './array';
 export * from './dom';
 export * from './bom';
 export * from './date';
+export * from './function';
 export * from './things';
 export * from './regex_constant';
-
-export { default as noop } from './noop';
