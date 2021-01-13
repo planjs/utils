@@ -1,5 +1,5 @@
 /**
- * 判断值不是 undefined null
+ * 是否是定义过的数据 值不是 undefined null
  * @param v
  */
 function isDef(v) {

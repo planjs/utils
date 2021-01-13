@@ -8,7 +8,7 @@ function get<T>(
   let current: any = entity;
 
   for (let i = 0; i < paths.length; i += 1) {
-    if (isDef(current)) {
+    if (!isDef(current)) {
       return undefined;
     }
 
