@@ -72,3 +72,19 @@ export function isIOS(ua = window.navigator.userAgent) {
 export function isAndroid(ua = window.navigator.userAgent) {
   return !!ua.match(/android/gi);
 }
+
+/**
+ * 是否是微信浏览器
+ * @param ua
+ */
+export function isWXBrowser(ua = window.navigator.userAgent) {
+  return !!ua.match(/micromessenger/gi);
+}
+
+/**
+ * 判断是否企业微信浏览器
+ * @param ua
+ */
+export function isWWBrowser(ua = window.navigator.userAgent) {
+  return !!ua.match(/wxwork/gi) && isWWBrowser(ua);
+}
