@@ -27,3 +27,5 @@ export { default as pIf } from './pIf';
 
 export { default as promisify } from './promisify';
 export { default as sequenceChain } from './sequence-chain';
+
+export type { PromiseFN } from './interfaces';
