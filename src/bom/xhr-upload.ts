@@ -96,12 +96,16 @@ export default function upload<T>(option: UploadRequestOption<T>) {
     option.onError?.(e);
   };
 
-  xhr.onabort = function error(e) {
+  xhr.onabort = function abort(e) {
     option.onAbort?.(e);
   };
 
+  xhr.ontimeout = function timeout(e) {
+    option.onError?.(e);
+  };
+
   xhr.onload = function onload() {
-    if (xhr.status < 200 || xhr.status >= 300) {
+    if (((xhr.status / 100) | 0) === 2) {
       return option.onError?.(getError(option, xhr), getBody(xhr));
     }
 
