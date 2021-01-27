@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BaseRetryOpts | @planjs/utils</title>
+	<title>PromiseFN | @planjs/utils</title>
 	<meta name="description" content="Documentation for @planjs/utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,76 +56,47 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="baseretryopts.html">BaseRetryOpts</a>
+					<a href="promisefn.html">PromiseFN</a>
 				</li>
 			</ul>
-			<h1>Interface BaseRetryOpts</h1>
+			<h1>Interface PromiseFN&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T = <span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">BaseRetryOpts</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<a href="retryopts.html" class="tsd-signature-type">RetryOpts</a>
-							</li>
-						</ul>
+						<span class="target">PromiseFN</span>
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="baseretryopts.html#delayms" class="tsd-kind-icon">delay<wbr>Ms</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="baseretryopts.html#maxattempts" class="tsd-kind-icon">max<wbr>Attempts</a></li>
+			<section class="tsd-panel">
+				<h3 class="tsd-before-signature">Callable</h3>
+				<ul class="tsd-signatures tsd-kind-interface tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">__call<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/planjs/utils/blob/a9a2b11/src/promise/interfaces.ts#L1">src/promise/interfaces.ts:1</a></li>
 							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="delayms" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> delay<wbr>Ms</h3>
-					<div class="tsd-signature tsd-kind-icon">delay<wbr>Ms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/a9a2b11/src/promise/interfaces.ts#L14">src/promise/interfaces.ts:14</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>重试间隔</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="maxattempts" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> max<wbr>Attempts</h3>
-					<div class="tsd-signature tsd-kind-icon">max<wbr>Attempts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/a9a2b11/src/promise/interfaces.ts#L10">src/promise/interfaces.ts:10</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>最大等待次数
-							不设置则一直运行</p>
-						</div>
-					</div>
-				</section>
+						</aside>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -140,16 +111,8 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
-						<a href="baseretryopts.html" class="tsd-kind-icon">Base<wbr>Retry<wbr>Opts</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="baseretryopts.html#delayms" class="tsd-kind-icon">delay<wbr>Ms</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="baseretryopts.html#maxattempts" class="tsd-kind-icon">max<wbr>Attempts</a>
-							</li>
-						</ul>
+					<li class="current tsd-kind-interface tsd-has-type-parameter">
+						<a href="promisefn.html" class="tsd-kind-icon">PromiseFN</a>
 					</li>
 				</ul>
 				<ul class="after-current">

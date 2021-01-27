@@ -12,14 +12,20 @@ export { default as invert } from './invert';
 export { default as memoize } from './memoize';
 
 export { default as retry } from './retry';
+export type { RetryOpts } from './retry';
 export { default as until } from './until';
 
 export { default as asyncPool } from './async-pool';
+export type { AsyncPoolOpts } from './async-pool';
 export { default as singleLock } from './single-lock';
 
 export { default as settleAll } from './settle-all';
+export type { SettledPromises } from './settle-all';
 export { default as mapLimit } from './map-limit';
 
 export { default as pIf } from './pIf';
 
 export { default as promisify } from './promisify';
+export { default as sequenceChain } from './sequence-chain';
+
+export type { PromiseFN } from './interfaces';

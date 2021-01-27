@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.37](https://github.com/planjs/utils/compare/stable-1.0.36...stable-1.0.37) (2021-01-18)
+
+
+### Bug Fixes
+
+* typings ([a10466b](https://github.com/planjs/utils/commit/a10466b38664e423389809b777521b764aa28542))
+
+### [1.0.36](https://github.com/planjs/utils/compare/stable-1.0.35...stable-1.0.36) (2021-01-18)
+
+### [1.0.35](https://github.com/planjs/utils/compare/stable-1.0.34...stable-1.0.35) (2021-01-13)
+
+
+### Bug Fixes
+
+* promise ([58d37c3](https://github.com/planjs/utils/commit/58d37c321e2f672ab2ff1893d8c87e665265ac74))
+
+### [1.0.34](https://github.com/planjs/utils/compare/stable-1.0.33...stable-1.0.34) (2021-01-13)
+
+
+### Bug Fixes
+
+* isDef remark ([f66a397](https://github.com/planjs/utils/commit/f66a397bf4704cb1101dabe83fae32b6e9780c0b))
+
+### [1.0.33](https://github.com/planjs/utils/compare/stable-1.0.32...stable-1.0.33) (2021-01-13)
+
+### [1.0.32](https://github.com/planjs/utils/compare/stable-1.0.31...stable-1.0.32) (2021-01-12)
+
+
+### Bug Fixes
+
+* add function ([2b063bd](https://github.com/planjs/utils/commit/2b063bdd94b8151398adcd53e799774c0ea31683))
+
 ### [1.0.31](https://github.com/planjs/utils/compare/stable-1.0.30...stable-1.0.31) (2021-01-09)
 
 ### [1.0.30](https://github.com/planjs/utils/compare/stable-1.0.29...stable-1.0.30) (2021-01-06)

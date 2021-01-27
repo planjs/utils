@@ -83,6 +83,7 @@ export default myfetch;
  * 全局增加fetch polyfill
  */
 export function shim() {
+  // @ts-ignore
   // eslint-disable-next-line no-restricted-globals
   if (!self.fetch) self.fetch = myfetch;
 }

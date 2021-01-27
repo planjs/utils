@@ -1,4 +1,4 @@
-interface SettledPromises<T, V> {
+export interface SettledPromises<T, V> {
   errors: V[];
   results: T[];
 }
