@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.38](https://github.com/planjs/utils/compare/stable-1.0.22...stable-1.0.38) (2021-01-27)
+
+
+### Bug Fixes
+
+* add function ([2b063bd](https://github.com/planjs/utils/commit/2b063bdd94b8151398adcd53e799774c0ea31683))
+* is-Number ([02e6bd7](https://github.com/planjs/utils/commit/02e6bd779f65b725902144186d4abcf132a9f213))
+* is-Number & is-String ([b9d83b8](https://github.com/planjs/utils/commit/b9d83b807bfa9fa6d63727fe01b0f8ce19366a0b))
+* is-Object typings ([15a99da](https://github.com/planjs/utils/commit/15a99da2363b64d40dc27fb3ec5e59ceaf736759))
+* isDef remark ([f66a397](https://github.com/planjs/utils/commit/f66a397bf4704cb1101dabe83fae32b6e9780c0b))
+* promise ([58d37c3](https://github.com/planjs/utils/commit/58d37c321e2f672ab2ff1893d8c87e665265ac74))
+* typings ([a10466b](https://github.com/planjs/utils/commit/a10466b38664e423389809b777521b764aa28542))
+* **bom:** xhr upload ([a7b2f74](https://github.com/planjs/utils/commit/a7b2f7443d004c39e690682ae9d1c58405e13623))
+* **is:** number & string  lowerCase ([1093fe5](https://github.com/planjs/utils/commit/1093fe5d0caf84e303ed1099ce7c0e4a1bf5bc1f))
+* **xhr-uploader:** add abort event ([353702b](https://github.com/planjs/utils/commit/353702b8b8be6775fa87656212ed3c8b90a8aefe))
+* **xhr-uploader:** rename abort event ([f894582](https://github.com/planjs/utils/commit/f894582d6f63fd90bd6f4b6f98c4751c4b65d30a))
+
 ### [1.0.37](https://github.com/planjs/utils/compare/stable-1.0.36...stable-1.0.37) (2021-01-18)
 
 
