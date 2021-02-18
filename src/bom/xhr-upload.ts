@@ -105,7 +105,7 @@ export default function upload<T>(option: UploadRequestOption<T>) {
   };
 
   xhr.onload = function onload() {
-    if (((xhr.status / 100) | 0) === 2) {
+    if (((xhr.status / 100) | 0) !== 2) {
       return option.onError?.(getError(option, xhr), getBody(xhr));
     }
 
