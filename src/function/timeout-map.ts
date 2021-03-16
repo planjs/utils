@@ -1,27 +1,36 @@
 type TimeoutMapOptions<K, V> = {
   /**
-   * expiration time
+   * expiration interval
    */
   timeout?: number;
+  /**
+   * Whether to delete passively
+   * onTimeout will not be called on time
+   * @default true
+   */
+  passiveDeletion?: boolean;
   /**
    * delete handler
    */
   onTimeout?: (key: K, value: V, map: TimeoutMap<K, V>) => void;
 };
 
-// setTimeout 和 存缓存时间 看哪个更高效
+interface TimeoutMapKeyArgs<K, V> {
+  timeout: ReturnType<typeof setTimeout>;
+  expirationTime: number;
+  options: TimeoutMapOptions<K, V>;
+  onTimeout?: (key: K, value: V, map: TimeoutMap<K, V>) => void;
+}
+
 class TimeoutMap<K, V> extends Map<K, V> {
-  private _timeouts: Map<K, ReturnType<typeof setTimeout>> = new Map();
+  private readonly _keyArgs: Map<K, TimeoutMapKeyArgs<K, V>> = new Map();
 
   private readonly _options: TimeoutMapOptions<K, V> = {};
 
   constructor(entries?: readonly (readonly [K, V])[] | null, options?: TimeoutMapOptions<K, V>) {
-    super();
+    super(entries);
     if (options) {
       this._options = options;
-    }
-    if (entries) {
-      for (const element of entries) this.set(element[0], element[1]);
     }
   }
 
@@ -32,39 +41,70 @@ class TimeoutMap<K, V> extends Map<K, V> {
 
   delete(key) {
     this._clearTimeout(key);
+    this._keyArgs.delete(key);
     return super.delete(key);
   }
 
   clear() {
-    for (const key of this._timeouts.keys()) {
-      if (this._timeouts.has(key)) {
-        this._clearTimeout(key);
-      }
+    for (const key of this._keyArgs.keys()) {
+      this._clearTimeout(key);
     }
+    this._keyArgs.clear();
     return super.clear();
   }
 
-  private _setTimeout = (key: K, config?: TimeoutMapOptions<K, V>) => {
-    const _config = { ...this._options, ...config };
-    if (!_config.timeout || _config.timeout === Infinity) return;
-
-    this._clearTimeout(key);
-
-    const timeout = _config.timeout!;
-    this._timeouts.set(
-      key,
-      setTimeout(() => {
-        this.delete(key);
-        _config.onTimeout?.(key, super.get(key)!, this);
-      }, timeout),
-    );
+  private _mergeOptions = (options?: Partial<TimeoutMapOptions<K, V>>): TimeoutMapOptions<K, V> => {
+    const { passiveDeletion = true, ...rest } = options || {};
+    return {
+      ...this._options,
+      ...rest,
+      passiveDeletion,
+    };
   };
 
+  private _setKeyArgs(k: K, args: Partial<TimeoutMapKeyArgs<K, V>>): TimeoutMapKeyArgs<K, V> {
+    const _args = this._keyArgs.get(k);
+    const opt = { ..._args, ...args } as TimeoutMapKeyArgs<K, V>;
+    this._keyArgs.set(k, opt);
+    return opt;
+  }
+
+  private _setTimeout = (key: K, options?: TimeoutMapOptions<K, V>) => {
+    const _options = this._mergeOptions(options);
+    this._setKeyArgs(key, { options: _options });
+
+    if (!_options.timeout || _options.timeout === Infinity) return;
+
+    this._clearTimeout(key);
+    this._checkExpirationData();
+
+    if (_options.passiveDeletion) {
+      this._setKeyArgs(key, { expirationTime: Date.now().valueOf() + _options.timeout });
+    } else {
+      this._setKeyArgs(key, {
+        timeout: setTimeout(() => {
+          _options?.onTimeout?.(key, super.get(key)!, this);
+          this.delete(key);
+        }, _options.timeout),
+      });
+    }
+  };
+
+  private _checkExpirationData() {
+    for (const [k, arg] of this._keyArgs) {
+      if (arg.expirationTime && arg.expirationTime > Date.now().valueOf()) {
+        this._keyArgs.delete(k);
+        arg?.onTimeout?.(k, super.get(k)!, this);
+        this.delete(k);
+      }
+    }
+  }
+
   private _clearTimeout(key: K): boolean {
-    const timeout = this._timeouts.get(key);
-    if (timeout !== null) {
-      this._timeouts.delete(key);
-      clearTimeout(timeout!);
+    const arg = this._keyArgs.get(key);
+    if (arg?.timeout !== undefined) {
+      this._keyArgs.delete(key);
+      clearTimeout(arg!.timeout!);
       return true;
     }
     return false;
