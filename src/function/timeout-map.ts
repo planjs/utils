@@ -12,14 +12,13 @@ type TimeoutMapOptions<K, V> = {
   /**
    * delete handler
    */
-  onTimeout?: (key: K, value: V, map: TimeoutMap<K, V>) => void;
+  onTimeout?: (key: K, value: V, options: TimeoutMapKeyArgs<K, V>, map: TimeoutMap<K, V>) => void;
 };
 
 interface TimeoutMapKeyArgs<K, V> {
   timeout: ReturnType<typeof setTimeout>;
   expirationTime: number;
   options: TimeoutMapOptions<K, V>;
-  onTimeout?: (key: K, value: V, map: TimeoutMap<K, V>) => void;
 }
 
 class TimeoutMap<K, V> extends Map<K, V> {
@@ -83,7 +82,7 @@ class TimeoutMap<K, V> extends Map<K, V> {
     } else {
       this._setKeyArgs(key, {
         timeout: setTimeout(() => {
-          _options?.onTimeout?.(key, super.get(key)!, this);
+          _options?.onTimeout?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
           this.delete(key);
         }, _options.timeout),
       });
@@ -91,11 +90,11 @@ class TimeoutMap<K, V> extends Map<K, V> {
   };
 
   private _checkExpirationData() {
-    for (const [k, arg] of this._keyArgs) {
-      if (arg.expirationTime && arg.expirationTime > Date.now().valueOf()) {
-        this._keyArgs.delete(k);
-        arg?.onTimeout?.(k, super.get(k)!, this);
-        this.delete(k);
+    for (const [key, arg] of this._keyArgs) {
+      if (arg.expirationTime && arg.expirationTime < Date.now().valueOf()) {
+        arg.options?.onTimeout?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
+        this._keyArgs.delete(key);
+        this.delete(key);
       }
     }
   }
