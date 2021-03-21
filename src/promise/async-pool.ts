@@ -39,7 +39,11 @@ function asyncPool(options: AsyncPoolOpts) {
     queue.length = 0;
   }
 
-  return { executor, clear };
+  function length() {
+    return queue.length;
+  }
+
+  return { executor, clear, length };
 }
 
 export default asyncPool;
