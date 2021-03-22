@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SettledPromises | @planjs/utils</title>
+	<title>TimeoutMapKeyArgs | @planjs/utils</title>
 	<meta name="description" content="Documentation for @planjs/utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="settledpromises.html">SettledPromises</a>
+					<a href="timeoutmapkeyargs.html">TimeoutMapKeyArgs</a>
 				</li>
 			</ul>
-			<h1>Interface SettledPromises&lt;T, V&gt;</h1>
+			<h1>Interface TimeoutMapKeyArgs&lt;K, V&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
-						<h4>T</h4>
+						<h4>K</h4>
 					</li>
 					<li>
 						<h4>V</h4>
@@ -81,7 +81,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SettledPromises</span>
+						<span class="target">TimeoutMapKeyArgs</span>
 					</li>
 				</ul>
 			</section>
@@ -92,8 +92,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="settledpromises.html#errors" class="tsd-kind-icon">errors</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="settledpromises.html#results" class="tsd-kind-icon">results</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="timeoutmapkeyargs.html#expirationtime" class="tsd-kind-icon">expiration<wbr>Time</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="timeoutmapkeyargs.html#options" class="tsd-kind-icon">options</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="timeoutmapkeyargs.html#timerid" class="tsd-kind-icon">timer<wbr>Id</a></li>
 							</ul>
 						</section>
 					</div>
@@ -102,22 +103,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="errors" class="tsd-anchor"></a>
-					<h3>errors</h3>
-					<div class="tsd-signature tsd-kind-icon">errors<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="expirationtime" class="tsd-anchor"></a>
+					<h3>expiration<wbr>Time</h3>
+					<div class="tsd-signature tsd-kind-icon">expiration<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/promise/settle-all.ts#L2">src/promise/settle-all.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L29">src/function/timeout-map.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="results" class="tsd-anchor"></a>
-					<h3>results</h3>
-					<div class="tsd-signature tsd-kind-icon">results<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="options" class="tsd-anchor"></a>
+					<h3>options</h3>
+					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Omit</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">keyof </span><a href="../globals.html#timeoutmapconstructoroptions" class="tsd-signature-type">TimeoutMapConstructorOptions</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/promise/settle-all.ts#L3">src/promise/settle-all.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L30">src/function/timeout-map.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="timerid" class="tsd-anchor"></a>
+					<h3>timer<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">timer<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">setTimeout</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L28">src/function/timeout-map.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -136,13 +147,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-has-type-parameter">
-						<a href="settledpromises.html" class="tsd-kind-icon">Settled<wbr>Promises</a>
+						<a href="timeoutmapkeyargs.html" class="tsd-kind-icon">Timeout<wbr>Map<wbr>Key<wbr>Args</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="settledpromises.html#errors" class="tsd-kind-icon">errors</a>
+								<a href="timeoutmapkeyargs.html#expirationtime" class="tsd-kind-icon">expiration<wbr>Time</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="settledpromises.html#results" class="tsd-kind-icon">results</a>
+								<a href="timeoutmapkeyargs.html#options" class="tsd-kind-icon">options</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="timeoutmapkeyargs.html#timerid" class="tsd-kind-icon">timer<wbr>Id</a>
 							</li>
 						</ul>
 					</li>

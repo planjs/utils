@@ -104,8 +104,8 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="timeoutmap.html#_symbol_tostringtag_" class="tsd-kind-icon">[<wbr>Symbol.to<wbr>String<wbr>Tag]</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="timeoutmap.html#_keyargs" class="tsd-kind-icon">_key<wbr>Args</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="timeoutmap.html#_options" class="tsd-kind-icon">_options</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="timeoutmap.html#_timeouts" class="tsd-kind-icon">_timeouts</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="timeoutmap.html#size" class="tsd-kind-icon">size</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="timeoutmap.html#map" class="tsd-kind-icon">Map</a></li>
 							</ul>
@@ -114,7 +114,11 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="timeoutmap.html#_symbol_iterator_" class="tsd-kind-icon">[<wbr>Symbol.iterator]</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="timeoutmap.html#_cleanexpirationelement" class="tsd-kind-icon">_clean<wbr>Expiration<wbr>Element</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="timeoutmap.html#_cleanoverlimitelement" class="tsd-kind-icon">_clean<wbr>Over<wbr>Limit<wbr>Element</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="timeoutmap.html#_cleartimeout" class="tsd-kind-icon">_clear<wbr>Timeout</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="timeoutmap.html#_mergeoptions" class="tsd-kind-icon">_merge<wbr>Options</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="timeoutmap.html#_setkeyargs" class="tsd-kind-icon">_set<wbr>Key<wbr>Args</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="timeoutmap.html#_settimeout" class="tsd-kind-icon">_set<wbr>Timeout</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="timeoutmap.html#clear" class="tsd-kind-icon">clear</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="timeoutmap.html#delete" class="tsd-kind-icon">delete</a></li>
@@ -142,7 +146,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/planjs/utils/blob/43d6825/src/function/timeout-map.ts#L16">src/function/timeout-map.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L36">src/function/timeout-map.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -173,22 +177,22 @@
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_keyargs" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> _key<wbr>Args</h3>
+					<div class="tsd-signature tsd-kind-icon">_key<wbr>Args<span class="tsd-signature-symbol">:</span> <a href="timeoutmap.html#map" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/timeoutmapkeyargs.html" class="tsd-signature-type">TimeoutMapKeyArgs</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Map()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L34">src/function/timeout-map.ts:34</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="_options" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> _options</h3>
 					<div class="tsd-signature tsd-kind-icon">_options<span class="tsd-signature-symbol">:</span> <a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/43d6825/src/function/timeout-map.ts#L16">src/function/timeout-map.ts:16</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_timeouts" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _timeouts</h3>
-					<div class="tsd-signature tsd-kind-icon">_timeouts<span class="tsd-signature-symbol">:</span> <a href="timeoutmap.html#map" class="tsd-signature-type">Map</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">setTimeout</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Map()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/43d6825/src/function/timeout-map.ts#L14">src/function/timeout-map.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L36">src/function/timeout-map.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -240,6 +244,40 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_cleanexpirationelement" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _clean<wbr>Expiration<wbr>Element</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_clean<wbr>Expiration<wbr>Element<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L102">src/function/timeout-map.ts:102</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_cleanoverlimitelement" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _clean<wbr>Over<wbr>Limit<wbr>Element</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_clean<wbr>Over<wbr>Limit<wbr>Element<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L122">src/function/timeout-map.ts:122</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
 					<a name="_cleartimeout" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _clear<wbr>Timeout</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
@@ -249,7 +287,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/planjs/utils/blob/43d6825/src/function/timeout-map.ts#L63">src/function/timeout-map.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L112">src/function/timeout-map.ts:112</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -263,16 +301,65 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="_settimeout" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _set<wbr>Timeout</h3>
+					<a name="_mergeoptions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _merge<wbr>Options</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">_set<wbr>Timeout<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, config<span class="tsd-signature-symbol">?: </span><a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">_merge<wbr>Options<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/planjs/utils/blob/43d6825/src/function/timeout-map.ts#L47">src/function/timeout-map.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L66">src/function/timeout-map.ts:66</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_setkeyargs" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _set<wbr>Key<wbr>Args</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_set<wbr>Key<wbr>Args<span class="tsd-signature-symbol">(</span>k<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/timeoutmapkeyargs.html" class="tsd-signature-type">TimeoutMapKeyArgs</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/timeoutmapkeyargs.html" class="tsd-signature-type">TimeoutMapKeyArgs</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L75">src/function/timeout-map.ts:75</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>k: <span class="tsd-signature-type">K</span></h5>
+								</li>
+								<li>
+									<h5>args: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/timeoutmapkeyargs.html" class="tsd-signature-type">TimeoutMapKeyArgs</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/timeoutmapkeyargs.html" class="tsd-signature-type">TimeoutMapKeyArgs</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="_settimeout" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _set<wbr>Timeout</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">_set<wbr>Timeout<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">K</span>, options<span class="tsd-signature-symbol">?: </span><a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L82">src/function/timeout-map.ts:82</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -281,7 +368,7 @@
 									<h5>key: <span class="tsd-signature-type">K</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> config: <a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -299,7 +386,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Map.clear</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/planjs/utils/blob/43d6825/src/function/timeout-map.ts#L38">src/function/timeout-map.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L58">src/function/timeout-map.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -317,7 +404,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Map.delete</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/planjs/utils/blob/43d6825/src/function/timeout-map.ts#L33">src/function/timeout-map.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L52">src/function/timeout-map.ts:52</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -486,7 +573,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides Map.set</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/planjs/utils/blob/43d6825/src/function/timeout-map.ts#L28">src/function/timeout-map.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/planjs/utils/blob/ca7859d/src/function/timeout-map.ts#L45">src/function/timeout-map.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -552,10 +639,10 @@
 								<a href="timeoutmap.html#_symbol_tostringtag_" class="tsd-kind-icon">[<wbr>Symbol.to<wbr>String<wbr>Tag]</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="timeoutmap.html#_options" class="tsd-kind-icon">_options</a>
+								<a href="timeoutmap.html#_keyargs" class="tsd-kind-icon">_key<wbr>Args</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="timeoutmap.html#_timeouts" class="tsd-kind-icon">_timeouts</a>
+								<a href="timeoutmap.html#_options" class="tsd-kind-icon">_options</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="timeoutmap.html#size" class="tsd-kind-icon">size</a>
@@ -567,7 +654,19 @@
 								<a href="timeoutmap.html#_symbol_iterator_" class="tsd-kind-icon">[<wbr>Symbol.iterator]</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="timeoutmap.html#_cleanexpirationelement" class="tsd-kind-icon">_clean<wbr>Expiration<wbr>Element</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="timeoutmap.html#_cleanoverlimitelement" class="tsd-kind-icon">_clean<wbr>Over<wbr>Limit<wbr>Element</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="timeoutmap.html#_cleartimeout" class="tsd-kind-icon">_clear<wbr>Timeout</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="timeoutmap.html#_mergeoptions" class="tsd-kind-icon">_merge<wbr>Options</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="timeoutmap.html#_setkeyargs" class="tsd-kind-icon">_set<wbr>Key<wbr>Args</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="timeoutmap.html#_settimeout" class="tsd-kind-icon">_set<wbr>Timeout</a>
