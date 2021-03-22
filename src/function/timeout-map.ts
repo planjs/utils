@@ -1,6 +1,15 @@
-type TimeoutMapOptions<K, V> = {
+type TimeoutMapConstructorOptions = {
+  /**
+   * Control storage length
+   * @default undefined not Control
+   */
+  maxLength?: number;
+};
+
+type TimeoutMapOptions<K, V> = TimeoutMapConstructorOptions & {
   /**
    * expiration interval
+   * @default undefined no timeout
    */
   timeout?: number;
   /**
@@ -16,9 +25,9 @@ type TimeoutMapOptions<K, V> = {
 };
 
 interface TimeoutMapKeyArgs<K, V> {
-  timeout: ReturnType<typeof setTimeout>;
+  timerId: ReturnType<typeof setTimeout>;
   expirationTime: number;
-  options: TimeoutMapOptions<K, V>;
+  options: Omit<TimeoutMapOptions<K, V>, keyof TimeoutMapConstructorOptions>;
 }
 
 class TimeoutMap<K, V> extends Map<K, V> {
@@ -35,6 +44,8 @@ class TimeoutMap<K, V> extends Map<K, V> {
 
   set(key: K, value: V, options?: TimeoutMapOptions<K, V>) {
     this._setTimeout(key, options);
+    this._cleanOverLimitElement();
+    this._cleanExpirationElement();
     return super.set(key, value);
   }
 
@@ -75,13 +86,12 @@ class TimeoutMap<K, V> extends Map<K, V> {
     if (!_options.timeout || _options.timeout === Infinity) return;
 
     this._clearTimeout(key);
-    this._checkExpirationData();
 
     if (_options.passiveDeletion) {
       this._setKeyArgs(key, { expirationTime: Date.now().valueOf() + _options.timeout });
     } else {
       this._setKeyArgs(key, {
-        timeout: setTimeout(() => {
+        timerId: setTimeout(() => {
           _options?.onTimeout?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
           this.delete(key);
         }, _options.timeout),
@@ -89,7 +99,7 @@ class TimeoutMap<K, V> extends Map<K, V> {
     }
   };
 
-  private _checkExpirationData() {
+  private _cleanExpirationElement() {
     for (const [key, arg] of this._keyArgs) {
       if (arg.expirationTime && arg.expirationTime < Date.now().valueOf()) {
         arg.options?.onTimeout?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
@@ -101,12 +111,28 @@ class TimeoutMap<K, V> extends Map<K, V> {
 
   private _clearTimeout(key: K): boolean {
     const arg = this._keyArgs.get(key);
-    if (arg?.timeout !== undefined) {
+    if (arg?.timerId !== undefined) {
       this._keyArgs.delete(key);
-      clearTimeout(arg!.timeout!);
+      clearTimeout(arg!.timerId!);
       return true;
     }
     return false;
+  }
+
+  private _cleanOverLimitElement() {
+    if (this._options.maxLength !== undefined && super.size > this._options.maxLength) {
+      const limitKeys = [...super.keys()].slice(0, super.size - this._options.maxLength);
+      limitKeys.forEach((key) => {
+        const arg = this._keyArgs.get(key);
+        if (arg) {
+          console.warn(
+            `TimeoutMap [${key}] over limit ${this._options.maxLength}, has been deleted`,
+          );
+          arg.options?.onTimeout?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
+        }
+        this.delete(key);
+      });
+    }
   }
 }
 
