@@ -27,7 +27,7 @@ type TimeoutMapOptions<K, V> = TimeoutMapConstructorOptions & {
 interface TimeoutMapKeyArgs<K, V> {
   timerId: ReturnType<typeof setTimeout>;
   expirationTime: number;
-  options: Omit<TimeoutMapOptions<K, V>, keyof TimeoutMapConstructorOptions>;
+  options: TimeoutMapOptions<K, V>;
 }
 
 class TimeoutMap<K, V> extends Map<K, V> {
@@ -38,14 +38,31 @@ class TimeoutMap<K, V> extends Map<K, V> {
   constructor(entries?: readonly (readonly [K, V])[] | null, options?: TimeoutMapOptions<K, V>) {
     super(entries);
     if (options) {
-      this._options = options;
+      this._options = {
+        passiveDeletion: true,
+        ...options,
+      };
     }
   }
 
-  set(key: K, value: V, options?: TimeoutMapOptions<K, V>) {
-    this._setTimeout(key, options);
+  get(key: K): V | undefined {
     this._cleanOverLimitElement();
+    return super.get(key);
+  }
+
+  has(key: K): boolean {
+    this._cleanOverLimitElement();
+    return super.has(key);
+  }
+
+  set(
+    key: K,
+    value: V,
+    options?: Omit<TimeoutMapOptions<K, V>, keyof TimeoutMapConstructorOptions>,
+  ) {
+    this._setTimeout(key, options);
     this._cleanExpirationElement();
+    this._cleanOverLimitElement();
     return super.set(key, value);
   }
 
@@ -64,11 +81,9 @@ class TimeoutMap<K, V> extends Map<K, V> {
   }
 
   private _mergeOptions = (options?: Partial<TimeoutMapOptions<K, V>>): TimeoutMapOptions<K, V> => {
-    const { passiveDeletion = true, ...rest } = options || {};
     return {
       ...this._options,
-      ...rest,
-      passiveDeletion,
+      ...options,
     };
   };
 
@@ -120,6 +135,7 @@ class TimeoutMap<K, V> extends Map<K, V> {
   }
 
   private _cleanOverLimitElement() {
+    // TODO Prioritize the clearing of fast-expiring
     if (this._options.maxLength !== undefined && super.size > this._options.maxLength) {
       const limitKeys = [...super.keys()].slice(0, super.size - this._options.maxLength);
       limitKeys.forEach((key) => {
