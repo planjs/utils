@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/planjs/utils/compare/stable-1.1.2...stable-1.3.0) (2021-03-23)
+
+
+### Features
+
+* **async-pool:** add length ([b3d206c](https://github.com/planjs/utils/commit/b3d206cf43126614677eb4f914d58cbae9ef9806))
+* **timeoutmap:** add maxLeng ([ca7859d](https://github.com/planjs/utils/commit/ca7859d43792ceed2ac50450ecfb75230c24a4ae))
+
+
+### Bug Fixes
+
+* **timeoutmap:** some optimization ([7b50d3f](https://github.com/planjs/utils/commit/7b50d3f65e2c4f081b04ae200f02aa3c435e43dc))
+
 ## [1.2.0](https://github.com/planjs/utils/compare/stable-1.0.39...stable-1.2.0) (2021-03-22)
 
 
