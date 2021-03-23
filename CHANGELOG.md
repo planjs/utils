@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.4](https://github.com/planjs/utils/compare/stable-1.3.3...stable-1.3.4) (2021-03-23)
+
+
+### Bug Fixes
+
+* ts error ([8b47add](https://github.com/planjs/utils/commit/8b47addff6d2ee0ce05b8a307e3665a2e09d8a5d))
+
 ### [1.3.3](https://github.com/planjs/utils/compare/stable-1.3.2...stable-1.3.3) (2021-03-23)
 
 
