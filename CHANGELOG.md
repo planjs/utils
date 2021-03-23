@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.3](https://github.com/planjs/utils/compare/stable-1.3.2...stable-1.3.3) (2021-03-23)
+
+
+### Bug Fixes
+
+* timeoutmap warn ([8341679](https://github.com/planjs/utils/commit/834167917a641898aad67604ece1df8ff4f547b6))
+
 ### [1.3.2](https://github.com/planjs/utils/compare/stable-1.3.1...stable-1.3.2) (2021-03-23)
 
 
