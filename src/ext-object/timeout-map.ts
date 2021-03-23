@@ -22,6 +22,10 @@ type TimeoutMapOptions<K, V> = TimeoutMapConstructorOptions & {
    * delete handler
    */
   onTimeout?: (key: K, value: V, options: TimeoutMapKeyArgs<K, V>, map: TimeoutMap<K, V>) => void;
+  /**
+   * when over limit
+   */
+  onOverLimit?: (key: K, value: V, options: TimeoutMapKeyArgs<K, V>, map: TimeoutMap<K, V>) => void;
 };
 
 interface TimeoutMapKeyArgs<K, V> {
@@ -141,10 +145,7 @@ class TimeoutMap<K, V> extends Map<K, V> {
       limitKeys.forEach((key) => {
         const arg = this._keyArgs.get(key);
         if (arg) {
-          console.warn(
-            `TimeoutMap [${key}] over limit ${this._options.maxLength}, has been deleted`,
-          );
-          arg.options?.onTimeout?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
+          arg.options?.onOverLimit?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
         }
         this.delete(key);
       });
