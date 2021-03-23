@@ -27,7 +27,7 @@ function singleLock<T = any>() {
     }
   }
 
-  function exit<R = any>(args: R) {
+  function exit<R = any>(args?: R) {
     queue.shift();
     const reject = queue.shift();
     if (reject) {
