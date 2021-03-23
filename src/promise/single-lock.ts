@@ -17,21 +17,21 @@ function singleLock<T = any>() {
     }
   }
 
-  function unLock(...args: any[]) {
+  function unLock<T>(args: T) {
     const resolve = queue.shift();
     queue.shift();
     if (resolve) {
-      resolve(...args);
+      resolve(args);
     } else {
       locked = false;
     }
   }
 
-  function exit(...args: any[]) {
+  function exit<R = any>(args: R) {
     queue.shift();
     const reject = queue.shift();
     if (reject) {
-      reject(...args);
+      reject(args);
     } else {
       locked = false;
     }
