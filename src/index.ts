@@ -17,4 +17,5 @@ export * from './date';
 export * from './function';
 export * from './things';
 export * from './function';
+export * from './ext-object';
 export * from './regex_constant';
