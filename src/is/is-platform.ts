@@ -43,20 +43,20 @@ export function isOpera(ua = window.navigator.userAgent) {
 /**
  * 是否为IE浏览器
  */
-export function isIE(UA = window.navigator.userAgent.toLowerCase()) {
-  return UA && /msie|trident/.test(UA);
+export function isIE(ua = window.navigator.userAgent.toLowerCase()) {
+  return /msie|trident/.test(ua);
 }
 
-export function isIE8(UA = window.navigator.userAgent.toLowerCase()) {
-  return UA && UA.indexOf('msie 8.0') > 0;
+export function isIE8(ua = window.navigator.userAgent.toLowerCase()) {
+  return ua.indexOf('msie 8.0') > 0;
 }
 
-export function isIE9(UA = window.navigator.userAgent.toLowerCase()) {
-  return UA && UA.indexOf('msie 9.0') > 0;
+export function isIE9(ua = window.navigator.userAgent.toLowerCase()) {
+  return ua.indexOf('msie 9.0') > 0;
 }
 
-export function isEDGE(UA = window.navigator.userAgent.toLowerCase()) {
-  return UA && UA.indexOf('edge/') > 0;
+export function isEDGE(ua = window.navigator.userAgent.toLowerCase()) {
+  return ua.indexOf('edge/') > 0;
 }
 
 /**
@@ -86,5 +86,14 @@ export function isWXBrowser(ua = window.navigator.userAgent) {
  * @param ua
  */
 export function isWWBrowser(ua = window.navigator.userAgent) {
-  return !!ua.match(/wxwork/gi) && isWWBrowser(ua);
+  return !!ua.match(/wxwork/gi) && isWXBrowser(ua);
+}
+
+/**
+ * 判断是否微信小程序内的webview
+ * @param ua
+ * https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html
+ */
+export function isWXMiniProgramWebView(ua = window.navigator.userAgent) {
+  return !!ua.match(/miniProgram/gi);
 }
