@@ -2,6 +2,10 @@ export interface PromiseFN<T = any> {
   (): Promise<T>;
 }
 
+export interface AnyPromiseFN<A = any, T = any> {
+  (arg?: A): Promise<T>;
+}
+
 export interface BaseRetryOpts {
   /**
    * 最大等待次数

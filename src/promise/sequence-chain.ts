@@ -1,19 +1,19 @@
-import { PromiseFN } from './interfaces';
+import { AnyPromiseFN } from './interfaces';
 
 /**
  * 链式处理，向下传递结果
- * eg：拦截器
  * @param handlers
  */
-function sequenceChain(handlers: PromiseFN[]) {
-  const chain = handlers.slice();
-  let promise = Promise.resolve();
-  while (chain.length) {
-    const fulfilled = chain.shift();
-    const rejected = chain.shift();
-    promise = promise.then(fulfilled, rejected);
-  }
-  return promise;
+function sequenceChain(handlers: Array<[AnyPromiseFN, AnyPromiseFN]>) {
+  return <T>(arg?: any): Promise<T> => {
+    const chain = handlers.slice();
+    let promise = Promise.resolve(arg!);
+    while (chain.length) {
+      const [fulfilled, rejected] = chain.shift()!;
+      promise = promise.then(fulfilled, rejected);
+    }
+    return promise;
+  };
 }
 
 export default sequenceChain;

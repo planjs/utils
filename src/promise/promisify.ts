@@ -1,21 +1,40 @@
-interface LikeWXApi {
-  success?(res?: any): void;
-  fail?(res?: any): void;
-}
-
+export default function promisify<T>(
+  f: (cb: (err: any, res: T) => void) => void,
+  thisContext?: any,
+): () => Promise<T>;
+export default function promisify<A, T>(
+  f: (arg: A, cb: (err: any, res: T) => void) => void,
+  thisContext?: any,
+): (arg: A) => Promise<T>;
+export default function promisify<A, A2, T>(
+  f: (arg: A, arg2: A2, cb: (err: any, res: T) => void) => void,
+  thisContext?: any,
+): (arg: A, arg2: A2) => Promise<T>;
+export default function promisify<A, A2, A3, T>(
+  f: (arg: A, arg2: A2, arg3: A3, cb: (err: any, res: T) => void) => void,
+  thisContext?: any,
+): (arg: A, arg2: A2, arg3: A3) => Promise<T>;
+export default function promisify<A, A2, A3, A4, T>(
+  f: (arg: A, arg2: A2, arg3: A3, arg4: A4, cb: (err: any, res: T) => void) => void,
+  thisContext?: any,
+): (arg: A, arg2: A2, arg3: A3, arg4: A4) => Promise<T>;
+export default function promisify<A, A2, A3, A4, A5, T>(
+  f: (arg: A, arg2: A2, arg3: A3, arg4: A4, arg5: A5, cb: (err: any, res: T) => void) => void,
+  thisContext?: any,
+): (arg: A, arg2: A2, arg3: A3, arg4: A4, arg5: A5) => Promise<T>;
 /**
- * promise化 success fail 参数的api
- * @param func
+ * promisify fun
+ * @param f
+ * @param thisContext
+ * eg:
  */
-function promisify<Options extends LikeWXApi, PromisifyResult>(func: (_: Options) => void) {
-  return (opt?: Options) =>
-    new Promise<PromisifyResult>((resolve, reject) =>
-      func({
-        ...opt,
-        success: resolve,
-        fail: reject,
-      } as Options),
-    );
+export default function promisify(f: any, thisContext?: any) {
+  return function () {
+    // eslint-disable-next-line prefer-rest-params
+    const args = Array.prototype.slice.call(arguments);
+    return new Promise((resolve, reject) => {
+      args.push((err: any, result: any) => (err ? reject(err) : resolve(result)));
+      f.apply(thisContext, args);
+    });
+  };
 }
-
-export default promisify;
