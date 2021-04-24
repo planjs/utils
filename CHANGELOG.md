@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/planjs/utils/compare/stable-1.3.5...stable-1.4.0) (2021-04-24)
+
+
+### Features
+
+* enhance ([75459f2](https://github.com/planjs/utils/commit/75459f2b4f87f69c32e454021d5924928adb0dd5))
+* enhance some functions ([62a7d0e](https://github.com/planjs/utils/commit/62a7d0ea10724cca0a6be74f1b45da4220cbafad))
+
 ### [1.3.5](https://github.com/planjs/utils/compare/stable-1.3.4...stable-1.3.5) (2021-03-29)
 
 
