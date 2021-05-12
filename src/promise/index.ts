@@ -23,7 +23,8 @@ export { default as settleAll } from './settle-all';
 export type { SettledPromises } from './settle-all';
 export { default as mapLimit } from './map-limit';
 
-export { default as pIf } from './pIf';
+export { default as pIf } from './p-if';
+export { default as pTry } from './p-try';
 
 export { default as promisify } from './promisify';
 export { default as sequenceChain } from './sequence-chain';
