@@ -4,6 +4,9 @@
  */
 function getType(value: any) {
   const toString = Object.prototype.toString;
+  if (value == null) {
+    return value === undefined ? 'Undefined' : 'Null';
+  }
   return toString
     .call(value)
     .replace(/^\[object/, '')
