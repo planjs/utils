@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/planjs/utils/compare/stable-1.5.0...stable-1.5.1) (2021-05-15)
+
+
+### Bug Fixes
+
+* global ([6af4754](https://github.com/planjs/utils/commit/6af4754a882daafbf367b5b74529548a63dd6ea0))
+
 ## [1.5.0](https://github.com/planjs/utils/compare/stable-1.4.0...stable-1.5.0) (2021-05-15)
 
 
