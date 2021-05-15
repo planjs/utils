@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/planjs/utils/compare/stable-1.4.0...stable-1.5.0) (2021-05-15)
+
+
+### Features
+
+* add func ([0575387](https://github.com/planjs/utils/commit/0575387ca42473945dae202907495062a1d8a4bd))
+* add p-try ([562b040](https://github.com/planjs/utils/commit/562b0408c4d998d6f30f5271a5eeacfd252c141b))
+
 ## [1.4.0](https://github.com/planjs/utils/compare/stable-1.3.5...stable-1.4.0) (2021-04-24)
 
 
