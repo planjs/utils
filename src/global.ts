@@ -1,27 +1,27 @@
 const check = function (it): it is typeof global {
-  return typeof it == 'object' && it.Object === Object;
+  return it && it.Object === Object && it;
 };
 
 /**
  * global
  */
-const _global = check(global) && global;
+const _global = check(typeof global == 'object' && global);
 
 /**
  * window
  */
-const _window = check(window) && window;
+const _window = check(typeof window == 'object' && window);
 
 /**
  * globalThis
  */
-const _globalThis = check(globalThis) && globalThis;
+const _globalThis = check(typeof globalThis == 'object' && globalThis);
 
 /**
  * self
  */
 // eslint-disable-next-line no-restricted-globals
-const _self = check(self) && self;
+const _self = check(typeof self == 'object' && self);
 
 /**
  * func this
