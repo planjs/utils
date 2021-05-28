@@ -30,6 +30,7 @@ const _fnThis =
   (function () {
     // @ts-ignore
     return this;
+    // eslint-disable-next-line no-new-func
   })() || Function('return this')();
 
 /**

@@ -1,3 +1,5 @@
+const defaultUA = isBrowser() ? window.navigator.userAgent : '';
+
 /**
  * 检查是否浏览器环境
  */
@@ -15,61 +17,61 @@ export function isNode() {
 /**
  * 是否为safari浏览器
  */
-export function isSafari(ua = window.navigator.userAgent) {
+export function isSafari(ua = defaultUA) {
   return !ua.match(/Chrome/gi) && !!ua.match(/Safari/gi);
 }
 
 /**
  * 是否为chrome浏览器
  */
-export function isChrome(ua = window.navigator.userAgent) {
+export function isChrome(ua = defaultUA) {
   return !!ua.match(/Chrome/gi);
 }
 
 /**
  * 是否为firefox浏览器
  */
-export function isFirefox(ua = window.navigator.userAgent) {
+export function isFirefox(ua = defaultUA) {
   return !!ua.match(/Firefox/gi);
 }
 
 /**
  * 是否为opera浏览器
  */
-export function isOpera(ua = window.navigator.userAgent) {
+export function isOpera(ua = defaultUA) {
   return !!ua.match(/Opera/gi);
 }
 
 /**
  * 是否为IE浏览器
  */
-export function isIE(ua = window.navigator.userAgent.toLowerCase()) {
-  return /msie|trident/.test(ua);
+export function isIE(ua = defaultUA) {
+  return /msie|trident/.test(ua.toLowerCase());
 }
 
-export function isIE8(ua = window.navigator.userAgent.toLowerCase()) {
-  return ua.indexOf('msie 8.0') > 0;
+export function isIE8(ua = defaultUA) {
+  return ua.toLowerCase().indexOf('msie 8.0') > 0;
 }
 
-export function isIE9(ua = window.navigator.userAgent.toLowerCase()) {
-  return ua.indexOf('msie 9.0') > 0;
+export function isIE9(ua = defaultUA) {
+  return ua.toLowerCase().indexOf('msie 9.0') > 0;
 }
 
-export function isEDGE(ua = window.navigator.userAgent.toLowerCase()) {
-  return ua.indexOf('edge/') > 0;
+export function isEDGE(ua = defaultUA) {
+  return ua.toLowerCase().indexOf('edge/') > 0;
 }
 
 /**
  * 是否为IOS系统
  */
-export function isIOS(ua = window.navigator.userAgent) {
+export function isIOS(ua = defaultUA) {
   return !!ua.match(/iphone|ipad|iPod/gi);
 }
 
 /**
  * 是否为Android系统
  */
-export function isAndroid(ua = window.navigator.userAgent) {
+export function isAndroid(ua = defaultUA) {
   return !!ua.match(/android/gi);
 }
 
@@ -77,7 +79,7 @@ export function isAndroid(ua = window.navigator.userAgent) {
  * 是否是微信浏览器
  * @param ua
  */
-export function isWXBrowser(ua = window.navigator.userAgent) {
+export function isWXBrowser(ua = defaultUA) {
   return !!ua.match(/micromessenger/gi);
 }
 
@@ -85,7 +87,7 @@ export function isWXBrowser(ua = window.navigator.userAgent) {
  * 判断是否企业微信浏览器
  * @param ua
  */
-export function isWWBrowser(ua = window.navigator.userAgent) {
+export function isWWBrowser(ua = defaultUA) {
   return !!ua.match(/wxwork/gi) && isWXBrowser(ua);
 }
 
@@ -94,6 +96,16 @@ export function isWWBrowser(ua = window.navigator.userAgent) {
  * @param ua
  * https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html
  */
-export function isWXMiniProgramWebView(ua = window.navigator.userAgent) {
+export function isWXMiniProgramWebView(ua = defaultUA) {
   return !!ua.match(/miniProgram/gi);
+}
+
+/**
+ * 判断是否暗黑模式
+ */
+export function isPrefersDarkMode() {
+  if (!isBrowser()) {
+    throw new Error('Can only be used on the node side.');
+  }
+  return window.matchMedia('(prefers-color-scheme: dark)');
 }

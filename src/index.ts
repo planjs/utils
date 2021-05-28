@@ -1,16 +1,11 @@
-import Event from './event';
-
-const eventCenter = new Event();
-
-export { Event, eventCenter };
 export { default as global } from './global';
-export { default as nextTick } from './next-tick';
 
 export * from './constant';
 export * from './is';
 export * from './promise';
 export * from './random';
 export * from './string';
+export * from './number';
 export * from './blob';
 export * from './array';
 export * from './dom';

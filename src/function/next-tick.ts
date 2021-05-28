@@ -1,4 +1,4 @@
-import isFunction from './is/is-Function';
+import isFunction from '../is/is-Function';
 
 const ensureCallable = function (fn) {
   if (isFunction(fn)) throw new TypeError(fn + ' is not a function');

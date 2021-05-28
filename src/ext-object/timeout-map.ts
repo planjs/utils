@@ -59,6 +59,26 @@ class TimeoutMap<K, V> extends Map<K, V> {
     return super.has(key);
   }
 
+  keys(): IterableIterator<K> {
+    this._cleanOverLimitElement();
+    return super.keys();
+  }
+
+  values(): IterableIterator<V> {
+    this._cleanOverLimitElement();
+    return super.values();
+  }
+
+  entries(): IterableIterator<[K, V]> {
+    this._cleanOverLimitElement();
+    return super.entries();
+  }
+
+  forEach(callbackfn: (value: V, key: K, map: Map<K, V>) => void, thisArg?: any) {
+    this._cleanOverLimitElement();
+    return super.forEach(callbackfn, thisArg);
+  }
+
   set(
     key: K,
     value: V,

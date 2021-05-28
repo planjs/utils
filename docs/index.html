@@ -67,9 +67,7 @@
 				<a href="#utils" id="utils" style="color: inherit; text-decoration: none;">
 					<h1>utils</h1>
 				</a>
-				<p><img src="https://img.shields.io/npm/v/@planjs/utils?label=@planjs/utils" alt="npm">
-					<img src="https://packagephobia.now.sh/badge?p=@planjs/utils" alt="npm"> <br/>
-				<a href="https://npmjs.org/package/@planjs/utils"><img src="https://nodei.co/npm/@planjs/utils.png?downloads=true&downloadRank=true&stars=true" alt="NPM"></a></p>
+				<p><img src="https://img.shields.io/npm/v/@planjs/utils?label=@planjs/utils" alt="npm"> <img src="https://packagephobia.now.sh/badge?p=@planjs/utils" alt="npm"> <br/> <a href="https://npmjs.org/package/@planjs/utils"><img src="https://nodei.co/npm/@planjs/utils.png?downloads=true&downloadRank=true&stars=true" alt="NPM"></a></p>
 				<blockquote>
 					<p>Common tools collection <a href="https://planjs.github.io/utils/">doc</a></p>
 				</blockquote>
@@ -80,9 +78,20 @@
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
-				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { delay, retry } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@planjs/utils&#x27;</span>;
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> {
+  delay,
+  retry,
+  pTry,
+  sequenceChain,
+  nextTick,
+  range,
+  REG_TEL_PHONE,
+  eventCenter,
+  TimeoutMap,
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@planjs/utils&#x27;</span>;
 
-<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">init</span>(<span class="hljs-params"></span>) </span>{
+<span class="hljs-comment">// promise utils</span>
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">await</span> delay(<span class="hljs-number">100</span>);
   <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetchData</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;testing&#x27;</span>));
@@ -90,7 +99,43 @@
   <span class="hljs-keyword">await</span> retry(fetchData, { <span class="hljs-attr">maxAttempts</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">delayMs</span>: <span class="hljs-number">500</span> })();
 }
 
-init();</code></pre>
+<span class="hljs-keyword">const</span> pool = asyncPool({ <span class="hljs-attr">maxConcurrency</span>: <span class="hljs-number">10</span> });
+
+<span class="hljs-keyword">const</span> randArr = range(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>);
+
+nextTick(<span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> [err, res] = <span class="hljs-keyword">await</span> pTry(main());
+  <span class="hljs-keyword">if</span> (!err) {
+    <span class="hljs-built_in">console</span>.log(res);
+  }
+  <span class="hljs-keyword">let</span> start = <span class="hljs-built_in">Date</span>.now();
+  <span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.all(randArr.map(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> pool.executor(delay(v))));
+  <span class="hljs-comment">// The timer has an accuracy problem</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Date</span>.now() - start + <span class="hljs-number">1</span> &gt;= <span class="hljs-built_in">Math</span>.max(...randArr)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;concurrency&#x27;</span>);
+  }
+  <span class="hljs-keyword">const</span> count = <span class="hljs-function">(<span class="hljs-params">a</span>) =&gt;</span> ++a;
+  <span class="hljs-keyword">const</span> val = <span class="hljs-keyword">await</span> sequenceChain([range(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>).map(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> count)])(<span class="hljs-number">1</span>);
+  <span class="hljs-built_in">console</span>.log(val); <span class="hljs-comment">// 11</span>
+});
+
+<span class="hljs-comment">// commonly used regex</span>
+REG_TEL_PHONE.test(<span class="hljs-string">&#x27;132xxxxxxx&#x27;</span>); <span class="hljs-comment">// false</span>
+
+<span class="hljs-comment">// event center</span>
+eventCenter.on(<span class="hljs-string">&#x27;log&#x27;</span>, <span class="hljs-built_in">console</span>.log);
+eventCenter.trigger(<span class="hljs-string">&#x27;log&#x27;</span>, <span class="hljs-string">&#x27;planjs&#x27;</span>);
+
+<span class="hljs-comment">// ext obj</span>
+<span class="hljs-keyword">const</span> timeoutMap = <span class="hljs-keyword">new</span> TimeoutMap({
+  <span class="hljs-attr">timeout</span>: <span class="hljs-number">200</span>,
+  <span class="hljs-attr">passiveDeletion</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-function"><span class="hljs-title">onTimeout</span>(<span class="hljs-params">k, v</span>)</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`expired key [<span class="hljs-subst">${k}</span>], val [<span class="hljs-subst">${v}</span>]`</span>);
+  },
+});
+timeoutMap.set(<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;fupengl&#x27;</span>);
+delay(<span class="hljs-number">201</span>).then(<span class="hljs-function">() =&gt;</span> timeoutMap.get(<span class="hljs-string">&#x27;name&#x27;</span>)); <span class="hljs-comment">// null</span></code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -112,14 +157,17 @@ init();</code></pre>
 					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/timeoutmap.html" class="tsd-kind-icon">Timeout<wbr>Map</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/anypromisefn.html" class="tsd-kind-icon">Any<wbr>PromiseFN</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/asyncpoolexecutoropts.html" class="tsd-kind-icon">Async<wbr>Pool<wbr>Executor<wbr>Opts</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/asyncpoolopts.html" class="tsd-kind-icon">Async<wbr>Pool<wbr>Opts</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/baseretryopts.html" class="tsd-kind-icon">Base<wbr>Retry<wbr>Opts</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/likewxapi.html" class="tsd-kind-icon">LikeWXApi</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="interfaces/oauthclientoptions.html" class="tsd-kind-icon">Oauth<wbr>Client<wbr>Options</a>
@@ -177,6 +225,9 @@ init();</code></pre>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#response" class="tsd-kind-icon">Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
+						<a href="globals.html#singleton" class="tsd-kind-icon">Singleton</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-has-type-parameter">
 						<a href="globals.html#thenreturn" class="tsd-kind-icon">Then<wbr>Return</a>
@@ -284,7 +335,28 @@ init();</code></pre>
 						<a href="globals.html#reg_windows_folder_path" class="tsd-kind-icon">REG_<wbr>WINDOWS_<wbr>FOLDER_<wbr>PATH</a>
 					</li>
 					<li class=" tsd-kind-variable">
+						<a href="globals.html#singleton_key" class="tsd-kind-icon">SINGLETON_<wbr>KEY</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#_fnthis" class="tsd-kind-icon">_fn<wbr>This</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#_global" class="tsd-kind-icon">_global</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#_globalthis" class="tsd-kind-icon">_global<wbr>This</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#_self" class="tsd-kind-icon">_self</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#_window" class="tsd-kind-icon">_window</a>
+					</li>
+					<li class=" tsd-kind-variable">
 						<a href="globals.html#code" class="tsd-kind-icon">code</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#defaultua" class="tsd-kind-icon">defaultUA</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#eventcenter" class="tsd-kind-icon">event<wbr>Center</a>
@@ -296,10 +368,19 @@ init();</code></pre>
 						<a href="globals.html#memoizeimgtobloburl" class="tsd-kind-icon">memoize<wbr>Img<wbr>ToBlob<wbr>Url</a>
 					</li>
 					<li class=" tsd-kind-variable">
+						<a href="globals.html#nexttick" class="tsd-kind-icon">next<wbr>Tick</a>
+					</li>
+					<li class=" tsd-kind-variable">
 						<a href="globals.html#revlookup" class="tsd-kind-icon">rev<wbr>Lookup</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#root" class="tsd-kind-icon">root</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#_bytelength" class="tsd-kind-icon">_byte<wbr>Length</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#_nexttick" class="tsd-kind-icon">_next<wbr>Tick</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#appendscript" class="tsd-kind-icon">append<wbr>Script</a>
@@ -323,7 +404,19 @@ init();</code></pre>
 						<a href="globals.html#bytetoreadablesize" class="tsd-kind-icon">byte<wbr>ToReadable<wbr>Size</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#camelcase" class="tsd-kind-icon">camel<wbr>Case</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#canvasdownloadimage" class="tsd-kind-icon">canvas<wbr>Download<wbr>Image</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#check" class="tsd-kind-icon">check</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#chunk" class="tsd-kind-icon">chunk</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#convertobjectkeyscase" class="tsd-kind-icon">convert<wbr>Object<wbr>Keys<wbr>Case</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#createuniquestring" class="tsd-kind-icon">create<wbr>Unique<wbr>String</a>
@@ -347,7 +440,13 @@ init();</code></pre>
 						<a href="globals.html#encodechunk" class="tsd-kind-icon">encode<wbr>Chunk</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#ensurecallable" class="tsd-kind-icon">ensure<wbr>Callable</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#executecopy" class="tsd-kind-icon">execute<wbr>Copy</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#format" class="tsd-kind-icon">format</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#get" class="tsd-kind-icon">get</a>
@@ -393,6 +492,9 @@ init();</code></pre>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#immediate" class="tsd-kind-icon">immediate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#incrementid" class="tsd-kind-icon">increment<wbr>Id</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#invert" class="tsd-kind-icon">invert</a>
@@ -476,6 +578,9 @@ init();</code></pre>
 						<a href="globals.html#isplanobject" class="tsd-kind-icon">is<wbr>Plan<wbr>Object</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#isprefersdarkmode" class="tsd-kind-icon">is<wbr>Prefers<wbr>Dark<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#isprimitive" class="tsd-kind-icon">is<wbr>Primitive</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
@@ -506,6 +611,9 @@ init();</code></pre>
 						<a href="globals.html#iswxbrowser" class="tsd-kind-icon">isWXBrowser</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#iswxminiprogramwebview" class="tsd-kind-icon">isWXMini<wbr>Program<wbr>Web<wbr>View</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#iswindow" class="tsd-kind-icon">is<wbr>Window</a>
 					</li>
 					<li class=" tsd-kind-function">
@@ -523,8 +631,14 @@ init();</code></pre>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#noop" class="tsd-kind-icon">noop</a>
 					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#numbertostringwithcomma" class="tsd-kind-icon">number<wbr>ToString<wbr>With<wbr>Comma</a>
+					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#pif" class="tsd-kind-icon">p<wbr>If</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#ptry" class="tsd-kind-icon">p<wbr>Try</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#padding" class="tsd-kind-icon">padding</a>
@@ -571,6 +685,9 @@ init();</code></pre>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#singlelock" class="tsd-kind-icon">single<wbr>Lock</a>
 					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#singleton" class="tsd-kind-icon">singleton</a>
+					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#slash" class="tsd-kind-icon">slash</a>
 					</li>
@@ -585,6 +702,9 @@ init();</code></pre>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#todate" class="tsd-kind-icon">to<wbr>Date</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#toggle" class="tsd-kind-icon">toggle</a>
 					</li>
 					<li class=" tsd-kind-function tsd-has-type-parameter">
 						<a href="globals.html#transformerrors" class="tsd-kind-icon">transform<wbr>Errors</a>
@@ -628,16 +748,15 @@ init();</code></pre>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>

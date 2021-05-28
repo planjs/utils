@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SettledPromises | @planjs/utils</title>
+	<title>AsyncPoolExecutorOpts | @planjs/utils</title>
 	<meta name="description" content="Documentation for @planjs/utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,32 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="settledpromises.html">SettledPromises</a>
+					<a href="asyncpoolexecutoropts.html">AsyncPoolExecutorOpts</a>
 				</li>
 			</ul>
-			<h1>Interface SettledPromises&lt;T, V&gt;</h1>
+			<h1>Interface AsyncPoolExecutorOpts</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>T</h4>
-					</li>
-					<li>
-						<h4>V</h4>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SettledPromises</span>
+						<span class="target">AsyncPoolExecutorOpts</span>
 					</li>
 				</ul>
 			</section>
@@ -92,8 +81,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="settledpromises.html#errors" class="tsd-kind-icon">errors</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="settledpromises.html#results" class="tsd-kind-icon">results</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="asyncpoolexecutoropts.html#ispriority" class="tsd-kind-icon">is<wbr>Priority</a></li>
 							</ul>
 						</section>
 					</div>
@@ -102,24 +90,24 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="errors" class="tsd-anchor"></a>
-					<h3>errors</h3>
-					<div class="tsd-signature tsd-kind-icon">errors<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">[]</span></div>
+					<a name="ispriority" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> is<wbr>Priority</h3>
+					<div class="tsd-signature tsd-kind-icon">is<wbr>Priority<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/a3d0cc4/src/promise/settle-all.ts#L2">src/promise/settle-all.ts:2</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/a3d0cc4/src/promise/async-pool.ts#L15">src/promise/async-pool.ts:15</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="results" class="tsd-anchor"></a>
-					<h3>results</h3>
-					<div class="tsd-signature tsd-kind-icon">results<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/a3d0cc4/src/promise/settle-all.ts#L3">src/promise/settle-all.ts:3</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>下一次优先执行</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>false</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -135,14 +123,11 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-has-type-parameter">
-						<a href="settledpromises.html" class="tsd-kind-icon">Settled<wbr>Promises</a>
+					<li class="current tsd-kind-interface">
+						<a href="asyncpoolexecutoropts.html" class="tsd-kind-icon">Async<wbr>Pool<wbr>Executor<wbr>Opts</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="settledpromises.html#errors" class="tsd-kind-icon">errors</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="settledpromises.html#results" class="tsd-kind-icon">results</a>
+								<a href="asyncpoolexecutoropts.html#ispriority" class="tsd-kind-icon">is<wbr>Priority</a>
 							</li>
 						</ul>
 					</li>

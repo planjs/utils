@@ -3,7 +3,7 @@
  * @param value
  * @param fractionDigits
  */
-export function byteToReadableSize(value: number, fractionDigits: number = 2) {
+function byteToReadableSize(value: number, fractionDigits: number = 2) {
   if (!value) {
     return '0 Bytes';
   }
@@ -14,3 +14,5 @@ export function byteToReadableSize(value: number, fractionDigits: number = 2) {
   const size = (srcSize / Math.pow(1024, index)).toFixed(fractionDigits);
   return size + unitArr[index];
 }
+
+export default byteToReadableSize;
