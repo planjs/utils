@@ -16,3 +16,5 @@ export * from './things';
 export * from './function';
 export * from './ext-object';
 export * from './regex_constant';
+
+export type { PropertyName, Dictionary, ClassType } from './type';

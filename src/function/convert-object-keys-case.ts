@@ -1,4 +1,9 @@
-import { Dictionary } from '../type';
+type UppercaseDictionary<T> = {
+  [K in keyof T as `${Uppercase<K & string>}`]: T[K];
+};
+type LowercaseDictionary<T> = {
+  [K in keyof T as `${Lowercase<K & string>}`]: T[K];
+};
 
 /**
  * 转换对象中的key为大小写
@@ -6,10 +11,9 @@ import { Dictionary } from '../type';
  * @param action {toLowerCase|toLowerCase} default toLowerCase
  * @return object
  */
-function convertObjectKeysCase<T>(
-  obj: Dictionary<T>,
-  action: 'toLowerCase' | 'toUpperCase' = 'toLowerCase',
-): Dictionary<T> {
+function convertObjectKeysCase<T>(obj: T, action?: 'toLowerCase'): LowercaseDictionary<T>;
+function convertObjectKeysCase<T>(obj: T, action?: 'toUpperCase'): UppercaseDictionary<T>;
+function convertObjectKeysCase<T>(obj: T, action: 'toLowerCase' | 'toUpperCase' = 'toLowerCase') {
   return Object.keys(obj).reduce(function (accum, key) {
     accum[key[action]()] = obj[key];
     return accum;

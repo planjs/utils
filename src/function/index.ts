@@ -4,4 +4,4 @@ export { default as get } from './get';
 export { default as nextTick } from './next-tick';
 export { default as toggle } from './toogle';
 export { default as convertObjectKeysCase } from './convert-object-keys-case';
-export { default as singleton } from './singleton';
+export { default as singleton, SINGLETON_KEY } from './singleton';

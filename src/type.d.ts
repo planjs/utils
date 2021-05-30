@@ -8,10 +8,6 @@ export interface Dictionary<T> {
   [index: string]: T;
 }
 
-export interface NumericDictionary<T> {
-  [index: string]: T;
-}
-
 export interface ClassType<T = any, A = any> {
   prototype: T;
   new (args?: A): T;

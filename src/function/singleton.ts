@@ -3,11 +3,24 @@ import { ClassType } from '../type';
 export const SINGLETON_KEY = Symbol('singleton');
 
 export type Singleton<T extends ClassType> = T & {
-  [SINGLETON_KEY]: T extends new (...args: any[]) => infer I ? I : never;
+  [SINGLETON_KEY]: InstanceType<T>;
 };
 
-const singleton = <T extends ClassType>(classTarget: T) =>
-  new Proxy(classTarget, {
+/**
+ * singleton class
+ * @param classTarget
+ * @return class {classTarget}
+ * @example
+ * class A {}
+ * const SingletonA = singleton(A);
+ * console.log(new SingletonA() === new SingletonA()) // true;
+ *
+ * use decorators
+ * @singleton
+ * class B {}
+ */
+const singleton = <T extends ClassType>(classTarget: T) => {
+  return new Proxy(classTarget, {
     construct(target: Singleton<T>, argumentsList, newTarget) {
       if (target.prototype !== newTarget.prototype) {
         return Reflect.construct(target, argumentsList, newTarget);
@@ -18,5 +31,6 @@ const singleton = <T extends ClassType>(classTarget: T) =>
       return target[SINGLETON_KEY];
     },
   });
+};
 
 export default singleton;
