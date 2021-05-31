@@ -1,6 +1,12 @@
 import { dataUrl2Blob } from '../blob/blob';
 import memoize from '../promise/memoize';
 
+/**
+ * 创建一个img元素，获取img元素
+ * @param src
+ * @param crossOrigin
+ * @return {Promise<HTMLImageElement>}
+ */
 export function loadImage(src: string, crossOrigin?: string | null): Promise<HTMLImageElement> {
   return new Promise(function (resolve, reject) {
     const img = new Image();
@@ -19,8 +25,9 @@ export function loadImage(src: string, crossOrigin?: string | null): Promise<HTM
  * 图片通过canvas转换成blob
  * @param url
  * @param opt
+ * @return {Promise<Blob>}
  */
-export function imgToBlobUrl(
+export function imageToBlobUrl(
   url: string,
   opt?: {
     type?: string;
@@ -45,4 +52,4 @@ export function imgToBlobUrl(
 /**
  * 相同路径的blob会被缓存
  */
-export const memoizeImgToBlobUrl = memoize(imgToBlobUrl);
+export const memoizeImgToBlobUrl = memoize(imageToBlobUrl);

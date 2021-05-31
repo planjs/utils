@@ -30,8 +30,13 @@ function getLens(b64: string) {
   return [validLen, placeHoldersLen];
 }
 
-// base64 is 4/3 + up to two characters of the original data
-export function b64ByteLength(b64: string) {
+/**
+ * base64 string len
+ * @param b64
+ * @description base64 is 4/3 + up to two characters of the original data
+ * @return {number} len
+ */
+export function b64ByteLength(b64: string): number {
   const lens = getLens(b64);
   const validLen = lens[0];
   const placeHoldersLen = lens[1];
@@ -45,8 +50,9 @@ function _byteLength(_b64: string, validLen: number, placeHoldersLen: number) {
 /**
  * base64 转换成 Uint8Array
  * @param b64
+ * @return {Uint8Array | string[]}
  */
-export function b64ToByteArray(b64: string) {
+export function b64ToByteArray(b64: string): Uint8Array | string[] {
   let tmp;
   const lens = getLens(b64);
   const validLen = lens[0];
@@ -110,8 +116,9 @@ function encodeChunk(uint8: number[], start: number, end: number) {
 /**
  * Uint8Array to base64
  * @param uint8
+ * @return {string} base64 string
  */
-export function byteArrayToB64(uint8: number[]) {
+export function byteArrayToB64(uint8: number[]): string {
   let tmp;
   const len = uint8.length;
   const extraBytes = len % 3; // if we have 1 byte left, pad 2 bytes

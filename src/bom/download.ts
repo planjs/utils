@@ -1,5 +1,5 @@
 import { dataUrl2Blob } from '../blob/blob';
-import { imgToBlobUrl } from '../blob/img-to-blob';
+import { imageToBlobUrl } from '../blob/img-to-blob';
 
 /**
  * 下载文件
@@ -48,5 +48,5 @@ export function canvasDownloadImage(
     quality?: any;
   },
 ) {
-  return imgToBlobUrl(path, opt).then((res) => downloadFile(res, fileName));
+  return imageToBlobUrl(path, opt).then((res) => downloadFile(res, fileName));
 }

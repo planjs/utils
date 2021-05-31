@@ -1,3 +1,5 @@
+import global from '../global';
+
 type Options = {
   method?: string;
   headers?: Record<string, string>;
@@ -27,7 +29,7 @@ type Response = {
  * @param url
  * @param options
  */
-function myfetch(url: string, options: Options = {}) {
+function myFetch(url: string, options: Options = {}) {
   return new Promise<Response>((resolve, reject) => {
     const request = new XMLHttpRequest();
     const keys: string[] = [];
@@ -77,13 +79,11 @@ function myfetch(url: string, options: Options = {}) {
   });
 }
 
-export default myfetch;
+export default myFetch;
 
 /**
  * 全局增加fetch polyfill
  */
 export function shim() {
-  // @ts-ignore
-  // eslint-disable-next-line no-restricted-globals
-  if (!self.fetch) self.fetch = myfetch;
+  if (!global.fetch) global.fetch = myFetch;
 }

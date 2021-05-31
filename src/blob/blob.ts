@@ -3,6 +3,7 @@ import { REG_DATA_URL } from '../regex_constant';
 /**
  * base64 转换成 Blob
  * @param dataUrl
+ * @return {Blob}
  */
 export function dataUrl2Blob(dataUrl: string): Blob {
   if (!REG_DATA_URL.test(dataUrl)) throw new Error(`${dataUrl} is not a data url`);
@@ -34,6 +35,9 @@ export function getBlobByXHR(url: string): Promise<Blob> {
       }
     };
     xhr.onerror = function (error) {
+      reject(error);
+    };
+    xhr.ontimeout = function (error) {
       reject(error);
     };
     xhr.send();
