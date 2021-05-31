@@ -16,6 +16,7 @@ export { default as isFunction } from './is-Function';
 export { default as isRegExp } from './is-RegExp';
 export { default as isPrimitive } from './is-Primitive';
 export { default as isPromise } from './is-Promise';
+export { default as isSymbol } from './is-Symbol';
 
 export { default as isWindow } from './is-Window';
 export { default as isFile } from './is-File';

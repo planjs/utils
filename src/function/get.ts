@@ -3,7 +3,7 @@ import { isDef } from '../is';
 
 function get<T>(
   entity: Dictionary<T> | null | undefined,
-  ...paths: PropertyPath[]
+  paths: PropertyPath[],
 ): T[keyof T] | undefined {
   let current: any = entity;
 
