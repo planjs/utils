@@ -1,24 +1,29 @@
-import { Dictionary, PropertyPath } from '../type';
+import global from '../global';
 import { isFunction } from '../is';
 import { get } from '../function';
-import global from '../global';
+import type { Dictionary, PropertyPath } from '../type';
 
-function mapPick<T extends Dictionary<any>, K extends string>(
+function mapPick<
+  T extends Dictionary<any>,
+  K extends string,
+  Value = T[keyof T],
+  Item = Record<K, Value>
+>(
   arr: T[],
   keyPaths: Record<K, (PropertyPath | keyof T)[]>,
-  keyPredicates?: Record<K, (key: K, value: T, index: number, array: T[]) => T[keyof T]>,
-): Record<K, T[keyof T]>[] {
+  keyPredicates?: Record<K, (key: K, value: T, index: number, array: T[]) => Value>,
+): Item[] {
   const resultKeys = Object.keys(keyPaths);
-  return arr.reduce<Record<K, T[keyof T]>[]>((result, item, index) => {
+  return arr.reduce<Item[]>((result, item, index) => {
     result.push(
-      resultKeys.reduce<Record<K, T[keyof T]>>((acc, key) => {
+      resultKeys.reduce<Item>((acc, key) => {
         if (keyPredicates && isFunction(keyPredicates[key])) {
           acc[key] = keyPredicates[key].call(global, key, item, index, arr);
-        } else if (keyPaths[key]) {
+        } else {
           acc[key] = get(item, keyPaths[key]);
         }
         return acc;
-      }, {} as Record<K, T[keyof T]>),
+      }, {} as Item),
     );
     return result;
   }, []);

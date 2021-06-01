@@ -1,4 +1,4 @@
-import { get } from '../src';
+import { get } from '../src/function';
 
 describe('function', () => {
   test('get', () => {
