@@ -1,3 +1,7 @@
+/**
+ * 返回一个promise，外部可以控制promise状态
+ * @return {promise,resolve,reject}
+ */
 function defer<T>(): {
   promise: Promise<T>;
   resolve: (value?: T | PromiseLike<T>) => void;

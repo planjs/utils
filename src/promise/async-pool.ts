@@ -1,4 +1,4 @@
-import { PromiseFN } from './interfaces';
+import type { PromiseFN } from './interfaces';
 
 export interface AsyncPoolOpts {
   /**
