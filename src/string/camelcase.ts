@@ -4,9 +4,9 @@
  * @example
  * hello-word -> helloWord
  */
-function camelCase(str: string) {
+function camelcase(str: string) {
   const camelizeRE = /-(\w)/g;
   return str.replace(camelizeRE, (_, c) => (c ? c.toUpperCase() : ''));
 }
 
-export default camelCase;
+export default camelcase;

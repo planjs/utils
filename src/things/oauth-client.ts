@@ -1,4 +1,5 @@
 import { parse, stringify, ParsedQuery, ParseOptions, StringifyOptions } from 'query-string';
+import { isBrowser } from '../is/is-platform';
 
 export interface OauthClientOptions<K extends string> {
   /**
@@ -43,7 +44,7 @@ class OauthClient<K extends string = 'code' | 'state'> {
   constructor({
     consumerKeys,
     mode,
-    url = window.location.href,
+    url = isBrowser() ? window.location.href : '',
     qsParseArgs,
     qsStringifyArgs,
   }: OauthClientOptions<K>) {

@@ -1,5 +1,5 @@
 import { dataUrl2Blob } from '../blob/blob';
-import { imageToBlobUrl } from '../blob/img-to-blob';
+import { imageToBlobUrl } from '../blob/image-to-blob';
 
 /**
  * 下载文件

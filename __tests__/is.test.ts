@@ -1,4 +1,4 @@
-import { isNode, isBrowser, isIE } from '../src';
+import { isNode, isBrowser, isIE } from '../src/is';
 
 describe('is', () => {
   test('is-platform', () => {

@@ -11,9 +11,18 @@ type LowercaseDictionary<T> = {
  * @param action {toLowerCase|toLowerCase} default toLowerCase
  * @return object
  */
-function convertObjectKeysCase<T>(obj: T, action?: 'toLowerCase'): LowercaseDictionary<T>;
-function convertObjectKeysCase<T>(obj: T, action?: 'toUpperCase'): UppercaseDictionary<T>;
-function convertObjectKeysCase<T>(obj: T, action: 'toLowerCase' | 'toUpperCase' = 'toLowerCase') {
+function convertObjectKeysCase<T extends object>(
+  obj: T,
+  action?: 'toLowerCase',
+): LowercaseDictionary<T>;
+function convertObjectKeysCase<T extends object>(
+  obj: T,
+  action?: 'toUpperCase',
+): UppercaseDictionary<T>;
+function convertObjectKeysCase<T extends object>(
+  obj: T,
+  action: 'toLowerCase' | 'toUpperCase' = 'toLowerCase',
+) {
   return Object.keys(obj).reduce(function (accum, key) {
     accum[key[action]()] = obj[key];
     return accum;
