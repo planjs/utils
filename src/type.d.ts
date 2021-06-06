@@ -8,6 +8,8 @@ export interface Dictionary<T> {
   [index: string]: T;
 }
 
+export type Values<T extends object> = T[keyof T];
+
 export interface ClassType<T = any, A = any> {
   prototype: T;
   new (args?: A): T;
