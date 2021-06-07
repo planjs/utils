@@ -5,9 +5,9 @@ import { AnyPromiseFN } from './interfaces';
  * @param handlers
  */
 function sequenceChain(handlers: Array<[AnyPromiseFN, AnyPromiseFN]>) {
-  return <T>(arg?: any): Promise<T> => {
+  return <T>(value?: any): Promise<T> => {
     const chain = handlers.slice();
-    let promise = Promise.resolve(arg!);
+    let promise = Promise.resolve(value!);
     while (chain.length) {
       const [fulfilled, rejected] = chain.shift()!;
       promise = promise.then(fulfilled, rejected);

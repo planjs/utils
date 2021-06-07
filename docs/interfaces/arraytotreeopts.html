@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TimeoutMapKeyArgs | @planjs/utils</title>
+	<title>ArrayToTreeOpts | @planjs/utils</title>
 	<meta name="description" content="Documentation for @planjs/utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="timeoutmapkeyargs.html">TimeoutMapKeyArgs</a>
+					<a href="arraytotreeopts.html">ArrayToTreeOpts</a>
 				</li>
 			</ul>
-			<h1>Interface TimeoutMapKeyArgs&lt;K, V&gt;</h1>
+			<h1>Interface ArrayToTreeOpts&lt;T, ChildrenKey&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -70,10 +70,10 @@
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
-						<h4>K</h4>
+						<h4>T</h4>
 					</li>
 					<li>
-						<h4>V</h4>
+						<h4>ChildrenKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span> = <span class="tsd-signature-type">"children"</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -81,7 +81,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TimeoutMapKeyArgs</span>
+						<span class="target">ArrayToTreeOpts</span>
 					</li>
 				</ul>
 			</section>
@@ -92,9 +92,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="timeoutmapkeyargs.html#expirationtime" class="tsd-kind-icon">expiration<wbr>Time</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="timeoutmapkeyargs.html#options" class="tsd-kind-icon">options</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="timeoutmapkeyargs.html#timerid" class="tsd-kind-icon">timer<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="arraytotreeopts.html#childrenkey" class="tsd-kind-icon">children<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="arraytotreeopts.html#parentprimarykey" class="tsd-kind-icon">parent<wbr>Primary<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="arraytotreeopts.html#primarykey" class="tsd-kind-icon">primary<wbr>Key</a></li>
 							</ul>
 						</section>
 					</div>
@@ -103,34 +103,64 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="expirationtime" class="tsd-anchor"></a>
-					<h3>expiration<wbr>Time</h3>
-					<div class="tsd-signature tsd-kind-icon">expiration<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="childrenkey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> children<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">children<wbr>Key<span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type">ChildrenKey</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/bc856ca/src/object/timeout-map.ts#L33">src/object/timeout-map.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/bc856ca/src/array/array-to-tree.ts#L18">src/array/array-to-tree.ts:18</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>叶子节点挂载的key</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>children</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="options" class="tsd-anchor"></a>
-					<h3>options</h3>
-					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../globals.html#timeoutmapoptions" class="tsd-signature-type">TimeoutMapOptions</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">V</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="parentprimarykey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> parent<wbr>Primary<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">parent<wbr>Primary<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/bc856ca/src/object/timeout-map.ts#L34">src/object/timeout-map.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/bc856ca/src/array/array-to-tree.ts#L13">src/array/array-to-tree.ts:13</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>关联主键ID</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>parentId</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="timerid" class="tsd-anchor"></a>
-					<h3>timer<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">timer<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ReturnType</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">typeof </span><span class="tsd-signature-type">setTimeout</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="primarykey" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> primary<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">primary<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/planjs/utils/blob/bc856ca/src/object/timeout-map.ts#L32">src/object/timeout-map.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/planjs/utils/blob/bc856ca/src/array/array-to-tree.ts#L8">src/array/array-to-tree.ts:8</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>主键ID</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>id</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -147,16 +177,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-has-type-parameter">
-						<a href="timeoutmapkeyargs.html" class="tsd-kind-icon">Timeout<wbr>Map<wbr>Key<wbr>Args</a>
+						<a href="arraytotreeopts.html" class="tsd-kind-icon">Array<wbr>ToTree<wbr>Opts</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="timeoutmapkeyargs.html#expirationtime" class="tsd-kind-icon">expiration<wbr>Time</a>
+								<a href="arraytotreeopts.html#childrenkey" class="tsd-kind-icon">children<wbr>Key</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="timeoutmapkeyargs.html#options" class="tsd-kind-icon">options</a>
+								<a href="arraytotreeopts.html#parentprimarykey" class="tsd-kind-icon">parent<wbr>Primary<wbr>Key</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="timeoutmapkeyargs.html#timerid" class="tsd-kind-icon">timer<wbr>Id</a>
+								<a href="arraytotreeopts.html#primarykey" class="tsd-kind-icon">primary<wbr>Key</a>
 							</li>
 						</ul>
 					</li>

@@ -49,8 +49,8 @@ nextTick(async () => {
   if (Date.now() - start + 1 >= Math.max(...randArr)) {
     console.log('concurrency');
   }
-  const count = (a) => ++a;
-  const val = await sequenceChain([range(0, 10).map((v) => count)])(1);
+  const count = (a = 0) => ++a;
+  const val = await sequenceChain([...range(0, 10).map((v) => [count])])();
   console.log(val); // 11
 });
 
