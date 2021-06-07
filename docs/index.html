@@ -114,8 +114,8 @@ nextTick(<span class="hljs-keyword">async</span> () =&gt; {
   <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Date</span>.now() - start + <span class="hljs-number">1</span> &gt;= <span class="hljs-built_in">Math</span>.max(...randArr)) {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;concurrency&#x27;</span>);
   }
-  <span class="hljs-keyword">const</span> count = <span class="hljs-function">(<span class="hljs-params">a</span>) =&gt;</span> ++a;
-  <span class="hljs-keyword">const</span> val = <span class="hljs-keyword">await</span> sequenceChain([range(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>).map(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> count)])(<span class="hljs-number">1</span>);
+  <span class="hljs-keyword">const</span> count = <span class="hljs-function">(<span class="hljs-params">a = <span class="hljs-number">0</span></span>) =&gt;</span> ++a;
+  <span class="hljs-keyword">const</span> val = <span class="hljs-keyword">await</span> sequenceChain([...range(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>).map(<span class="hljs-function">(<span class="hljs-params">v</span>) =&gt;</span> [count])])();
   <span class="hljs-built_in">console</span>.log(val); <span class="hljs-comment">// 11</span>
 });
 
