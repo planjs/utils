@@ -61,3 +61,31 @@ export function createUniqueString() {
   const randomNum = parseInt(String((1 + Math.random()) * 65536)) + '';
   return (+(randomNum + timestamp)).toString(32);
 }
+
+/**
+ * 获取随机bool值
+ * @return {boolean} a random true/false
+ */
+export function getRandomBool(): boolean {
+  return Math.random() >= 0.5;
+}
+
+/**
+ * 获取一个介于 `min` 和 `max` 之间的随机浮点数。
+ * @param {number} min - min number
+ * @param {number} max - max number
+ * @return {number} a random floating point number
+ */
+export function getRandomFloat(min: number, max: number) {
+  return Math.random() * (max - min) + min;
+}
+
+/**
+ * 获取一个介于 `min` 和 `max` 之间的随机整数。
+ * @param {number} min - min number
+ * @param {number} max - max number
+ * @return {number} a random integer
+ */
+export function getRandomInt(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
