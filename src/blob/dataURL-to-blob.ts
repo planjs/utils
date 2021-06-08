@@ -6,7 +6,9 @@ import { REG_DATA_URL } from '../regex_constant';
  * @return {Blob}
  */
 function dataURLToBlob(dataUrl: string): Blob {
-  if (!REG_DATA_URL.test(dataUrl)) throw new Error(`${dataUrl} is not a data url`);
+  if (!REG_DATA_URL.test(dataUrl)) {
+    throw new Error(`${dataUrl} is not a data url`);
+  }
   const arr = dataUrl.split(',');
   const mime = arr[0]!.match(/:(.*?);/)?.[1];
   const bStr = atob(arr[1]);
