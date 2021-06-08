@@ -6,3 +6,5 @@ export { default as toggle } from './toogle';
 export { default as singleton, SINGLETON_KEY } from './singleton';
 export { default as shallowEqual } from './shallow-equal';
 export { default as incrementId } from './increment-id';
+export { default as after } from './after';
+export { default as before } from './before';

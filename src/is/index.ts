@@ -1,6 +1,7 @@
 export * from './is-platform';
 
 export { default as getType } from './get-type';
+export { default as isEmpty } from './is-empty';
 
 export { default as isError } from './is-Error';
 export { default as isNaN } from './is-NaN';
@@ -10,6 +11,8 @@ export { default as isDef } from './is-Def';
 export { default as isUndefined, isUndefinedStr } from './is-Undefined';
 export { default as isString } from './is-String';
 export { default as isNumber } from './is-Number';
+export { default as isArguments } from './is-Arguments';
+export { default as isTypedArray } from './is-TypedArray';
 export { default as isObject, isPlanObject, isObjectLike } from './is-Object';
 export { default as isArray, isArrayLike } from './is-Array';
 export { default as isFunction } from './is-Function';
