@@ -1,4 +1,4 @@
-import { dataUrl2Blob } from '../blob/blob';
+import dataURLToBlob from '../blob/dataURL-to-blob';
 import memoize from '../promise/memoize';
 
 /**
@@ -43,7 +43,7 @@ export function imageToBlobUrl(
       canvas.height = img.height;
       ctx!.drawImage(img, 0, 0);
       const data = canvas.toDataURL(opt?.type ?? 'image/png', opt?.quality);
-      const dataUrl = dataUrl2Blob(data);
+      const dataUrl = dataURLToBlob(data);
       resolve(dataUrl);
     }, reject);
   });

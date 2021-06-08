@@ -1,4 +1,4 @@
-import { dataUrl2Blob } from '../blob/blob';
+import dataURLToBlob from '../blob/dataURL-to-blob';
 import { imageToBlobUrl } from '../blob/image-to-blob';
 
 /**
@@ -14,7 +14,7 @@ export function downloadFile(path: string | Blob, fileName: string) {
 
   if (typeof path === 'string') {
     try {
-      a.href = URL.createObjectURL(dataUrl2Blob(path));
+      a.href = URL.createObjectURL(dataURLToBlob(path));
     } catch (e) {}
   }
 
