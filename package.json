@@ -24,7 +24,6 @@
   "files": [
     "lib",
     "es",
-    "docs",
     "typings"
   ],
   "scripts": {
