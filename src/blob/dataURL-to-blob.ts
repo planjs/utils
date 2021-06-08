@@ -1,4 +1,5 @@
 import { REG_DATA_URL } from '../regex_constant';
+import { ensure } from '../debug';
 
 /**
  * base64 转换成 Blob
@@ -6,9 +7,7 @@ import { REG_DATA_URL } from '../regex_constant';
  * @return {Blob}
  */
 function dataURLToBlob(dataUrl: string): Blob {
-  if (!REG_DATA_URL.test(dataUrl)) {
-    throw new Error(`${dataUrl} is not a data url`);
-  }
+  ensure(!REG_DATA_URL.test(dataUrl), `${dataUrl} is not a data url`);
   const arr = dataUrl.split(',');
   const mime = arr[0]!.match(/:(.*?);/)?.[1];
   const bStr = atob(arr[1]);

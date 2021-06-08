@@ -1,19 +1,18 @@
 import { REG_DATA_URL } from '../regex_constant';
+import { ensure } from '../debug';
 
 /**
  * data64 转化成 File对象
  */
 function dataURLtoFile(dataUrl: string, filename: string) {
-  if (!REG_DATA_URL.test(dataUrl)) {
-    throw new Error(`${dataUrl} is not a data url`);
-  }
+  ensure(!REG_DATA_URL.test(dataUrl), `${dataUrl} is not a data url`);
   const arr = dataUrl.split(',');
   const mime = arr[0]!.match(/:(.*?);/)?.[1];
-  const bstr = atob(arr[1]);
-  let n = bstr.length;
+  const bStr = atob(arr[1]);
+  let n = bStr.length;
   const u8arr = new Uint8Array(n);
   while (n--) {
-    u8arr[n] = bstr.charCodeAt(n);
+    u8arr[n] = bStr.charCodeAt(n);
   }
   return new File([u8arr], filename, { type: mime });
 }
