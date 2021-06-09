@@ -24,16 +24,16 @@
   "files": [
     "lib",
     "es",
-    "docs",
     "typings"
   ],
   "scripts": {
     "doc": "typedoc",
     "lint:fix": "eslint --fix --ext js,ts src",
-    "prepare": "stan-builder && yarn doc",
+    "prepare": "yarn build && yarn doc",
     "prepublishOnly": "npm run release",
     "release": "./scripts/release.sh",
     "start": "stan-builder -w",
+    "build": "stan-builder",
     "test": "jest -u"
   },
   "husky": {

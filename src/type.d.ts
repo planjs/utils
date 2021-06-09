@@ -14,3 +14,5 @@ export interface ClassType<T = any, A = any> {
   prototype: T;
   new (args?: A): T;
 }
+
+export type AnyFn = (...args: any[]) => any;
