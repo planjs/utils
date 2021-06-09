@@ -10,7 +10,8 @@ export type {
   UploadRequestError,
   UploadProgressEvent,
 } from './xhr-upload';
+export { default as downloadCanvasImage } from './download-canvas-image';
+export { default as downloadFile } from './download-file';
 
-export * from './open-window';
-export * from './download';
+export { default as openWindow } from './open-window';
 export * from './cookie';

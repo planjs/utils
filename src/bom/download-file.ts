@@ -1,12 +1,11 @@
 import dataURLToBlob from '../blob/dataURL-to-blob';
-import { imageToBlobUrl } from '../blob/image-to-blob';
 
 /**
  * 下载文件
  * @param path {url|data url|blob}
  * @param fileName
  */
-export function downloadFile(path: string | Blob, fileName: string) {
+function downloadFile(path: string | Blob, fileName: string) {
   const a = document.createElement('a');
   const event = new MouseEvent('click');
   a.download = fileName;
@@ -33,20 +32,4 @@ export function downloadFile(path: string | Blob, fileName: string) {
   document.body.removeChild(a);
 }
 
-/**
- * 下载图片，如果是跨域图片需要用这个方法，同域等也可以直接用 downloadFile
- * @note 浏览器不要开拦截弹窗工具。。。
- * @param path
- * @param fileName
- * @param opt
- */
-export function canvasDownloadImage(
-  path: string,
-  fileName: string,
-  opt?: {
-    type?: string;
-    quality?: any;
-  },
-) {
-  return imageToBlobUrl(path, opt).then((res) => downloadFile(res, fileName));
-}
+export default downloadFile;
