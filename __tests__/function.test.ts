@@ -14,9 +14,9 @@ describe('function', () => {
     prefSetTimeout(() => {
       endTime = Date.now();
     }, timeout);
-    setTimeout(resolve, timeout);
+    setTimeout(() => resolve(), timeout + 17);
     await promise;
-    expect(endTime - startTime).toBe(0);
+    expect(endTime - startTime).toBeLessThan(timeout + 16 * 2);
   });
 
   // TODO check
@@ -28,18 +28,19 @@ describe('function', () => {
     const { promise, resolve } = defer();
     const prefId = prefSetInterval(() => {
       prefRes.push(Date.now());
-      if (prefRes.length > max) {
+      console.log(prefRes);
+      if (prefRes.length >= max) {
         clearPrefSetInterval(prefId);
       }
     }, interval);
     const id = setInterval(() => {
       orgRes.push(Date.now());
-      if (orgRes.length > max) {
+      if (orgRes.length >= max) {
         clearInterval(id);
         resolve();
       }
     }, interval);
     await promise;
-    expect(prefRes.length).toBe(orgRes.length);
+    expect(prefRes).toEqual(orgRes);
   });
 });

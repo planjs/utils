@@ -22,8 +22,8 @@ export function prefSetTimeout(handler: Function, timeout?: number, ...args: any
     timerIdMap[_id] = requestAnimationFrame(loop);
     endTime = Date.now();
     if (endTime - startTime >= interval) {
-      handler(...args);
       clearPrefTimeout(timerIdMap[_id]);
+      handler(...args);
     }
   };
   timerIdMap[_id] = requestAnimationFrame(loop);

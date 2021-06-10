@@ -16,13 +16,14 @@ const timerIdMap: Record<number, number> = {};
 export function prefSetInterval(handler: Function, ms?: number, ...args: any[]): number {
   const _id = id();
   const interval = ms || 0;
-  const startTime = Date.now();
+  let startTime = Date.now();
   let endTime = startTime;
   const loop = () => {
     timerIdMap[_id] = requestAnimationFrame(loop);
     endTime = Date.now();
     if (endTime - startTime >= interval) {
       handler(...args);
+      startTime = endTime;
     }
   };
   timerIdMap[_id] = requestAnimationFrame(loop);
