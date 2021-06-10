@@ -1,9 +1,5 @@
 import isFunction from '../is/is-Function';
-
-const ensureCallable = function (fn) {
-  if (isFunction(fn)) throw new TypeError(fn + ' is not a function');
-  return fn;
-};
+import { ensureCallable } from '../debug';
 
 function _nextTick(): (callback: Function, ...args: any[]) => void {
   // nodejs

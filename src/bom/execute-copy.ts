@@ -2,7 +2,7 @@
  * 复制到剪切板
  * @param textValue
  */
-function executeCopy(textValue) {
+function executeCopy(textValue: string) {
   const input = document.createElement('textarea');
   document.body.appendChild(input);
   input.value = textValue;

@@ -1,9 +1,7 @@
-import throwError from '../throw-error';
+import { ensure } from '../debug';
 
 function appendScript({ src, ...rest }: Partial<HTMLScriptElement>) {
-  if (!src) {
-    throw throwError('src required');
-  }
+  ensure(!src, 'src required');
 
   const isExist = document.querySelector(`script[src='${src}']`) !== null;
   if (isExist) {
@@ -13,7 +11,7 @@ function appendScript({ src, ...rest }: Partial<HTMLScriptElement>) {
 
   const script = document.createElement('script');
   script.type = 'text/javascript';
-  script.src = src;
+  script.src = src!;
   for (const attr in rest) {
     script[attr] = rest[attr];
   }

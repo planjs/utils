@@ -17,4 +17,4 @@ export * from './function';
 export * from './object';
 export * from './regex_constant';
 
-export type { PropertyName, Dictionary, ClassType } from './type';
+export type { PropertyName, PropertyPath, Dictionary, ClassType } from './type';
