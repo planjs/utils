@@ -138,16 +138,6 @@ class TimeoutMap<K, V> extends Map<K, V> {
     }
   };
 
-  private _cleanExpirationElement() {
-    for (const [key, arg] of this._keyArgs) {
-      if (arg.expirationTime && arg.expirationTime < Date.now().valueOf()) {
-        arg.options?.onTimeout?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
-        this._keyArgs.delete(key);
-        this.delete(key);
-      }
-    }
-  }
-
   private _clearTimeout(key: K): boolean {
     const arg = this._keyArgs.get(key);
     if (arg?.timerId !== undefined) {
@@ -156,6 +146,16 @@ class TimeoutMap<K, V> extends Map<K, V> {
       return true;
     }
     return false;
+  }
+
+  private _cleanExpirationElement() {
+    for (const [key, arg] of this._keyArgs) {
+      if (arg.expirationTime && arg.expirationTime < Date.now().valueOf()) {
+        arg.options?.onTimeout?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
+        this._keyArgs.delete(key);
+        this.delete(key);
+      }
+    }
   }
 
   private _cleanOverLimitElement() {

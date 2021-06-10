@@ -8,3 +8,7 @@ export { default as shallowEqual } from './shallow-equal';
 export { default as incrementId } from './increment-id';
 export { default as after } from './after';
 export { default as before } from './before';
+export { prefSetTimeout, clearPrefTimeout } from './pref-setTimeout';
+export { prefSetInterval, clearPrefSetInterval } from './pref-setInterval';
+export { default as debounce } from './debounce';
+export { default as throttle } from './throttle';

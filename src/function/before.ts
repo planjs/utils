@@ -1,4 +1,4 @@
-import { AnyFn } from '../type';
+import type { AnyFn } from '../type';
 
 /**
  * 只执行最开始的几次，超过次数之后返回最后一次执行的结果

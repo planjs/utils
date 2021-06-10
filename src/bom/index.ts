@@ -12,6 +12,8 @@ export type {
 } from './xhr-upload';
 export { default as downloadCanvasImage } from './download-canvas-image';
 export { default as downloadFile } from './download-file';
+export { default as requestAnimationFrame } from './requestAnimationFrame';
+export { default as cancelAnimationFrame } from './cancelAnimationFrame';
 
 export { default as openWindow } from './open-window';
 export * from './cookie';

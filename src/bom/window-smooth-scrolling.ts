@@ -1,3 +1,5 @@
+import requestAnimationFrame from './requestAnimationFrame';
+
 /**
  * 时间内，滚动条平滑滚到指定位置
  * @param to
@@ -15,18 +17,6 @@ function windowSmoothScrolling(to, duration) {
     );
   }
 
-  const _requestAnimFrame = (function () {
-    return (
-      window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      // @ts-ignore
-      window.mozRequestAnimationFrame ||
-      function (callback) {
-        window.setTimeout(callback, 1000 / 60);
-      }
-    );
-  })();
-
   if (duration < 0) {
     _setScrollTop(to);
     return;
@@ -38,7 +28,7 @@ function windowSmoothScrolling(to, duration) {
 
   const step = (diff / duration) * 10;
 
-  _requestAnimFrame(function () {
+  requestAnimationFrame(function () {
     if (Math.abs(step) > Math.abs(diff)) {
       _setScrollTop(_getScrollTop() + diff);
     }
