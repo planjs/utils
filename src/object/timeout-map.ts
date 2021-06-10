@@ -1,3 +1,5 @@
+import { prefSetTimeout, clearPrefTimeout } from '../function/pref-setTimeout';
+
 type TimeoutMapConstructorOptions = {
   /**
    * Control storage length
@@ -29,7 +31,7 @@ type TimeoutMapOptions<K, V> = TimeoutMapConstructorOptions & {
 };
 
 interface TimeoutMapKeyArgs<K, V> {
-  timerId: ReturnType<typeof setTimeout>;
+  timerId: number;
   expirationTime: number;
   options: TimeoutMapOptions<K, V>;
 }
@@ -130,7 +132,7 @@ class TimeoutMap<K, V> extends Map<K, V> {
       this._setKeyArgs(key, { expirationTime: Date.now().valueOf() + _options.timeout });
     } else {
       this._setKeyArgs(key, {
-        timerId: setTimeout(() => {
+        timerId: prefSetTimeout(() => {
           _options?.onTimeout?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
           this.delete(key);
         }, _options.timeout),
@@ -142,7 +144,7 @@ class TimeoutMap<K, V> extends Map<K, V> {
     const arg = this._keyArgs.get(key);
     if (arg?.timerId !== undefined) {
       this._keyArgs.delete(key);
-      clearTimeout(arg!.timerId!);
+      clearPrefTimeout(arg!.timerId!);
       return true;
     }
     return false;
