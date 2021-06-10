@@ -4,7 +4,7 @@ import incrementId from './increment-id';
 
 const id = incrementId();
 
-const timerIdMap: Record<any, number> = {};
+const timerIdMap: Record<number, number> = {};
 
 /**
  * 优先使用 requestAnimationFrame 实现 setInterval
