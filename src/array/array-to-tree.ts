@@ -22,7 +22,7 @@ type TreeNode<T, K extends string = 'children'> = T & Partial<Record<K, TreeNode
 
 /**
  * 数组通过关联主键，返回树
- * @param arr
+ * @param array
  * @param opts
  * @return tree { { [id]: TreeNode } } 可以根据root节点id获取树
  * @example
@@ -66,10 +66,10 @@ function arrayToTree<
   K extends string,
   Opts extends ArrayToTreeOpts<T, K> = ArrayToTreeOpts<T, K>,
   Node = TreeNode<T, NonNullable<Opts['childrenKey']>>
->(arr: T[], opts?: Opts): Record<string, Node> {
+>(array: T[], opts?: Opts): Record<string, Node> {
   const { parentPrimaryKey = 'parentId', primaryKey = 'id', childrenKey = 'children' } = opts || {};
   const hasOwnProperty = Object.prototype.hasOwnProperty;
-  return arr.reduce<Record<string, Node>>((branches, node) => {
+  return array.reduce<Record<string, Node>>((branches, node) => {
     const parentId = node[parentPrimaryKey];
     const itemId = node[primaryKey];
     if (!hasOwnProperty.call(branches, parentId)) {

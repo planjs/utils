@@ -12,3 +12,4 @@ export { prefSetTimeout, clearPrefTimeout } from './pref-setTimeout';
 export { prefSetInterval, clearPrefSetInterval } from './pref-setInterval';
 export { default as debounce } from './debounce';
 export { default as throttle } from './throttle';
+export { default as once } from './once';
