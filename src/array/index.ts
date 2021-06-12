@@ -9,3 +9,5 @@ export type { ArrayToTreeOpts } from './array-to-tree';
 export { default as arrayMove } from './array-move';
 export { default as arrayEachRight } from './each-right';
 export { default as arraySplice } from './array-splice';
+export { default as arraySum } from './array-sum';
+export { default as arrayAverage } from './array-average';

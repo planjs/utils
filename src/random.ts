@@ -66,7 +66,7 @@ export function createUniqueString() {
  * 获取随机bool值
  * @return {boolean} a random true/false
  */
-export function getRandomBool(): boolean {
+export function getRandomBool() {
   return Math.random() >= 0.5;
 }
 
@@ -88,4 +88,11 @@ export function getRandomFloat(min: number, max: number) {
  */
 export function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+/**
+ * 获取随机颜色
+ */
+export function getRandomHexColor() {
+  return '#' + ('00000' + ((Math.random() * 0x1000000) << 0).toString(16)).slice(-6);
 }

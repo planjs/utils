@@ -4,7 +4,7 @@
  * @param opacity
  * https://stackoverflow.com/questions/21646738/convert-hex-to-rgba
  */
-export function hexColorToRgb(hex: string, opacity?: number) {
+export function hexColorToRgba(hex: string, opacity?: number) {
   let c: any;
   if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
     c = hex.substring(1).split('');
