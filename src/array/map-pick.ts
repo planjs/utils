@@ -6,7 +6,7 @@ import type { Dictionary, PropertyPath } from '../type';
 
 /**
  * 从数组对象中获取指定的值，返回新的数组
- * @param arr {Array<Object>>}
+ * @param array {Array<Object>>}
  * @param keyPaths {<key, PropertyPath>} key 返回对象key, path 对象中值的key
  * @param keyPredicates {<key, predicate>} key 返回对象key, predicate 返回需要的值
  * @example
@@ -21,7 +21,7 @@ function mapPick<
   Value = T[keyof T],
   Item = Record<K, Value>
 >(
-  arr: readonly T[],
+  array: readonly T[],
   keyPaths?: Record<K, (PropertyPath | keyof T)[]>,
   keyPredicates?: Record<K, (key: K, value: T, index: number, array: readonly T[]) => Value>,
 ): Item[] {
@@ -29,11 +29,11 @@ function mapPick<
   if (!resultKeys.length) {
     return [];
   }
-  return arr.reduce<Item[]>((result, item, index) => {
+  return array.reduce<Item[]>((result, item, index) => {
     result.push(
       resultKeys.reduce<Item>((acc, key) => {
         if (keyPredicates && isFunction(keyPredicates[key])) {
-          acc[key] = keyPredicates[key].call(global, key, item, index, arr);
+          acc[key] = keyPredicates[key].call(global, key, item, index, array);
         } else if (keyPaths && keyPaths[key]) {
           acc[key] = get(item, keyPaths[key]);
         }
