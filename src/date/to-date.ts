@@ -1,40 +1,40 @@
+import isDigit from '../is/is-digit';
+import isDate from '../is/is-Date';
+import isString from '../is/is-String';
+import between from '../number/between';
+import throwError from '../throw-error';
+
 export type DateInput = Date | number | string;
+
+const invalidMsg = 'Invalid Date';
 
 /**
  * 时间戳，字符串，转换成 Date
  * @param input
- * @throws InvalidDateError
+ * @throws Invalid Date
  */
 function toDate(input: DateInput): Date {
-  const InvalidDateError = new Error('Invalid Date');
+  if (isDate(input)) return input;
 
-  if (input instanceof Date) {
-    return input;
-  }
+  let date: Date | undefined;
 
-  let _date: Date;
-  const _type = typeof input;
-
-  if (_type === 'number') {
-    const len = String(parseInt(input as string)).length;
-    // unix time
-    if (len === 10) {
-      input = +input * 1000;
-    } else if (len !== 13) {
-      throw InvalidDateError;
+  if (isDigit(input)) {
+    const len = String(Math.trunc(input)).length;
+    if (!between(len, 10, 14)) {
+      throwError(invalidMsg);
     }
-    _date = new Date(Math.floor(input as number));
-  } else if (_type === 'string') {
-    _date = new Date(String(input).replace(/[^\d\s:]+/g, '/'));
-  } else {
-    throw InvalidDateError;
+    input = input * (len === 10 ? 1000 : 1);
+    date = new Date(Math.floor(input));
+  } else if (isString(input)) {
+    date = new Date((input as string).replace(/[^\d\s:]+/g, '/'));
   }
 
-  if (isNaN(_date!.getTime())) {
-    throw InvalidDateError;
+  // Invalid Date
+  if (!date || isNaN(date.getTime())) {
+    throwError(invalidMsg);
   }
 
-  return _date!;
+  return date!;
 }
 
 export default toDate;
