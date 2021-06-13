@@ -12,11 +12,11 @@ export { default as invert } from './invert';
 export { default as memoize } from './memoize';
 
 export { default as retry } from './retry';
-export type { RetryOpts } from './retry';
+export type { RetryOption } from './retry';
 export { default as until } from './until';
 
 export { default as asyncPool } from './async-pool';
-export type { AsyncPoolOpts } from './async-pool';
+export type { AsyncPoolOption } from './async-pool';
 export { default as singleLock } from './single-lock';
 
 export { default as settleAll } from './settle-all';

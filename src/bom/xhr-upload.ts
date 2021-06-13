@@ -31,6 +31,10 @@ export interface UploadRequestOption<T = any> {
   method: UploadRequestMethod;
 }
 
+interface UploadResult {
+  abort(): void;
+}
+
 function getError(option: UploadRequestOption, xhr: XMLHttpRequest) {
   const msg = `cannot ${option.method} ${option.action} ${xhr.status}'`;
   const err = new Error(msg) as UploadRequestError;
@@ -57,7 +61,7 @@ function getBody(xhr: XMLHttpRequest) {
  * 上传文件
  * @param option
  */
-export default function upload<T>(option: UploadRequestOption<T>) {
+export default function upload<T>(option: UploadRequestOption<T>): UploadResult {
   const xhr = new XMLHttpRequest();
 
   if (option.onProgress && xhr.upload) {

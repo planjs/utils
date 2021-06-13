@@ -1,6 +1,9 @@
 export { default as global } from './global';
 
 export * from './constant';
+export * from './regex_constant';
+export * from './debug';
+
 export * from './is';
 export * from './promise';
 export * from './random';
@@ -15,6 +18,5 @@ export * from './function';
 export * from './things';
 export * from './function';
 export * from './object';
-export * from './regex_constant';
 
 export type { PropertyName, PropertyPath, Dictionary, ClassType } from './type';

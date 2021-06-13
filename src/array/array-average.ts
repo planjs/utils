@@ -1,10 +1,11 @@
 import arraySum from './array-sum';
 
 /**
- * 数组中数据平均值
+ * 计算数组中所有数字平均值
  * @param array
+ * @category Array
  */
-function arrayAverage(array: number[]) {
+function arrayAverage(array: number[]): number {
   return arraySum(array) / array.length;
 }
 

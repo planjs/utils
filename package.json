@@ -28,6 +28,8 @@
   ],
   "scripts": {
     "doc": "typedoc",
+    "watch:doc": "typedoc --watch --preserveWatchOutput",
+    "serve:doc": "npx http-server docs",
     "lint:fix": "eslint --fix --ext js,ts src",
     "prepare": "yarn build && yarn doc",
     "prepublishOnly": "npm run release",
@@ -74,6 +76,7 @@
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^11.0.0",
     "@planjs/fabric": "^0.0.71",
+    "@types/jest": "^26.0.23",
     "babel-jest": "^26.3.0",
     "commitizen": "^4.2.1",
     "conventional-changelog-cli": "^2.1.0",
@@ -84,8 +87,10 @@
     "stan-builder": "^0.9.11",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.3.0",
-    "typedoc": "^0.19.1",
-    "typescript": "^4.3.2"
+    "typedoc": "^0.20.36",
+    "typedoc-github-wiki-theme": "^0.3.0",
+    "typedoc-plugin-markdown": "^3.9.0",
+    "typescript": "4.2.4"
   },
   "publishConfig": {
     "access": "public"

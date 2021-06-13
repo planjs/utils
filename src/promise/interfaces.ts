@@ -6,7 +6,7 @@ export interface AnyPromiseFN<A = any, T = any> {
   (arg?: A): Promise<T>;
 }
 
-export interface BaseRetryOpts {
+export interface BaseRetryOption {
   /**
    * 最大等待次数
    * 不设置则一直运行

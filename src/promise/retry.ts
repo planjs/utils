@@ -1,7 +1,7 @@
-import { BaseRetryOpts } from './interfaces';
+import type { BaseRetryOption } from './interfaces';
 import delay from './delay';
 
-export interface RetryOpts extends BaseRetryOpts {
+export interface RetryOption extends BaseRetryOption {
   /**
    * 如果有些错误符合预期，可以跳过
    * @param err
@@ -13,14 +13,14 @@ export interface RetryOpts extends BaseRetryOpts {
  * promise重试
  * 如果没有重试次数则一直重试
  * @param fn 重试函数，需要返回promise
- * @param retryOpts
+ * @param retryOption
  */
-function retry<T extends Function>(fn: T, retryOpts: RetryOpts): T {
+function retry<T extends Function>(fn: T, retryOption: RetryOption): T {
   return ((async (...args: any[]): Promise<any> => {
     let lastErr: Error = new Error(
-      `Could not complete function within ${retryOpts.maxAttempts} attempts`,
+      `Could not complete function within ${retryOption.maxAttempts} attempts`,
     );
-    let retries = retryOpts.maxAttempts!;
+    let retries = retryOption.maxAttempts!;
     while (retries !== undefined ? retries : true) {
       try {
         if (retries !== undefined) {
@@ -28,13 +28,13 @@ function retry<T extends Function>(fn: T, retryOpts: RetryOpts): T {
         }
         return await fn(...args);
       } catch (err) {
-        if (retryOpts.isRetryable && !retryOpts.isRetryable(err)) {
+        if (!retryOption.isRetryable?.(err)) {
           throw err;
         }
         lastErr = err;
       }
-      if (retryOpts.delayMs) {
-        await delay(retryOpts.delayMs);
+      if (retryOption.delayMs) {
+        await delay(retryOption.delayMs);
       }
     }
     throw lastErr;

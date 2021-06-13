@@ -10,10 +10,12 @@ import type { Dictionary, PropertyPath } from '../type';
  * @param keyPaths {<key, PropertyPath>} key 返回对象key, path 对象中值的key
  * @param keyPredicates {<key, predicate>} key 返回对象key, predicate 返回需要的值
  * @example
- *
+ * ```ts
  * const list = [{ id: 1, name: 'bob' }, { id: 2, name: 'sam' }]
  * mapPick(list, { label: ['name'], value: ['id'] })
  * // [{ label: 'bob', value: 1 }, { label: 'sam', value: 2 }]
+ * ```
+ * @category Array
  */
 function mapPick<
   T extends Dictionary<any>,

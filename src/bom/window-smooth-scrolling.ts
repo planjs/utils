@@ -5,7 +5,7 @@ import requestAnimationFrame from './requestAnimationFrame';
  * @param to
  * @param duration
  */
-function windowSmoothScrolling(to, duration) {
+function windowSmoothScrolling(to: number, duration: number) {
   function _setScrollTop(value) {
     window.scrollTo(0, value);
     return value;

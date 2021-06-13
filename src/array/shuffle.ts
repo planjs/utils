@@ -1,6 +1,7 @@
 /**
  * 随机排列数组
  * @param array {array} 需要打乱顺序的数组
+ * @category Array
  */
 function shuffle<T = any>(array: T[]): T[] {
   const t = array.slice();
