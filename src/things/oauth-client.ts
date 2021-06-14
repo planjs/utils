@@ -1,7 +1,7 @@
 import { parse, stringify, ParsedQuery, ParseOptions, StringifyOptions } from 'query-string';
 import { isBrowser } from '../is/is-platform';
 
-export interface OauthClientOptions<K extends string> {
+export interface OauthClientOption<K extends string> {
   /**
    * url
    * @default window.location.href
@@ -35,7 +35,7 @@ type ParamsObject<K extends string> = Record<K, string>;
  */
 class OauthClient<K extends string = 'code' | 'state'> {
   consumerKeys: K[];
-  mode?: OauthClientOptions<K>['mode'];
+  mode?: OauthClientOption<K>['mode'];
   url!: URL;
 
   private readonly _qsParseArgs: ParseOptions;
@@ -47,7 +47,7 @@ class OauthClient<K extends string = 'code' | 'state'> {
     url = isBrowser() ? window.location.href : '',
     qsParseArgs,
     qsStringifyArgs,
-  }: OauthClientOptions<K>) {
+  }: OauthClientOption<K>) {
     this.consumerKeys = consumerKeys;
     this.mode = mode;
     this.setUrl(url);

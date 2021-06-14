@@ -1,6 +1,6 @@
 import type { Dictionary } from '../type';
 
-export interface ArrayToTreeOpts<T, ChildrenKey extends string = 'children'> {
+export interface ArrayToTreeOption<T, ChildrenKey extends string = 'children'> {
   /**
    * 主键ID
    * @default id
@@ -23,9 +23,10 @@ type TreeNode<T, K extends string = 'children'> = T & Partial<Record<K, TreeNode
 /**
  * 数组通过关联主键，返回树
  * @param array
- * @param opts
+ * @param option
  * @return tree { { [id]: TreeNode } } 可以根据root节点id获取树
  * @example
+ * ```ts
  * const arr = [
  *   { id: 1, parentId: 0 },
  *   { id: 2, parentId: 1 },
@@ -60,14 +61,17 @@ type TreeNode<T, K extends string = 'children'> = T & Partial<Record<K, TreeNode
  *     }
  *   ],
  * }
+ * ```
+ * @category Array
  */
 function arrayToTree<
   T extends Dictionary<any>,
   K extends string,
-  Opts extends ArrayToTreeOpts<T, K> = ArrayToTreeOpts<T, K>,
+  Opts extends ArrayToTreeOption<T, K> = ArrayToTreeOption<T, K>,
   Node = TreeNode<T, NonNullable<Opts['childrenKey']>>
->(array: T[], opts?: Opts): Record<string, Node> {
-  const { parentPrimaryKey = 'parentId', primaryKey = 'id', childrenKey = 'children' } = opts || {};
+>(array: T[], option?: Opts): Record<string, Node> {
+  const { parentPrimaryKey = 'parentId', primaryKey = 'id', childrenKey = 'children' } =
+    option || {};
   const hasOwnProperty = Object.prototype.hasOwnProperty;
   return array.reduce<Record<string, Node>>((branches, node) => {
     const parentId = node[parentPrimaryKey];

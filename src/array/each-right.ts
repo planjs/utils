@@ -2,6 +2,7 @@
  * 从右边foreach数组
  * @param array
  * @param iteratee
+ * @category Array
  */
 function arrayEachRight<T>(
   array: T[],

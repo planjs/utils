@@ -1,6 +1,6 @@
 import type { PromiseFN } from './interfaces';
 
-export interface AsyncPoolOpts {
+export interface AsyncPoolOption {
   /**
    * 最大同时执行异步任务
    */
@@ -17,14 +17,14 @@ export interface AsyncPoolExecutorOpts {
 
 /**
  * 异步池，放入需要执行的异步任务，总并行执行任务不超过设置的最大并发数量
- * @param options
+ * @param option
  */
-function asyncPool(options: AsyncPoolOpts) {
+function asyncPool(option: AsyncPoolOption) {
   const queue: PromiseFN[] = [];
   let currentAsyncOperations = 0;
 
   function next() {
-    if (currentAsyncOperations < options.maxConcurrency) {
+    if (currentAsyncOperations < option.maxConcurrency) {
       const pop = queue.pop();
       if (pop) {
         currentAsyncOperations++;

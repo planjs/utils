@@ -5,7 +5,7 @@ export { default as mapPick } from './map-pick';
 export { default as arrayToMap } from './array-to-map';
 export { default as arrayRandom } from './array-random';
 export { default as arrayToTree } from './array-to-tree';
-export type { ArrayToTreeOpts } from './array-to-tree';
+export type { ArrayToTreeOption } from './array-to-tree';
 export { default as arrayMove } from './array-move';
 export { default as arrayEachRight } from './each-right';
 export { default as arraySplice } from './array-splice';

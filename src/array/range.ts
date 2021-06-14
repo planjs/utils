@@ -3,6 +3,7 @@
  * @param from
  * @param to
  * @param step
+ * @category Array
  */
 function range(from: number, to: number, step: number = 1): number[] {
   return Array.from({ length: Math.floor((to - from) / step) + 1 }, (_, k) => from + k * step);

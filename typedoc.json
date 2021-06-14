@@ -1,5 +1,8 @@
 {
-  "inputFiles": ["./src"],
-  "mode": "file",
-  "out": "docs"
+  "entryPoints": ["./src/index.ts"],
+  "exclude": ["**/*+(.test|.spec|.e2e).ts"],
+  "out": "docs",
+  "tsconfig": "./tsconfig.docs.json",
+  "hideGenerator": true,
+  "gaID": "G-KTHKS8YZZR"
 }

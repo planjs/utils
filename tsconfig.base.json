@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "declarationMap": true,
+    "target": "es2018",
+    "module": "esnext",
+    "strict": true,
+    "declaration": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "composite": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "preserveWatchOutput": true,
+    "removeComments": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "outDir": "lib",
+    "declarationDir": "typings",
+    "lib": ["ESNext", "DOM"]
+  }
+}
