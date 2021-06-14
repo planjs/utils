@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/planjs/utils/compare/stable-1.6.1...stable-1.7.0) (2021-06-14)
+
+
+### Features
+
+* add debounce throttle ([9bf0135](https://github.com/planjs/utils/commit/9bf0135461cd83245fee21a968bbed3612a0f5be))
+* add url reg ([02f0e0a](https://github.com/planjs/utils/commit/02f0e0ae7a7839a458ea158805c2ac3d05c16837))
+* adjest debug ([940833d](https://github.com/planjs/utils/commit/940833def88d3fdff004a33fa3748e3d56b9f2c7))
+* timeoutmap pref ([fa19fff](https://github.com/planjs/utils/commit/fa19fff3a220f00480e7c26ef7a9d47cd7b845c7))
+* to-date ([f16b9fd](https://github.com/planjs/utils/commit/f16b9fda441e5436312b61310b77547a0265d31e))
+
+
+### Bug Fixes
+
+* **pref-settimeout:** cancel error ([2f136bb](https://github.com/planjs/utils/commit/2f136bbe58568f3752aff5b633e16d99b3dd9bc6))
+
 ### [1.6.1](https://github.com/planjs/utils/compare/stable-1.6.0...stable-1.6.1) (2021-06-07)
 
 ## [1.6.0](https://github.com/planjs/utils/compare/stable-1.5.1...stable-1.6.0) (2021-06-07)
