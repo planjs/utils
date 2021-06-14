@@ -1,3 +1,0 @@
-## Indexable
-
-▪ [key: `string`]: `string`

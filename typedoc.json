@@ -3,5 +3,6 @@
   "exclude": ["**/*+(.test|.spec|.e2e).ts"],
   "out": "docs",
   "tsconfig": "./tsconfig.docs.json",
-  "theme": "./node_modules/typedoc-github-wiki-theme/dist"
+  "hideGenerator": true,
+  "gaID": "G-KTHKS8YZZR"
 }

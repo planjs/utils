@@ -2,7 +2,7 @@
 
 ![npm](https://img.shields.io/npm/v/@planjs/utils?label=@planjs/utils) ![npm](https://packagephobia.now.sh/badge?p=@planjs/utils) <br/> [![NPM](https://nodei.co/npm/@planjs/utils.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/package/@planjs/utils)
 
-> Common tools collection [doc](https://planjs.github.io/utils/)
+> 🔧 contactInfoDefault [doc](https://planjs.github.io/utils/)
 
 ## Installation
 
