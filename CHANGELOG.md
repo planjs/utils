@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.1](https://github.com/planjs/utils/compare/stable-1.7.0...stable-1.7.1) (2021-06-15)
+
+
+### Bug Fixes
+
+* **pref-setinterval:** clearPrefSetInterval ([10df8ca](https://github.com/planjs/utils/commit/10df8caa99259c2d8c35658ec959cb42cb1e31ff))
+
 ## [1.7.0](https://github.com/planjs/utils/compare/stable-1.6.1...stable-1.7.0) (2021-06-14)
 
 

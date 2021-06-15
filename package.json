@@ -1,6 +1,6 @@
 {
   "name": "@planjs/utils",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "🔧 Common tools collection",
   "keywords": [
     "es6",
@@ -27,16 +27,16 @@
     "typings"
   ],
   "scripts": {
+    "build": "stan-builder",
     "doc": "typedoc --gitRevision master",
-    "watch:doc": "typedoc --watch --preserveWatchOutput",
-    "serve:doc": "npx http-server docs",
     "lint:fix": "eslint --fix --ext js,ts src",
     "prepare": "yarn build && yarn doc",
     "prepublishOnly": "npm run release",
     "release": "./scripts/release.sh",
+    "serve:doc": "npx http-server docs",
     "start": "stan-builder -w",
-    "build": "stan-builder",
-    "test": "jest -u"
+    "test": "jest -u",
+    "watch:doc": "typedoc --watch --preserveWatchOutput"
   },
   "husky": {
     "hooks": {
