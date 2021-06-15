@@ -1,8 +1,11 @@
-type ThenReturn<T> = T extends Promise<infer U>
-  ? U
-  : T extends (...args: any[]) => Promise<infer V>
-  ? V
-  : T;
+import type { ThenReturn } from '../type';
+import type { AnyPromiseFN } from './interfaces';
+
+export interface MemoizeReturnType<T extends AnyPromiseFN> {
+  (...args: Parameters<T>): Promise<ThenReturn<T>> | undefined;
+  reset(...args: Parameters<T>): void;
+  clear(): void;
+}
 
 /**
  * 缓存promise结果，支持超时时间
@@ -10,18 +13,20 @@ type ThenReturn<T> = T extends Promise<infer U>
  * @param harsher 返回标示本次运行结果的key
  * @param timeoutMs
  */
-function memoize<FnType extends (...args: any[]) => Promise<any>>(
+function memoize<FnType extends AnyPromiseFN>(
   fn: FnType,
   harsher: (...args: Parameters<FnType>) => any = (...args) => args[0],
   timeoutMs?: number,
-): FnType & { reset: (...args: Parameters<FnType>) => void; clear: () => void } {
+): MemoizeReturnType<FnType> {
   const memos: Map<
     ReturnType<typeof harsher>,
     { value: ThenReturn<FnType>; expiration: number }
   > = new Map();
   const queues: Map<ReturnType<typeof harsher>, Promise<ThenReturn<FnType>>> = new Map();
 
-  const returnFn = async (...args: Parameters<FnType>): Promise<ThenReturn<FnType>> => {
+  const returnFn: MemoizeReturnType<FnType> = async (
+    ...args: Parameters<FnType>
+  ): Promise<ThenReturn<FnType>> => {
     const key = harsher(...args);
     if (memos.has(key)) {
       if (!timeoutMs || Date.now() < memos.get(key)!.expiration) {
@@ -56,10 +61,9 @@ function memoize<FnType extends (...args: any[]) => Promise<any>>(
     memos.clear();
   };
 
-  (returnFn as any).reset = reset;
-  (returnFn as any).clear = clear;
-
-  return returnFn as FnType & { reset: FnType; clear: () => void };
+  returnFn.reset = reset;
+  returnFn.clear = clear;
+  return returnFn;
 }
 
 export default memoize;

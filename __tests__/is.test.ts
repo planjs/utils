@@ -18,8 +18,11 @@ describe('is', () => {
   test('is-Digit', () => {
     expect(isDigit('1')).toBe(true);
     expect(isDigit('1.2')).toBe(true);
+    expect(isDigit('-1.2')).toBe(true);
     expect(isDigit(1.2)).toBe(true);
+    expect(isDigit(-1.2)).toBe(true);
     expect(isDigit(Infinity)).toBe(false);
+    expect(isDigit(-Infinity)).toBe(false);
     expect(isDigit('1.x')).toBe(false);
   });
 });

@@ -8467,6 +8467,16 @@ query-string@^6.13.8:
     split-on-first "^1.0.0"
     strict-uri-encode "^2.0.0"
 
+query-string@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.npm.taobao.org/query-string/download/query-string-7.0.0.tgz#aaad2c8d5c6a6d0c6afada877fecbd56af79e609"
+  integrity sha1-qq0sjVxqbQxq+tqHf+y9Vq955gk=
+  dependencies:
+    decode-uri-component "^0.2.0"
+    filter-obj "^1.1.0"
+    split-on-first "^1.0.0"
+    strict-uri-encode "^2.0.0"
+
 queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.nlark.com/queue-microtask/download/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"

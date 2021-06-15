@@ -10,6 +10,7 @@ export { default as transformErrors } from './transform-errors';
 export { default as invert } from './invert';
 
 export { default as memoize } from './memoize';
+export type { MemoizeReturnType } from './memoize';
 
 export { default as retry } from './retry';
 export type { RetryOption } from './retry';

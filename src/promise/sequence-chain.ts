@@ -1,4 +1,4 @@
-import { AnyPromiseFN } from './interfaces';
+import type { AnyPromiseFN } from './interfaces';
 
 /**
  * 链式处理，向下传递结果

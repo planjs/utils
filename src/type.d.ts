@@ -16,3 +16,9 @@ export interface ClassType<T = any, A = any> {
 }
 
 export type AnyFn = (...args: any[]) => any;
+
+export type ThenReturn<T> = T extends Promise<infer U>
+  ? U
+  : T extends (...args: any[]) => Promise<infer V>
+  ? V
+  : T;

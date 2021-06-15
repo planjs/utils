@@ -14,3 +14,6 @@ export { default as debounce } from './debounce';
 export { default as throttle } from './throttle';
 export { default as once } from './once';
 export { default as pref } from './pref';
+
+export { default as curry } from './curry';
+export { default as uncurry } from './uncurry';
