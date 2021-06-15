@@ -1,4 +1,9 @@
 import { prefSetTimeout, clearPrefTimeout } from './pref-setTimeout';
+import incrementId from './increment-id';
+
+const id = incrementId();
+
+const timerIdMap: Record<number, number> = {};
 
 /**
  * 优先使用 requestAnimationFrame 实现 setInterval
@@ -10,11 +15,13 @@ import { prefSetTimeout, clearPrefTimeout } from './pref-setTimeout';
  */
 export function prefSetInterval(handler: Function, ms?: number, ...args: any[]): number {
   const interval = ms || 0;
+  const _id = id();
   function loop() {
-    return prefSetTimeout(() => {
+    timerIdMap[_id] = prefSetTimeout(() => {
       handler(...args);
       loop();
     }, interval);
+    return _id;
   }
   return loop();
 }
@@ -24,5 +31,8 @@ export function prefSetInterval(handler: Function, ms?: number, ...args: any[]):
  * @param handle
  */
 export function clearPrefSetInterval(handle: number) {
-  clearPrefTimeout(handle);
+  if (timerIdMap[handle]) {
+    clearPrefTimeout(handle);
+    delete timerIdMap[handle];
+  }
 }
