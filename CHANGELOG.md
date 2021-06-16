@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.7.2](https://github.com/planjs/utils/compare/stable-1.7.1...stable-1.7.2) (2021-06-16)
+
+
+### Bug Fixes
+
+* **memoize:** return type ([3dc53b9](https://github.com/planjs/utils/commit/3dc53b950730b140524f5e483bf0791102422a77))
+* **pref-setinterval:** cancel interval ([7620db6](https://github.com/planjs/utils/commit/7620db6b087ed633cb677c2d726a7a4dfd296272))
+
 ### [1.7.1](https://github.com/planjs/utils/compare/stable-1.7.0...stable-1.7.1) (2021-06-15)
 
 
