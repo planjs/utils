@@ -32,7 +32,7 @@ export function prefSetInterval(handler: Function, ms?: number, ...args: any[]):
  */
 export function clearPrefSetInterval(handle: number) {
   if (timerIdMap[handle]) {
-    clearPrefTimeout(handle);
+    clearPrefTimeout(timerIdMap[handle]);
     delete timerIdMap[handle];
   }
 }
