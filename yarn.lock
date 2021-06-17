@@ -1501,13 +1501,14 @@
     stylelint-declaration-block-no-ignored-properties "2.3.0"
     stylelint-order "4.1.0"
 
-"@planjs/utils@^1.0.40":
-  version "1.6.1"
-  resolved "https://registry.nlark.com/@planjs/utils/download/@planjs/utils-1.6.1.tgz#ef472a7cb894b8f0e3dba82c526c0b29d9eb3313"
-  integrity sha1-70cqfLiUuPDj26gsUmwLKdnrMxM=
+"@planjs/utils@^1.7.3":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@planjs/utils/-/utils-1.7.3.tgz#baf9284f141f4eaab989e7e612f627464201c12c"
+  integrity sha512-Uvf5EggCEPDJM03BvVnastoendRXAb6yC6oDaNmTaESjUTSX1+TCzUypOc79dlvLkV9smNaT8RAOAohdsfU3vg==
   dependencies:
     "@babel/runtime" "^7.12.5"
-    query-string "^6.13.8"
+    decimal.js "^10.2.1"
+    query-string "^7.0.0"
 
 "@rollup/plugin-alias@^3.1.2":
   version "3.1.2"
@@ -8457,16 +8458,6 @@ q@^1.1.2, q@^1.5.1:
   resolved "https://registry.npm.taobao.org/q/download/q-1.5.1.tgz?cache=0&sync_timestamp=1599054212574&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fq%2Fdownload%2Fq-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
-query-string@^6.13.8:
-  version "6.14.1"
-  resolved "https://registry.npm.taobao.org/query-string/download/query-string-6.14.1.tgz#7ac2dca46da7f309449ba0f86b1fd28255b0c86a"
-  integrity sha1-esLcpG2n8wlEm6D4ax/SglWwyGo=
-  dependencies:
-    decode-uri-component "^0.2.0"
-    filter-obj "^1.1.0"
-    split-on-first "^1.0.0"
-    strict-uri-encode "^2.0.0"
-
 query-string@^7.0.0:
   version "7.0.0"
   resolved "https://registry.npm.taobao.org/query-string/download/query-string-7.0.0.tgz#aaad2c8d5c6a6d0c6afada877fecbd56af79e609"
@@ -9392,10 +9383,10 @@ stack-utils@^2.0.2:
   dependencies:
     escape-string-regexp "^2.0.0"
 
-stan-builder@^0.9.11:
-  version "0.9.11"
-  resolved "https://registry.nlark.com/stan-builder/download/stan-builder-0.9.11.tgz?cache=0&sync_timestamp=1621913806313&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fstan-builder%2Fdownload%2Fstan-builder-0.9.11.tgz#2464834c14f64a9e3a8ef484a14e8b084a72801e"
-  integrity sha1-JGSDTBT2Sp46jvSEoU6LCEpygB4=
+stan-builder@^0.9.12:
+  version "0.9.12"
+  resolved "https://registry.yarnpkg.com/stan-builder/-/stan-builder-0.9.12.tgz#8c9f39248b4e236f2702d9b5dc878275380ca889"
+  integrity sha512-2xMUm3rNx2ecInY9B9qUk6BzY9MZuah8t3ZWCge+5xYzaoWu/FipQ2E9dBixvFQEIsV4s2DR7ReVyKE0nngj8A==
   dependencies:
     "@babel/code-frame" "^7.12.13"
     "@babel/core" "^7.14.2"
@@ -9443,17 +9434,17 @@ stan-builder@^0.9.11:
     rollup-plugin-terser "^7.0.2"
     rollup-plugin-typescript2 "0.30.0"
     rollup-plugin-visualizer "^4.1.1"
-    stan-utils "^0.6.10"
+    stan-utils "^0.6.11"
     through2 "^4.0.2"
     vinyl-fs "^3.0.3"
     vue-template-compiler "^2.6.12"
 
-stan-utils@^0.6.10:
-  version "0.6.10"
-  resolved "https://registry.nlark.com/stan-utils/download/stan-utils-0.6.10.tgz#4ec7d021bfd52304f8cb8e60f77bb0f9a3b4ebd4"
-  integrity sha1-TsfQIb/VIwT4y45g93uw+aO069Q=
+stan-utils@^0.6.11:
+  version "0.6.11"
+  resolved "https://registry.yarnpkg.com/stan-utils/-/stan-utils-0.6.11.tgz#bce891bdec06bf7473bb28347430da22740fd377"
+  integrity sha512-Fd/M3rdyUh47NpQEPbUtIcdrqyEoIG47rHyL7Jkjnp0Ur6SrHnMYXMYVa9zlZ3BZVZ+TcAYy/BeVGQKaYMW6hQ==
   dependencies:
-    "@planjs/utils" "^1.0.40"
+    "@planjs/utils" "^1.7.3"
     "@types/cross-spawn" "^6.0.2"
     "@types/debug" "^4.1.5"
     "@types/fs-extra" "^9.0.11"
