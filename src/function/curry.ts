@@ -30,6 +30,15 @@ type Curry5<T1, T2, T3, T4, T5, R> = {
   (t1: T1, t2: T2, t3: T3, t4: T4): Curry1<T5, R>;
   (t1: T1, t2: T2, t3: T3, t4: T4, t5: T5): R;
 };
+type Curry6<T1, T2, T3, T4, T5, T6, R> = {
+  (): Curry6<T1, T2, T3, T4, T5, T6, R>;
+  (t1: T1): Curry5<T2, T3, T4, T5, T6, R>;
+  (t1: T1, t2: T2): Curry4<T3, T4, T5, T6, R>;
+  (t1: T1, t2: T2, t3: T3): Curry3<T4, T5, T6, R>;
+  (t1: T1, t2: T2, t3: T3, t4: T4): Curry2<T5, T6, R>;
+  (t1: T1, t2: T2, t3: T3, t4: T4, t5: T5): Curry1<T6, R>;
+  (t1: T1, t2: T2, t3: T3, t4: T4, t5: T5, t6: T6): R;
+};
 
 function curry<T1, R>(func: (t1: T1) => R, depth?: number): Curry1<T1, R>;
 function curry<T1, T2, R>(func: (t1: T1, t2: T2) => R, depth?: number): Curry2<T1, T2, R>;
@@ -45,6 +54,10 @@ function curry<T1, T2, T3, T4, T5, R>(
   func: (t1: T1, t2: T2, t3: T3, t4: T4, t5: T5) => R,
   depth?: number,
 ): Curry5<T1, T2, T3, T4, T5, R>;
+function curry<T1, T2, T3, T4, T5, T6, R>(
+  func: (t1: T1, t2: T2, t3: T3, t4: T4, t5: T5, t6: T6) => R,
+  depth?: number,
+): Curry6<T1, T2, T3, T4, T5, T6, R>;
 function curry(fn: AnyFn, depth: number = fn.length): AnyFn {
   return function (...args) {
     if (args.length && args.length < depth) {
