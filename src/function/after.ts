@@ -10,9 +10,8 @@ function after<FN extends AnyFn>(n: number, func: FN): FN {
     throw new TypeError('Expected a function');
   }
   n = n || 0;
-  return function (...args) {
+  return function (this: FN, ...args) {
     if (--n < 1) {
-      // @ts-ignore
       return func.apply(this, args);
     }
   } as FN;
