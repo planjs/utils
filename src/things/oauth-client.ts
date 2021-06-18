@@ -1,4 +1,5 @@
-import { parse, stringify, ParsedQuery, ParseOptions, StringifyOptions } from 'query-string';
+import { parse, stringify } from 'query-string';
+import type { ParsedQuery, ParseOptions, StringifyOptions } from 'query-string';
 import { isBrowser } from '../is/is-platform';
 
 export interface OauthClientOption<K extends string> {

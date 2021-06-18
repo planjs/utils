@@ -7,7 +7,6 @@ const decimal = {
   abs: instanceFunc('abs'),
   add: instanceFunc('add'),
   ceil: instanceFunc('ceil'),
-  round: instanceFunc('round'),
 };
 
 export default decimal;
