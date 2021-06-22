@@ -7,6 +7,7 @@ import downloadFile from './download-file';
  * @param path 远程文件地址
  * @param fileName 下载文件名
  * @param opt
+ * @category Bom
  */
 function downloadCanvasImage(
   path: string,

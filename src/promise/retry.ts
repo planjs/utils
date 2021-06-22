@@ -14,9 +14,10 @@ export interface RetryOption extends BaseRetryOption {
  * 如果没有重试次数则一直重试
  * @param fn 重试函数，需要返回promise
  * @param retryOption
+ * @category Promise
  */
 function retry<T extends Function>(fn: T, retryOption: RetryOption): T {
-  return ((async (...args: any[]): Promise<any> => {
+  return (async (...args: any[]): Promise<any> => {
     let lastErr: Error = new Error(
       `Could not complete function within ${retryOption.maxAttempts} attempts`,
     );
@@ -38,7 +39,7 @@ function retry<T extends Function>(fn: T, retryOption: RetryOption): T {
       }
     }
     throw lastErr;
-  }) as any) as T;
+  }) as unknown as T;
 }
 
 export default retry;

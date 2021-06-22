@@ -4,6 +4,7 @@ import { isObjectLike } from './is-Object';
 /**
  * 是否为WeakSet
  * @param value
+ * @category Is
  */
 function isWeakSet(value: any): value is WeakSet<any> {
   return isObjectLike(value) && getType(value) === 'WeakSet';

@@ -3,6 +3,7 @@
  * @param number
  * @example
  * 111111 => 111,111
+ * @category Number
  */
 function numberToStringWithComma(number: number) {
   // convert number to string

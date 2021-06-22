@@ -4,6 +4,7 @@ import isWindow from './is-Window';
  * 定义一个参数是否是object类型的，不等同于javascript中的 typeof
  * null 不是对象
  * @param value
+ * @category Is
  */
 function isObject<T extends object>(value: unknown): value is { [P in keyof T]?: unknown } {
   return value === Object(value);
@@ -14,6 +15,7 @@ function isObject<T extends object>(value: unknown): value is { [P in keyof T]?:
  * isObjectLike([1, 2, 3]) => true
  * isObjectLike(Function) => false
  * isObjectLike(null) => false
+ * @category Is
  */
 export function isObjectLike<T>(value: unknown): value is T {
   return typeof value === 'object' && value !== null;
@@ -22,6 +24,7 @@ export function isObjectLike<T>(value: unknown): value is T {
 /**
  * 判断是否 plan object 通过 "{}" 或者 "new Object" 创建的
  * @param value
+ * @category Is
  */
 export function isPlanObject<T extends object>(
   value: unknown,

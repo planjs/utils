@@ -18,6 +18,7 @@ export type Singleton<T extends ClassType> = T & {
  * use decorators
  * @singleton
  * class B {}
+ * @category Function
  */
 const singleton = <T extends ClassType>(classTarget: T) => {
   return new Proxy(classTarget, {

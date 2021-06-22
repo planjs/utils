@@ -1,6 +1,7 @@
 /**
  * 复制到剪切板
  * @param textValue
+ * @category Bom
  */
 function executeCopy(textValue: string) {
   const input = document.createElement('textarea');

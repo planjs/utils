@@ -1,6 +1,7 @@
 /**
  * 格式化时间间隔
  * @param runningTime
+ * @category Date
  */
 function parseTimeRange(runningTime: number) {
   const time = +(runningTime / 1000).toFixed(1);

@@ -20,6 +20,7 @@ export interface DebouncedFunc<T extends AnyFn> {
  * @param wait
  * @param options
  * @ref https://github.com/lodash/lodash/blob/master/debounce.js
+ * @category Function
  */
 function debounce<T extends AnyFn>(
   func: T,

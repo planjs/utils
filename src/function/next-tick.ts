@@ -27,6 +27,7 @@ function _nextTick(): (callback: Function, ...args: any[]) => void {
 /**
  * 延迟执行
  * event loop
+ * @category Function
  */
 const nextTick = _nextTick();
 

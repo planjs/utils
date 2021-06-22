@@ -1,6 +1,7 @@
 /**
  * 数字转换为中文
  * @param n
+ * @category Number
  */
 function numberToChinese(n: number) {
   const fraction = ['角', '分'];

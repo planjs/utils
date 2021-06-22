@@ -4,6 +4,7 @@ import requestAnimationFrame from './requestAnimationFrame';
  * 时间内，滚动条平滑滚到指定位置
  * @param to
  * @param duration
+ * @category Bom
  */
 function windowSmoothScrolling(to: number, duration: number) {
   function _setScrollTop(value) {

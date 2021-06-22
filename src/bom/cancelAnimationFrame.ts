@@ -2,6 +2,7 @@ import global from '../global';
 
 /**
  * cancelAnimationFrame polyfill
+ * @category Bom
  */
 const CAF: typeof cancelAnimationFrame = (function () {
   return (

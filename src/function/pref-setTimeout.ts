@@ -16,6 +16,7 @@ const useRAF = isNative(requestAnimationFrame);
  * @param handler
  * @param timeout
  * @param args
+ * @category Function
  */
 export function prefSetTimeout(handler: Function, timeout?: number, ...args: any[]): number {
   if (!useRAF) {
@@ -40,6 +41,7 @@ export function prefSetTimeout(handler: Function, timeout?: number, ...args: any
 /**
  * 取消 prefSetTimeout
  * @param handle
+ * @category Function
  */
 export function clearPrefTimeout(handle: number) {
   if (!useRAF) {

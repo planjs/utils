@@ -2,6 +2,7 @@
  * 取模
  * @param n
  * @param d
+ * @category Number
  */
 function modulo(n: number, d: number) {
   if (d === 0) {

@@ -10,6 +10,7 @@ type LowercaseDictionary<T> = {
  * @param obj
  * @param action {toLowerCase|toLowerCase} default toLowerCase
  * @return object
+ * @category Object
  */
 function convertObjectKeysCase<T extends object>(
   obj: T,

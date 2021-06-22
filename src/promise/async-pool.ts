@@ -18,6 +18,7 @@ export interface AsyncPoolExecutorOpts {
 /**
  * 异步池，放入需要执行的异步任务，总并行执行任务不超过设置的最大并发数量
  * @param option
+ * @category Promise
  */
 function asyncPool(option: AsyncPoolOption) {
   const queue: PromiseFN[] = [];

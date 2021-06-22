@@ -3,6 +3,7 @@
  * @return lock 获得锁
  *         unLock 解锁，promise.resolve
  *         exit 退出，promise.reject
+ * @category Promise
  */
 function singleLock<T = any>() {
   let locked = false;

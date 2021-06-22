@@ -1,9 +1,10 @@
 /**
  * 格式化距现在的已过时间
  * @param startTime
+ * @category Date
  */
 export function parsePassTime(startTime: number) {
-  const currentTime = Date.parse((new Date() as unknown) as string),
+  const currentTime = Date.parse(new Date() as unknown as string),
     time = currentTime - startTime,
     day = parseInt(String(time / (1000 * 60 * 60 * 24))),
     hour = parseInt(String(time / (1000 * 60 * 60))),

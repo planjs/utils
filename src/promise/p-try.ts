@@ -2,6 +2,7 @@
  * 合并返回promise的结果和错误
  * @param promise
  * @returns Error and result array
+ * @category Promise
  */
 async function pTry<ValueType, ErrorType = any>(
   promise: Promise<ValueType>,

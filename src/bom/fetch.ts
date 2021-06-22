@@ -28,6 +28,7 @@ type Response = {
  * 具有兼容性的fetch
  * @param url
  * @param options
+ * @category Bom
  */
 function myFetch(url: string, options: Options = {}) {
   return new Promise<Response>((resolve, reject) => {

@@ -9,6 +9,7 @@ import type { AnyFn } from '../type';
  * const result = tryCatch(() => throw new Error('error'), () => 1)
  * result() // 1
  * ```
+ * @category Function
  */
 function tryCatch<FN extends AnyFn>(
   tryer: FN,

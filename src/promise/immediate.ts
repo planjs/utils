@@ -1,6 +1,7 @@
 /**
  * 推迟执行promise
  * @param value
+ * @category Promise
  */
 async function immediate<T>(value: T): Promise<T>;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

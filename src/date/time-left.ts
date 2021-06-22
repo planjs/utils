@@ -5,6 +5,7 @@ import toDate, { DateInput } from './to-date';
  * @note startTime - endTime 的剩余时间,startTime大于endTime时，均返回0
  * @param startTime
  * @param endTime
+ * @category Date
  */
 function timeLeft(startTime: DateInput, endTime: DateInput) {
   if (!startTime || !endTime) {

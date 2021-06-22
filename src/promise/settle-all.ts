@@ -8,6 +8,7 @@ export interface SettledPromises<T, V> {
  * 并行Promise.all执行
  * @param promises
  * @param errFn
+ * @category Promise
  */
 async function settleAll<T, V>(
   promises: readonly Promise<T>[],

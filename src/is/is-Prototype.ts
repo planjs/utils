@@ -1,6 +1,7 @@
 /**
  * 是否Prototype
  * @param value
+ * @category Is
  */
 function isPrototype(value) {
   const Ctor = value && value.constructor;

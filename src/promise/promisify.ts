@@ -26,7 +26,7 @@ export default function promisify<A, A2, A3, A4, A5, T>(
  * promisify fun
  * @param f
  * @param thisContext
- * eg:
+ * @category Promise
  */
 export default function promisify(f: any, thisContext?: any) {
   return function () {

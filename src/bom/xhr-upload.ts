@@ -60,6 +60,7 @@ function getBody(xhr: XMLHttpRequest) {
 /**
  * 上传文件
  * @param option
+ * @category Bom
  */
 export default function upload<T>(option: UploadRequestOption<T>): UploadResult {
   const xhr = new XMLHttpRequest();

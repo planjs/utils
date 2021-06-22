@@ -1,6 +1,7 @@
 /**
  * 是否为promise
  * @param obj
+ * @category Is
  */
 function isPromise<T, S>(obj: PromiseLike<T> | S): obj is PromiseLike<T> {
   return (

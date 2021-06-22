@@ -40,6 +40,12 @@ type Curry6<T1, T2, T3, T4, T5, T6, R> = {
   (t1: T1, t2: T2, t3: T3, t4: T4, t5: T5, t6: T6): R;
 };
 
+/**
+ * 柯里化
+ * @param func
+ * @param depth
+ * @category Function
+ */
 function curry<T1, R>(func: (t1: T1) => R, depth?: number): Curry1<T1, R>;
 function curry<T1, T2, R>(func: (t1: T1, t2: T2) => R, depth?: number): Curry2<T1, T2, R>;
 function curry<T1, T2, T3, R>(

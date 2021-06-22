@@ -36,6 +36,10 @@ interface TimeoutMapKeyArgs<K, V> {
   options: TimeoutMapOptions<K, V>;
 }
 
+/**
+ * Map with set validity period
+ * @category Object
+ */
 class TimeoutMap<K, V> extends Map<K, V> {
   private readonly _keyArgs: Map<K, TimeoutMapKeyArgs<K, V>> = new Map();
 

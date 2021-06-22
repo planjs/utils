@@ -1,8 +1,9 @@
 /**
- *
+ * 按批次执行promise
  * @param input
  * @param limit
  * @param iteratee
+ * @category Promise
  */
 async function mapLimit<T, V>(
   input: readonly T[],

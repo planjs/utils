@@ -5,6 +5,7 @@
  * @param compare
  * @param compareContext
  * https://github.com/dashed/shallowequal
+ * @category Function
  */
 function shallowEqual<Context = any>(
   objA: any,

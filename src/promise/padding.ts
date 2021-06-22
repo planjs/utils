@@ -4,6 +4,7 @@ import delay from './delay';
  * 延迟promise返回结果
  * @param promise
  * @param paddingMs
+ * @category Promise
  */
 function padding<T>(promise: T, paddingMs: number) {
   const start = Date.now();

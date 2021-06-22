@@ -3,6 +3,7 @@
  * @param hex
  * @param opacity
  * https://stackoverflow.com/questions/21646738/convert-hex-to-rgba
+ * @category Dom
  */
 export function hexColorToRgba(hex: string, opacity?: number) {
   let c: any;

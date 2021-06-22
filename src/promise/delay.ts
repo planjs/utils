@@ -5,6 +5,7 @@ import requestAnimationFrame from '../bom/requestAnimationFrame';
  * @default 25
  * @param delayTimeMs
  * @param value
+ * @category Promise
  */
 async function delay<T>(delayTimeMs: number, value: T): Promise<T>;
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

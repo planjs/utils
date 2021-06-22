@@ -4,6 +4,7 @@ import { isObjectLike } from './is-Object';
 /**
  * 是否为WeakMap
  * @param value
+ * @category Is
  */
 function isWeakMap(value): value is WeakMap<any, any> {
   return isObjectLike(value) && getType(value) === 'WeakMap';

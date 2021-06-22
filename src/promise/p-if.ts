@@ -3,6 +3,7 @@
  * @param condition true 调用 doIf 否则 doElse
  * @param doIf 如果 condition 为 true 执行
  * @param doElse 如果 condition 为 false 执行
+ * @category Promise
  */
 function pIf<ValueType, DoIfReturnType, DoElseReturnType = ValueType>(
   condition: boolean | ((value: ValueType) => boolean | PromiseLike<boolean>),

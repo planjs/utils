@@ -1,6 +1,7 @@
 /**
  * 判断是否原始数据类型
  * @param value
+ * @category Is
  */
 function isPrimitive(value): value is string | number | symbol | boolean {
   return (

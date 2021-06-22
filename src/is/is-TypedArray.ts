@@ -5,6 +5,7 @@ const regTyped = /^(Float(?:32|64)|(?:Int|Uint)(?:8|16|32)|Uint8Clamped)Array$/;
 /**
  * check typed array
  * @param value
+ * @category Is
  */
 function isTypedArray(
   value: any,

@@ -6,6 +6,7 @@
  * 4、>= 1day && < 1year, 显示日期“XX月XX日 XX:XX”
  * 5、>= 1year, 显示具体日期 XXXX年XX月XX日 XX:XX
  * @param time
+ * @category Date
  */
 function parseTimeWX(time) {
   const date = new Date(time);

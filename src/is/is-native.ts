@@ -8,6 +8,7 @@ import isObject from './is-Object';
  *
  * isNative(window) // true
  * isNative(alert) // true
+ * @category Is
  */
 function isNative(value) {
   const toString = Object.prototype.toString;

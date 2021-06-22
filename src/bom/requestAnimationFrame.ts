@@ -2,6 +2,7 @@ import global from '../global';
 
 /**
  * requestAnimationFrame polyfill
+ * @category Bom
  */
 const RAF: typeof requestAnimationFrame = (function () {
   return (

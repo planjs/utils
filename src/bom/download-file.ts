@@ -4,6 +4,7 @@ import dataURLToBlob from '../blob/dataURL-to-blob';
  * 下载文件
  * @param path {url|data url|blob}
  * @param fileName
+ * @category Bom
  */
 function downloadFile(path: string | Blob, fileName: string) {
   const a = document.createElement('a');

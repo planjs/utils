@@ -5,6 +5,7 @@ import isInfinite from './is-Infinite';
  * 是否为数字
  * @note 字符串数字也是数字
  * @param value
+ * @category Is
  */
 function isDigit(value): value is number | bigint {
   return !isNaN(+value) && !isInfinite(value);

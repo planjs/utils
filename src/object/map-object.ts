@@ -4,6 +4,7 @@ import type { Dictionary } from '../type';
  * 遍历obj返回新的对象
  * @param obj
  * @param predicate
+ * @category Object
  */
 function mapObject<U extends Record<keyof T, any>, T extends Dictionary<any>>(
   obj: T,

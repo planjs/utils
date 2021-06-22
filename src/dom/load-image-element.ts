@@ -3,6 +3,7 @@
  * @param src
  * @param crossOrigin
  * @return {Promise<HTMLImageElement>}
+ * @category Dom
  */
 export function loadImageElement(
   src: string,

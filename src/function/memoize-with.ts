@@ -24,6 +24,7 @@ type MemoizeWithReturnType<T extends AnyFn> = {
  * counter(100) // 200
  * count // 2
  * ```
+ * @category Function
  */
 function memoizeWith<FN extends AnyFn>(
   func: FN,

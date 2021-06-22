@@ -1,6 +1,7 @@
 /**
  * 获取数据类型
  * @param value
+ * @category Is
  */
 function getType(value: any) {
   const toString = Object.prototype.toString;

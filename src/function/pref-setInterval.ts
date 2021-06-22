@@ -12,6 +12,7 @@ const timerIdMap: Record<number, number> = {};
  * @param handler
  * @param ms
  * @param args
+ * @category Function
  */
 export function prefSetInterval(handler: Function, ms?: number, ...args: any[]): number {
   const interval = ms || 0;
@@ -29,6 +30,7 @@ export function prefSetInterval(handler: Function, ms?: number, ...args: any[]):
 /**
  * 取消 prefSetInterval
  * @param handle
+ * @category Function
  */
 export function clearPrefSetInterval(handle: number) {
   if (timerIdMap[handle]) {

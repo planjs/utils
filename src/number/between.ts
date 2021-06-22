@@ -8,6 +8,7 @@
  * between(1, 2) // true
  * between(2, 1, 3) // true
  * between(3, 3) // false
+ * @category Number
  */
 function between(number: number, start: number, end: number) {
   if (end === undefined) {

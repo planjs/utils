@@ -3,6 +3,7 @@ import type { AnyPromiseFN } from './interfaces';
 /**
  * 链式处理，向下传递结果
  * @param handlers
+ * @category Promise
  */
 function sequenceChain(handlers: Array<[AnyPromiseFN, AnyPromiseFN]>) {
   return <T>(value?: any): Promise<T> => {

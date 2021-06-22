@@ -9,6 +9,7 @@ const hasOwnProperty = Object.prototype.hasOwnProperty;
 /**
  * 检查是否空对象
  * @param value
+ * @category Is
  */
 function isEmpty(value: any): boolean {
   if (value == null) {

@@ -2,6 +2,7 @@
  * 两个值做切换
  * @param defaultValue
  * @param reverseValue
+ * @category Function
  */
 function toggle<D, R>(
   defaultValue: D,

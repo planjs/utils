@@ -6,6 +6,7 @@ import delay from './delay';
  * 一定次数内重试获取获取一些异步的值
  * @param fn
  * @param retryOption
+ * @category Promise
  */
 function until<T extends (...args: any[]) => Promise<any>>(fn: T, retryOption: BaseRetryOption): T {
   return (async (...args: any[]): Promise<any> => {

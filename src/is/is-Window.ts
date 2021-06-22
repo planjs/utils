@@ -1,6 +1,7 @@
 /**
  * 判断是否为window对象
  * @param value
+ * @category Is
  */
 function isWindow(value): value is Window {
   return (

@@ -12,6 +12,7 @@ const invalidMsg = 'Invalid Date';
  * 时间戳，字符串，转换成 Date
  * @param input
  * @throws Invalid Date
+ * @category Date
  */
 function toDate(input: DateInput): Date {
   if (isDate(input)) return input;

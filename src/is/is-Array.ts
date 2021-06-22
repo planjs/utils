@@ -4,6 +4,7 @@ import getType from './get-type';
 /**
  * 是否为Array类型
  * @param value
+ * @category Is
  */
 function isArray<T, S>(value: Array<T> | S): value is Array<T> {
   return Array.isArray ? Array.isArray(value) : getType(value) === 'Array';
