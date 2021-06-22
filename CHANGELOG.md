@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/planjs/utils/compare/stable-1.7.3...stable-1.8.0) (2021-06-22)
+
+
+### Features
+
+* add fn ([0221232](https://github.com/planjs/utils/commit/0221232d0b36a8840387197aea74e83e9f441f78))
+* done ([e44aaea](https://github.com/planjs/utils/commit/e44aaea7a9a76d081fb1f4432fdb19fb462a899b))
+
 ### [1.7.3](https://github.com/planjs/utils/compare/stable-1.7.2...stable-1.7.3) (2021-06-17)
 
 ### [1.7.2](https://github.com/planjs/utils/compare/stable-1.7.1...stable-1.7.2) (2021-06-16)
