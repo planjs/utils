@@ -1,5 +1,9 @@
 language : node_js
 
+cache:
+  directories:
+    - node_modules
+
 node_js:
   - "14"
 
@@ -8,3 +12,14 @@ install:
 
 script:
   - yarn test
+
+before_deploy:
+  - "yarn doc"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: docs
+  on:
+    branch: master
