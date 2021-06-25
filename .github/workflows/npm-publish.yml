@@ -34,11 +34,11 @@ jobs:
       - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-      - uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-
+     - name: Push changes
+     - uses: ad-m/github-push-action@master
+       with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
 
   publish-gpr:
     needs: build
