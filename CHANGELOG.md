@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.8.2 (2021-06-25)
+
 ## [1.8.0](https://github.com/planjs/utils/compare/stable-1.7.3...stable-1.8.0) (2021-06-22)
 
 
