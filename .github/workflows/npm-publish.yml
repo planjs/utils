@@ -32,13 +32,13 @@ jobs:
           git config --local user.name "fupengl"
       - run: yarn
       - run: npm publish
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-     - name: Push changes
-     - uses: ad-m/github-push-action@master
-       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - name: Push changes
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
 
   publish-gpr:
     needs: build
