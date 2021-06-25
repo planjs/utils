@@ -1,10 +1,13 @@
 {
   "name": "@planjs/utils",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "🔧 Common tools collection",
   "keywords": [
     "es6",
     "promise",
+    "fp",
+    "bom",
+    "ts-utils",
     "uuid"
   ],
   "homepage": "https://planjs.github.io/utils/",
@@ -16,7 +19,11 @@
     "url": "git+https://github.com/planjs/utils.git"
   },
   "license": "ISC",
-  "author": "fupeng",
+  "author": {
+    "name": "fupengl",
+    "email": "fupenglxy@gmail.com",
+    "url": "https://github.com/fupengl"
+  },
   "sideEffects": false,
   "main": "lib/index.js",
   "module": "es/index.js",
