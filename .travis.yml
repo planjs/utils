@@ -12,14 +12,3 @@ install:
 
 script:
   - yarn test
-
-before_deploy:
-  - "yarn doc"
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: docs
-  on:
-    branch: master
