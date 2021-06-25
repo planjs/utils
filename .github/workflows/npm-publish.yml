@@ -27,12 +27,16 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-      run: |
+      - run: |
         git config --local user.email "fupenglxy@gmail.com"
         git config --local user.name "fupengl"
       - run: yarn
       - run: npm publish
-      - run: git push origin master
+      - name: Push changes
+      - uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
