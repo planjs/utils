@@ -1,6 +1,7 @@
 # utils
 
-![npm](https://img.shields.io/npm/v/@planjs/utils?label=@planjs/utils) ![npm](https://packagephobia.now.sh/badge?p=@planjs/utils) <br/> [![NPM](https://nodei.co/npm/@planjs/utils.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/package/@planjs/utils)
+![npm](https://img.shields.io/npm/v/@planjs/utils?label=@planjs/utils) ![npm](https://packagephobia.now.sh/badge?p=@planjs/utils) [![action](https://github.com/planjs/utils/actions/workflows/npm-publish.yml/badge.svg?branch=master)](https://github.com/planjs/utils/actions/workflows/npm-publish.yml)
+<br/> [![NPM](https://nodei.co/npm/@planjs/utils.png?downloads=true&downloadRank=true&stars=true)](https://npmjs.org/package/@planjs/utils)
 
 > 🔧 contactInfoDefault [doc](https://planjs.github.io/utils/)
 
