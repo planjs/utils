@@ -29,7 +29,7 @@ function retry<T extends Function>(fn: T, retryOption: RetryOption): T {
         }
         return await fn(...args);
       } catch (err) {
-        if (!retryOption.isRetryable?.(err)) {
+        if (retryOption.isRetryable && !retryOption.isRetryable(err)) {
           throw err;
         }
         lastErr = err;
