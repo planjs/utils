@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.8.4 (2021-07-05)
+
+
+### Bug Fixes
+
+* **retry:** error ([aca7c75](https://github.com/planjs/utils/commit/aca7c75fac6ea1894737f11780b5db8213de3f7f))
+
 ### 1.8.3 (2021-06-25)
 
 ### 1.8.2 (2021-06-25)
