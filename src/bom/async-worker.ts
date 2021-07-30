@@ -1,67 +1,33 @@
-import incrementId from '../function/increment-id';
+type CB = (payload?: any) => void;
 
-type AsyncWorkerEventType = string | number | symbol;
+function asyncWorker(ctx: Worker) {
+  const handlers: Array<CB> = [];
 
-type AsyncWorkerPayloadWarp<Payload = any> = {
-  seq: number;
-  type: AsyncWorkerEventType;
-  payload: Payload;
-};
-
-type ExecResult<T> = Promise<T> & { id: number };
-
-function asyncWorker<TypeMap extends Record<AsyncWorkerEventType, { payload: any; result: any }>>(
-  ctx: Worker,
-) {
-  const genSeq = incrementId();
-  const eventMap: Record<
-    AsyncWorkerEventType,
-    Array<
-      (
-        payload: TypeMap[keyof TypeMap]['payload'],
-        callback: () => TypeMap[keyof TypeMap]['result'],
-      ) => void
-    >
-  > = {};
-
-  function postMessage<T>(payload: AsyncWorkerPayloadWarp<T>) {
-    ctx.postMessage(payload);
+  function task<T, P = any>(payload: P): Promise<T> {
+    return new Promise<T>((resolve, reject) => {
+      const messageChannel = new MessageChannel();
+      ctx.postMessage(payload, [messageChannel.port2]);
+      messageChannel.port1.onmessage = (ev) => {
+        resolve(ev.data);
+        messageChannel.port2.close();
+      };
+      messageChannel.port1.onmessageerror = reject;
+    });
   }
 
-  function exec(type: keyof TypeMap, payload: TypeMap[keyof TypeMap]['payload']) {
-    const result = new Promise((resolve, reject) => {
-      result.id = genSeq();
-
-      postMessage({
-        seq: result.id,
-        type,
-        payload,
-      });
-
-      console.log(resolve, reject);
-    }) as ExecResult<TypeMap[keyof TypeMap]>;
-    return result;
+  function processor(fn: CB) {
+    handlers.push(fn);
   }
 
-  function handle(
-    type: keyof TypeMap,
-    handler: (
-      payload: TypeMap[keyof TypeMap]['payload'],
-      callback: () => TypeMap[keyof TypeMap]['result'],
-    ) => void,
-  ) {
-    if (!eventMap[type]) {
-      eventMap[type] = [];
-    }
-    eventMap[type].push(handler);
-  }
-
-  function clear() {}
+  ctx.onmessage = (ev) => {
+    handlers.forEach((handler) => {
+      handler(ev.data);
+    });
+  };
 
   return {
-    exec,
-    handle,
-    clear,
+    task,
+    processor,
   };
 }
 
