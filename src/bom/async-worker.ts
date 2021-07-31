@@ -1,4 +1,5 @@
 import { prefSetTimeout, clearPrefTimeout } from '../function/pref-setTimeout';
+import { isPlanObject } from '../is/is-Object';
 
 type CB = <P = any, R = any>(payload?: P) => Promise<R>;
 
@@ -18,27 +19,40 @@ export type AsyncWorkerTaskOptions = {
     | false;
 };
 
+const ERRKey = '__err__';
+
 function asyncWorker(ctx: Worker) {
   const handlers: Array<CB> = [];
 
   function onMessage(ev: MessageEvent) {
     const messagePort = ev.ports[0];
     handlers.forEach((handler) => {
-      handler(ev.data).then((result) => {
-        messagePort.postMessage(result);
-        messagePort.close();
-      });
+      handler(ev.data)
+        .then(
+          (result) => {
+            messagePort.postMessage(result);
+          },
+          (err) => {
+            messagePort.postMessage({ [ERRKey]: err });
+          },
+        )
+        .finally(() => {
+          messagePort.close();
+        });
     });
   }
 
   function task<T, P = any>(payload: P, opts?: AsyncWorkerTaskOptions): Promise<T> {
+    let timer: number = 0;
+    const { port1, port2 } = new MessageChannel();
+
     return new Promise<T>((resolve, reject) => {
-      let timer: number = 0;
-      const { port1, port2 } = new MessageChannel();
       port1.onmessage = (ev) => {
-        resolve(ev.data);
-        port1.close();
-        timer && clearPrefTimeout(timer);
+        if (isPlanObject(ev.data) && ERRKey in ev.data) {
+          reject(ev.data[ERRKey]);
+        } else {
+          resolve(ev.data);
+        }
       };
       port1.onmessageerror = reject;
 
@@ -47,9 +61,11 @@ function asyncWorker(ctx: Worker) {
       if (opts?.timeout) {
         timer = prefSetTimeout(() => {
           reject(new Error('timeout'));
-          port1.close();
         }, opts.timeout);
       }
+    }).finally(() => {
+      port1.close();
+      timer && clearPrefTimeout(timer);
     });
   }
 
