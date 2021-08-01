@@ -9,7 +9,7 @@ export type AsyncWorkerTaskOptions = {
    */
   timeout?: number;
   /**
-   * 开启并发控制
+   * 根据设置的key开启并发控制
    */
   concurrent?:
     | {
@@ -17,6 +17,10 @@ export type AsyncWorkerTaskOptions = {
         max: number;
       }
     | false;
+  /**
+   * 线程
+   */
+  maxThreads?: number;
 };
 
 const ERRKey = '__err__';
@@ -24,7 +28,7 @@ const ERRKey = '__err__';
 function asyncWorker(ctx: Worker) {
   const handlers: Array<CB> = [];
 
-  function onMessage(ev: MessageEvent) {
+  function _onMessage(ev: MessageEvent) {
     const messagePort = ev.ports[0];
     handlers.forEach((handler) => {
       handler(ev.data)
@@ -42,7 +46,7 @@ function asyncWorker(ctx: Worker) {
     });
   }
 
-  function task<T, P = any>(payload: P, opts?: AsyncWorkerTaskOptions): Promise<T> {
+  function postMessage<T, P = any>(payload: P, opts?: AsyncWorkerTaskOptions): Promise<T> {
     let timer: number = 0;
     const { port1, port2 } = new MessageChannel();
 
@@ -69,26 +73,26 @@ function asyncWorker(ctx: Worker) {
     });
   }
 
-  function cook(fn: CB) {
+  function onmessage(fn: CB) {
     handlers.push(fn);
   }
 
-  function listen() {
-    ctx.onmessage = onMessage;
+  function _listen() {
+    ctx.addEventListener('message', _onMessage);
   }
 
   function setCtx(c: Parameters<typeof asyncWorker>[0]) {
+    ctx.removeEventListener('message', _onMessage);
     ctx = c;
-    listen();
+    _listen();
   }
 
-  listen();
+  _listen();
 
   return {
     setCtx,
-    listen,
-    task,
-    cook,
+    postMessage,
+    onmessage,
   };
 }
 
