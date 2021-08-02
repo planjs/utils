@@ -1,7 +1,7 @@
 import { prefSetTimeout, clearPrefTimeout } from '../function/pref-setTimeout';
 import { isPlanObject } from '../is/is-Object';
 
-type CB = (payload: MessageEvent) => Promise<any> | void;
+type CB = (payload: MessageEvent) => Promise<any> | any;
 
 export type AsyncWorkerTaskOptions = {
   /**
@@ -33,7 +33,7 @@ function asyncWorker(ctx: Worker) {
     const messagePort = ev.ports[0];
     if (messagePort) {
       handlers.forEach((handler) => {
-        handler(ev)
+        Promise.resolve(handler(ev))
           .then(
             (result) => {
               messagePort.postMessage(result);
