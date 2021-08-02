@@ -20,7 +20,7 @@ const useRAF = isNative(requestAnimationFrame);
  */
 export function prefSetTimeout(handler: Function, timeout?: number, ...args: any[]): number {
   if (!useRAF) {
-    return setTimeout(handler, timeout);
+    return setTimeout(handler, timeout, ...args);
   }
   const _id = id();
   const interval = timeout || 0;

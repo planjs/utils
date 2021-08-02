@@ -1,7 +1,7 @@
 import { prefSetTimeout, clearPrefTimeout } from '../function/pref-setTimeout';
 import { isPlanObject } from '../is/is-Object';
 
-type CB = <P = any, R = any>(payload?: P) => Promise<R>;
+type CB = (payload: MessageEvent) => Promise<any> | void;
 
 export type AsyncWorkerTaskOptions = {
   /**
@@ -19,6 +19,7 @@ export type AsyncWorkerTaskOptions = {
     | false;
   /**
    * 线程
+   * TODO
    */
   maxThreads?: number;
 };
@@ -30,25 +31,35 @@ function asyncWorker(ctx: Worker) {
 
   function _onMessage(ev: MessageEvent) {
     const messagePort = ev.ports[0];
-    handlers.forEach((handler) => {
-      handler(ev.data)
-        .then(
-          (result) => {
-            messagePort.postMessage(result);
-          },
-          (err) => {
-            messagePort.postMessage({ [ERRKey]: err });
-          },
-        )
-        .finally(() => {
-          messagePort.close();
-        });
-    });
+    if (messagePort) {
+      handlers.forEach((handler) => {
+        handler(ev)
+          .then(
+            (result) => {
+              messagePort.postMessage(result);
+            },
+            (err) => {
+              messagePort.postMessage({ [ERRKey]: err });
+            },
+          )
+          .catch((err) => {
+            console.log('[asyncWorker] onmessage error', err);
+          })
+          .finally(() => {
+            messagePort.close();
+          });
+      });
+    }
   }
 
   function postMessage<T, P = any>(payload: P, opts?: AsyncWorkerTaskOptions): Promise<T> {
     let timer: number = 0;
     const { port1, port2 } = new MessageChannel();
+
+    // 启用并发控制
+    if (opts?.concurrent) {
+      console.log(opts);
+    }
 
     return new Promise<T>((resolve, reject) => {
       port1.onmessage = (ev) => {
