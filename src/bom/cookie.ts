@@ -1,13 +1,16 @@
+import toDate from '../date/to-date';
+import type { DateInput } from '../date/to-date';
+
 /**
  * 写cookies
  * @param {string} name 写cookie的key
  * @param {string|number} value 写cookie的值
- * @param {number} day 存储的时间，默认30天
+ * @param expires {DateInput}
+ * @throws Invalid Date
  * @category Bom
  */
-export const setCookie = (name: string, value: string | number, day: number = 30): void => {
-  const exp = new Date();
-  exp.setTime(exp.getTime() + day * 24 * 60 * 60 * 1000);
+export const setCookie = (name: string, value: string | number, expires: DateInput): void => {
+  const exp = toDate(expires);
   document.cookie = name + '=' + escape(value + '') + ';path=/;expires=' + exp.toUTCString();
 };
 
