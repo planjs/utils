@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.9.2 (2021-08-04)
+
+
+### Bug Fixes
+
+* **bom:** setCookie date input ([fe1a8ff](https://github.com/planjs/utils/commit/fe1a8ff78ce1a4e43ab2f78fecf8cbd408398fab))
+
 ### 1.9.1 (2021-08-02)
 
 ## 1.9.0 (2021-07-27)
