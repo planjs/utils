@@ -1,6 +1,8 @@
+import root from '../global';
 import Event from './event';
 
-const eventCenter = new Event();
+const eventCenterKey = '__planjs_event_center__';
+const eventCenter: Event = root[eventCenterKey] || (root[eventCenterKey] = new Event());
 
 export { Event, eventCenter };
 
