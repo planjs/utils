@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.9.3 (2021-08-17)
+
+
+### Bug Fixes
+
+* **eventcenter:** add global var ([8207916](https://github.com/planjs/utils/commit/820791610f6b26360aaf56d46d53c76e0ac48d44))
+
 ### 1.9.2 (2021-08-04)
 
 
