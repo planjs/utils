@@ -21,7 +21,7 @@ function mapPick<
   T extends Dictionary<any>,
   K extends string,
   Value = T[keyof T],
-  Item = Record<K, Value>
+  Item = Record<K, Value>,
 >(
   array: readonly T[],
   keyPaths?: Record<K, (PropertyPath | keyof T)[]>,
