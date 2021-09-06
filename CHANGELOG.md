@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.11.0 (2021-09-06)
+
+
+### Features
+
+* **object:** toObjectArray add cbfn ([b77d790](https://github.com/planjs/utils/commit/b77d790ff81b413b342cc82b21589577c268dcea))
+
 ## 1.10.0 (2021-09-04)
 
 
