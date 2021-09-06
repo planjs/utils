@@ -1,6 +1,6 @@
 import type { Dictionary } from '../type';
 
-type ToObjectArrayOptions = {
+type ToObjectArrayOptions<T> = {
   /**
    * @default value
    */
@@ -9,6 +9,10 @@ type ToObjectArrayOptions = {
    * @default label
    */
   valuePropName?: string;
+  /**
+   * 遍历key value
+   */
+  callbackfn?: (k: string, v: T[keyof T]) => T;
 };
 
 /**
@@ -25,15 +29,22 @@ type ToObjectArrayOptions = {
  */
 function toObjectArray<T extends Record<string, any> = { label: any; value: string }>(
   dict: Dictionary<any>,
-  opts?: ToObjectArrayOptions,
+  opts?: ToObjectArrayOptions<T>,
 ): Array<T> {
   const { keyPropName = 'value', valuePropName = 'label' } = opts || {};
   const result: any[] = [];
+  const fn: ToObjectArrayOptions<T>['callbackfn'] = (k, v) => {
+    if (opts?.callbackfn) {
+      return opts.callbackfn(k, v);
+    } else {
+      return {
+        [keyPropName]: k,
+        [valuePropName]: dict[k],
+      } as T;
+    }
+  };
   for (const k in dict) {
-    result.push({
-      [keyPropName]: k,
-      [valuePropName]: dict[k],
-    });
+    result.push(fn(k, dict[k]));
   }
   return result;
 }
