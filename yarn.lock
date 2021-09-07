@@ -1039,6 +1039,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.15.4":
+  version "7.15.4"
+  resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.15.4.tgz?cache=0&sync_timestamp=1630618785994&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
+  integrity sha1-/RfRa/34eObdAtGXU6OfqKjZyEo=
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.14.5", "@babel/template@^7.3.3":
   version "7.14.5"
   resolved "https://registry.nlark.com/@babel/template/download/@babel/template-7.14.5.tgz?cache=0&sync_timestamp=1623280386138&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Ftemplate%2Fdownload%2F%40babel%2Ftemplate-7.14.5.tgz#a9bc9d8b33354ff6e55a9c60d1109200a68974f4"
@@ -1581,10 +1588,10 @@
     stylelint-declaration-block-no-ignored-properties "^1.1.0"
     stylelint-order "^0.8.1"
 
-"@planjs/utils@^1.8.4":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@planjs/utils/-/utils-1.9.0.tgz#0967ce392f4897245146665920892a611a8de818"
-  integrity sha512-M1RXIFgQtum0DfJT4/9dDto2YVUPpe5xhnccZHZqtPDKxOkbONLTD3fNJok0cimPeYZ505qR7x3dQ2M7yvG8iQ==
+"@planjs/utils@^1.10.0":
+  version "1.11.2"
+  resolved "https://registry.nlark.com/@planjs/utils/download/@planjs/utils-1.11.2.tgz#a7e98b570b14b8435f58b7b856fecce6ca9ec248"
+  integrity sha1-p+mLVwsUuENfWLe4Vv7M5sqewkg=
   dependencies:
     "@babel/runtime" "^7.12.5"
     decimal.js "^10.2.1"
@@ -3886,6 +3893,11 @@ decimal.js@^10.2.1:
   version "10.2.1"
   resolved "https://registry.npm.taobao.org/decimal.js/download/decimal.js-10.2.1.tgz#238ae7b0f0c793d3e3cea410108b35a2c01426a3"
   integrity sha1-I4rnsPDHk9PjzqQQEIs1osAUJqM=
+
+decimal.js@^10.3.1:
+  version "10.3.1"
+  resolved "https://registry.nlark.com/decimal.js/download/decimal.js-10.3.1.tgz#d8c3a444a9c6774ba60ca6ad7261c3a94fd5e783"
+  integrity sha1-2MOkRKnGd0umDKatcmHDqU/V54M=
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -7428,6 +7440,17 @@ multimatch@^4.0.0:
     arrify "^2.0.1"
     minimatch "^3.0.4"
 
+multimatch@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npm.taobao.org/multimatch/download/multimatch-5.0.0.tgz#932b800963cea7a31a033328fa1e0c3a1874dbe6"
+  integrity sha1-kyuACWPOp6MaAzMo+h4MOhh02+Y=
+  dependencies:
+    "@types/minimatch" "^3.0.3"
+    array-differ "^3.0.0"
+    array-union "^2.1.0"
+    arrify "^2.0.1"
+    minimatch "^3.0.4"
+
 mute-stream@0.0.7:
   version "0.0.7"
   resolved "https://registry.nlark.com/mute-stream/download/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
@@ -8714,6 +8737,16 @@ query-string@^7.0.0:
     split-on-first "^1.0.0"
     strict-uri-encode "^2.0.0"
 
+query-string@^7.0.1:
+  version "7.0.1"
+  resolved "https://registry.nlark.com/query-string/download/query-string-7.0.1.tgz?cache=0&sync_timestamp=1624297034221&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fquery-string%2Fdownload%2Fquery-string-7.0.1.tgz#45bd149cf586aaa582dffc7ec7a8ad97dd02f75d"
+  integrity sha1-Rb0UnPWGqqWC3/x+x6itl90C910=
+  dependencies:
+    decode-uri-component "^0.2.0"
+    filter-obj "^1.1.0"
+    split-on-first "^1.0.0"
+    strict-uri-encode "^2.0.0"
+
 queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.nlark.com/queue-microtask/download/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
@@ -9240,10 +9273,10 @@ rollup@^2.42.3:
   optionalDependencies:
     fsevents "~2.3.1"
 
-rollup@^2.53.2:
-  version "2.55.1"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.55.1.tgz#66a444648e2fb603d8e329e77a61c608a6510fda"
-  integrity sha512-1P9w5fpb6b4qroePh8vHKGIvPNxwoCQhjJpIqfZGHLKpZ0xcU2/XBmFxFbc9697/6bmHpmFTLk5R1dAQhFSo0g==
+rollup@^2.56.3:
+  version "2.56.3"
+  resolved "https://registry.nlark.com/rollup/download/rollup-2.56.3.tgz#b63edadd9851b0d618a6d0e6af8201955a77aeff"
+  integrity sha1-tj7a3ZhRsNYYptDmr4IBlVp3rv8=
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -9664,10 +9697,10 @@ stack-utils@^2.0.2:
   dependencies:
     escape-string-regexp "^2.0.0"
 
-stan-builder@^0.9.14:
-  version "0.9.14"
-  resolved "https://registry.yarnpkg.com/stan-builder/-/stan-builder-0.9.14.tgz#904efa3a42a20589880f7a1a807385cecae6a804"
-  integrity sha512-jDdE8ts/358ruhUVcLd2rO2kwdkK4v+CFtJF2386nx9pI4oxgc6IjGSH9jnwLY7fYbbHYlZ+m9lYbcJ4h68GRw==
+stan-builder@^0.9.21:
+  version "0.9.21"
+  resolved "https://registry.nlark.com/stan-builder/download/stan-builder-0.9.21.tgz#d8a5d33a2f3db3c711071c9dfc058c4fb2c6aadb"
+  integrity sha1-2KXTOi89s8cRBxyd/AWMT7LGqts=
   dependencies:
     "@babel/core" "^7.14.2"
     "@babel/plugin-proposal-decorators" "^7.14.2"
@@ -9709,24 +9742,24 @@ stan-builder@^0.9.14:
     gulp-typescript "^6.0.0-alpha.1"
     merge2 "^1.4.1"
     postcss-load-config "^2.1.2"
-    rollup "^2.53.2"
+    rollup "^2.56.3"
     rollup-plugin-postcss "^3.1.8"
     rollup-plugin-terser "^7.0.2"
     rollup-plugin-typescript2 "0.30.0"
     rollup-plugin-visualizer "^4.1.1"
-    stan-utils "^0.6.12"
+    stan-utils "^0.6.19"
     through2 "^4.0.2"
     vinyl-fs "^3.0.3"
     vue-template-compiler "^2.6.12"
   optionalDependencies:
     fsevents "~2.3.2"
 
-stan-utils@^0.6.12:
-  version "0.6.12"
-  resolved "https://registry.yarnpkg.com/stan-utils/-/stan-utils-0.6.12.tgz#c7d890f6df9f584b9d8f07eaa31696bcd6065d7d"
-  integrity sha512-sK4WwehgvibRguHnM0Zkri2kWrEIYew9mxuUWntCXWU5t7fQx3FnP3d0NKImwe2Jj1EKNhqZ4KPz+0QiFEY+VQ==
+stan-utils@^0.6.19:
+  version "0.6.19"
+  resolved "https://registry.nlark.com/stan-utils/download/stan-utils-0.6.19.tgz#e3e0b87e2ec29c993ac3cd37d79ba1880e626147"
+  integrity sha1-4+C4fi7CnJk6w80315uhiA5iYUc=
   dependencies:
-    "@planjs/utils" "^1.8.4"
+    "@planjs/utils" "^1.10.0"
     "@types/cross-spawn" "^6.0.2"
     "@types/debug" "^4.1.5"
     "@types/fs-extra" "^9.0.11"
@@ -9752,6 +9785,7 @@ stan-utils@^0.6.12:
     joi "^17.2.1"
     lodash "^4.17.20"
     mkdirp "^1.0.4"
+    multimatch "^5.0.0"
     ora "^5.1.0"
     prettier "2.1.2"
     pretty-ms "^7.0.1"

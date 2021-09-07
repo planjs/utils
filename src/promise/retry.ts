@@ -1,4 +1,4 @@
-import type { BaseRetryOption } from './interfaces';
+import type { BaseRetryOption } from './type';
 import delay from './delay';
 
 export interface RetryOption extends BaseRetryOption {

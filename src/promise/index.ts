@@ -30,4 +30,4 @@ export { default as pTry } from './p-try';
 export { default as promisify } from './promisify';
 export { default as sequenceChain } from './sequence-chain';
 
-export type { PromiseFN } from './interfaces';
+export type { PromiseFN } from './type';

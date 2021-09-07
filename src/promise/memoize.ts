@@ -1,5 +1,5 @@
 import type { ThenReturn } from '../type';
-import type { AnyPromiseFN } from './interfaces';
+import type { AnyPromiseFN } from './type';
 
 export type MemoizeReturnType<T extends AnyPromiseFN> = {
   reset(...args: Parameters<T>): void;

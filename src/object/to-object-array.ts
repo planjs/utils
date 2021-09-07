@@ -1,4 +1,5 @@
 import type { Dictionary } from '../type';
+import { isMap } from '../is';
 
 type ToObjectArrayOptions<T> = {
   /**
@@ -12,7 +13,7 @@ type ToObjectArrayOptions<T> = {
   /**
    * 遍历key value
    */
-  callbackfn?: (k: string, v: T[keyof T]) => T;
+  callbackfn?: (k: string, v: T[keyof T]) => T | void;
 };
 
 /**
@@ -24,6 +25,8 @@ type ToObjectArrayOptions<T> = {
  * ```ts
  * const a = { a: 1, b: 2 }
  * toObjectArray(a) // [{ value: 'a', label: 1 }, { value: 'b', label: 2 }]
+ * const b = new Map([['a', 1], ['b', 2]])
+ * toObjectArray(a) // [{ value: 'a', label: 1 }, { value: 'b', label: 2 }]
  * ```
  * @category Object
  */
@@ -32,7 +35,7 @@ function toObjectArray<T extends Record<string, any> = { label: any; value: stri
   opts?: ToObjectArrayOptions<T>,
 ): Array<T> {
   const { keyPropName = 'value', valuePropName = 'label' } = opts || {};
-  const result: any[] = [];
+  const result: T[] = [];
   const fn: ToObjectArrayOptions<T>['callbackfn'] = (k, v) => {
     if (opts?.callbackfn) {
       return opts.callbackfn(k, v);
@@ -43,8 +46,11 @@ function toObjectArray<T extends Record<string, any> = { label: any; value: stri
       } as T;
     }
   };
-  for (const k in dict) {
-    result.push(fn(k, dict[k]));
+  for (const [k, v] of isMap(dict) ? dict : Object.entries(dict)) {
+    const item = fn(k, v);
+    if (item) {
+      result.push(item);
+    }
   }
   return result;
 }

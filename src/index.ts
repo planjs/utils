@@ -19,4 +19,13 @@ export * from './things';
 export * from './function';
 export * from './object';
 
-export type { PropertyName, PropertyPath, Dictionary, ClassType } from './type';
+export type {
+  PropertyName,
+  PropertyPath,
+  Dictionary,
+  ClassType,
+  Values,
+  ThenReturn,
+  AnyFn,
+  Many,
+} from './type';

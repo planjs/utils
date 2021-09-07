@@ -13,6 +13,8 @@ export { default as isString } from './is-String';
 export { default as isNumber } from './is-Number';
 export { default as isArguments } from './is-Arguments';
 export { default as isTypedArray } from './is-TypedArray';
+export { default as isMap } from './is-Map';
+export { default as isSet } from './is-Set';
 export { default as isWeakMap } from './is-WeakMap';
 export { default as isWeakSet } from './is-WeakSet';
 export { default as isObject, isPlanObject, isObjectLike } from './is-Object';
