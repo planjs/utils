@@ -61,8 +61,10 @@ function myFetch(url: string, options: Options = {}) {
         keys.push((key = key.toLowerCase()));
         all.push([key, value]);
         headers[key] = headers[key] ? `${headers[key]},${value}` : value;
+
         return m;
       });
+
       resolve(response());
     };
 
