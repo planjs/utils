@@ -6,18 +6,18 @@ function set<Entity = any, Output = Entity, Value = any>(
   value: Value,
 ): Output {
   if (!paths.length) {
-    return (value as unknown) as Output;
+    return value as unknown as Output;
   }
 
   const [path, ...restPath] = paths;
 
   let clone: Output;
   if (!entity && typeof path === 'number') {
-    clone = ([] as unknown) as Output;
+    clone = [] as unknown as Output;
   } else if (Array.isArray(entity)) {
-    clone = ([...entity] as unknown) as Output;
+    clone = [...entity] as unknown as Output;
   } else {
-    clone = ({ ...entity } as unknown) as Output;
+    clone = { ...entity } as unknown as Output;
   }
 
   clone[path as string] = set(clone[path as string], restPath, value);

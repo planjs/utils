@@ -68,10 +68,13 @@ function arrayToTree<
   T extends Dictionary<any>,
   K extends string,
   Opts extends ArrayToTreeOption<T, K> = ArrayToTreeOption<T, K>,
-  Node = TreeNode<T, NonNullable<Opts['childrenKey']>>
+  Node = TreeNode<T, NonNullable<Opts['childrenKey']>>,
 >(array: T[], option?: Opts): Record<string, Node> {
-  const { parentPrimaryKey = 'parentId', primaryKey = 'id', childrenKey = 'children' } =
-    option || {};
+  const {
+    parentPrimaryKey = 'parentId',
+    primaryKey = 'id',
+    childrenKey = 'children',
+  } = option || {};
   const hasOwnProperty = Object.prototype.hasOwnProperty;
   return array.reduce<Record<string, Node>>((branches, node) => {
     const parentId = node[parentPrimaryKey];
