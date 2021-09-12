@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.11.4 (2021-09-12)
+
+
+### Bug Fixes
+
+* deps audit ([b75243a](https://github.com/planjs/utils/commit/b75243a0113787d431f98a4e85cdc9f98ef46424))
+
 ### 1.11.3 (2021-09-07)
 
 ### 1.11.2 (2021-09-07)
