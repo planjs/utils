@@ -1,3 +1,5 @@
+export type Primitive = null | undefined | string | number | boolean | symbol | bigint;
+
 export type Many<T> = T | ReadonlyArray<T>;
 
 export type PropertyName = string | number | symbol;
