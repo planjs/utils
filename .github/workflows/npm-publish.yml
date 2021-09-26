@@ -41,7 +41,7 @@ jobs:
           branch: ${{ github.ref }}
 
   publish-gpr:
-    needs: build
+    needs: [build,publish-npm]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
