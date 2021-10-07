@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.12.0 (2021-10-07)
+
+
+### Features
+
+* add structural-clone ([36ff566](https://github.com/planjs/utils/commit/36ff5665b4836b0c1750d6f73e5467641760cc1b))
+
 ### 1.11.7 (2021-09-26)
 
 ### 1.11.6 (2021-09-26)
