@@ -1399,7 +1399,7 @@
     core-js-pure "^3.14.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.0", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.6":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.14.0", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.6":
   version "7.14.5"
   resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.14.5.tgz?cache=0&sync_timestamp=1623280395479&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.14.5.tgz#665450911c6031af38f81db530f387ec04cd9a98"
   integrity sha1-ZlRQkRxgMa84+B21MPOH7ATNmpg=
@@ -1973,14 +1973,18 @@
     stylelint-declaration-block-no-ignored-properties "^2.4.0"
     stylelint-order "^3.0.0"
 
-"@planjs/utils@^1.10.0":
-  version "1.11.2"
-  resolved "https://registry.nlark.com/@planjs/utils/download/@planjs/utils-1.11.2.tgz#a7e98b570b14b8435f58b7b856fecce6ca9ec248"
-  integrity sha1-p+mLVwsUuENfWLe4Vv7M5sqewkg=
+"@planjs/utils@^1.11.7":
+  version "1.11.7"
+  resolved "https://registry.npmmirror.com/@planjs/utils/download/@planjs/utils-1.11.7.tgz#4e6eed392e3f255013b0dec1d2c7a36fdd82468d"
+  integrity sha1-Tm7tOS4/JVATsN7B0sejb92CRo0=
   dependencies:
-    "@babel/runtime" "^7.12.5"
-    decimal.js "^10.2.1"
-    query-string "^7.0.0"
+    "@babel/runtime" "^7.15.4"
+    "@types/lodash.debounce" "^4.0.6"
+    "@types/lodash.throttle" "^4.1.6"
+    decimal.js "^10.3.1"
+    lodash.debounce "^4.0.8"
+    lodash.throttle "^4.1.1"
+    query-string "^7.0.1"
 
 "@rollup/plugin-alias@^3.1.2":
   version "3.1.2"
@@ -2363,6 +2367,13 @@
   version "0.0.29"
   resolved "https://registry.nlark.com/@types/json5/download/@types/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
   integrity sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
+
+"@types/lodash.clonedeep@^4.5.6":
+  version "4.5.6"
+  resolved "https://registry.nlark.com/@types/lodash.clonedeep/download/@types/lodash.clonedeep-4.5.6.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Flodash.clonedeep%2Fdownload%2F%40types%2Flodash.clonedeep-4.5.6.tgz#3b6c40a0affe0799a2ce823b440a6cf33571d32b"
+  integrity sha1-O2xAoK/+B5mizoI7RAps8zVx0ys=
+  dependencies:
+    "@types/lodash" "*"
 
 "@types/lodash.debounce@^4.0.6":
   version "4.0.6"
@@ -9251,16 +9262,6 @@ q@^1.1.2, q@^1.5.1:
   resolved "https://registry.npm.taobao.org/q/download/q-1.5.1.tgz?cache=0&sync_timestamp=1599054212574&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fq%2Fdownload%2Fq-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
 
-query-string@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.npm.taobao.org/query-string/download/query-string-7.0.0.tgz#aaad2c8d5c6a6d0c6afada877fecbd56af79e609"
-  integrity sha1-qq0sjVxqbQxq+tqHf+y9Vq955gk=
-  dependencies:
-    decode-uri-component "^0.2.0"
-    filter-obj "^1.1.0"
-    split-on-first "^1.0.0"
-    strict-uri-encode "^2.0.0"
-
 query-string@^7.0.1:
   version "7.0.1"
   resolved "https://registry.nlark.com/query-string/download/query-string-7.0.1.tgz?cache=0&sync_timestamp=1624297034221&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fquery-string%2Fdownload%2Fquery-string-7.0.1.tgz#45bd149cf586aaa582dffc7ec7a8ad97dd02f75d"
@@ -10181,10 +10182,10 @@ stack-utils@^2.0.2:
   dependencies:
     escape-string-regexp "^2.0.0"
 
-stan-builder@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.nlark.com/stan-builder/download/stan-builder-0.10.0.tgz#43ba5fe659959b4325d3782d15a546b06d580805"
-  integrity sha1-Q7pf5lmVm0Ml03gtFaVGsG1YCAU=
+stan-builder@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.npmmirror.com/stan-builder/download/stan-builder-0.11.0.tgz#06274793e56bcbf8ba757b90e9c5ac8ff1cc27a7"
+  integrity sha1-BidHk+Vry/i6dXuQ6cWsj/HMJ6c=
   dependencies:
     "@babel/core" "^7.14.2"
     "@babel/plugin-proposal-decorators" "^7.14.2"
@@ -10233,19 +10234,19 @@ stan-builder@^0.10.0:
     rollup-plugin-terser "^7.0.2"
     rollup-plugin-typescript2 "0.30.0"
     rollup-plugin-visualizer "^4.1.1"
-    stan-utils "^0.6.19"
+    stan-utils "^0.6.21"
     through2 "^4.0.2"
     vinyl-fs "^3.0.3"
     vue-template-compiler "^2.6.12"
   optionalDependencies:
     fsevents "~2.3.2"
 
-stan-utils@^0.6.19:
-  version "0.6.19"
-  resolved "https://registry.nlark.com/stan-utils/download/stan-utils-0.6.19.tgz#e3e0b87e2ec29c993ac3cd37d79ba1880e626147"
-  integrity sha1-4+C4fi7CnJk6w80315uhiA5iYUc=
+stan-utils@^0.6.21:
+  version "0.6.21"
+  resolved "https://registry.npmmirror.com/stan-utils/download/stan-utils-0.6.21.tgz#c1904ad2ab5a82418e268d0d4065bf2424f39b91"
+  integrity sha1-wZBK0qtagkGOJo0NQGW/JCTzm5E=
   dependencies:
-    "@planjs/utils" "^1.10.0"
+    "@planjs/utils" "^1.11.7"
     "@types/cross-spawn" "^6.0.2"
     "@types/debug" "^4.1.5"
     "@types/fs-extra" "^9.0.11"

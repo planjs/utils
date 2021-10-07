@@ -13,6 +13,7 @@ export { prefSetTimeout, clearPrefTimeout } from './pref-setTimeout';
 export { prefSetInterval, clearPrefSetInterval } from './pref-setInterval';
 export { default as debounce } from 'lodash.debounce';
 export { default as throttle } from 'lodash.throttle';
+export { default as cloneDeep } from 'lodash.clonedeep';
 export { default as once } from './once';
 export { default as pref } from './pref';
 export { default as tryCatch } from './try-catch';

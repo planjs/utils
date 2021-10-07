@@ -14,6 +14,7 @@ export { default as downloadCanvasImage } from './download-canvas-image';
 export { default as downloadFile } from './download-file';
 export { default as requestAnimationFrame } from './requestAnimationFrame';
 export { default as cancelAnimationFrame } from './cancelAnimationFrame';
+export { default as structuralClone } from './structural-clone';
 
 export { default as openWindow } from './open-window';
 export { default as asyncWorker } from './async-worker';

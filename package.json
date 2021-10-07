@@ -78,9 +78,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.15.4",
+    "@types/lodash.clonedeep": "^4.5.6",
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.throttle": "^4.1.6",
     "decimal.js": "^10.3.1",
+    "lodash.clonedeep": "^4.5.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "query-string": "^7.0.1"
@@ -97,7 +99,7 @@
     "husky": "^4.2.5",
     "jest": "^26.4.2",
     "lint-staged": "^10.2.13",
-    "stan-builder": "^0.10.0",
+    "stan-builder": "^0.11.0",
     "standard-version": "^9.3.1",
     "ts-jest": "^26.3.0",
     "typedoc": "^0.20.36",
