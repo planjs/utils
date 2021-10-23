@@ -39,12 +39,11 @@ function toObjectArray<T extends Record<string, any> = { label: any; value: stri
   const fn: ToObjectArrayOptions<T>['callbackfn'] = (k, v) => {
     if (opts?.callbackfn) {
       return opts.callbackfn(k, v);
-    } else {
-      return {
-        [keyPropName]: k,
-        [valuePropName]: dict[k],
-      } as T;
     }
+    return {
+      [keyPropName]: k,
+      [valuePropName]: dict[k],
+    } as T;
   };
   for (const [k, v] of isMap(dict) ? dict : Object.entries(dict)) {
     const item = fn(k, v);
