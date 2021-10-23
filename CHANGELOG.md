@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.13.0 (2021-10-23)
+
+
+### Features
+
+* add equal ([61ca0b3](https://github.com/planjs/utils/commit/61ca0b33e602fe75d0f9d542e8a82424bce02b1c))
+
 ## 1.12.0 (2021-10-07)
 
 
