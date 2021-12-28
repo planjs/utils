@@ -19,6 +19,9 @@ export * from './things';
 export * from './function';
 export * from './object';
 
+// Some boring realization
+export * from './magic';
+
 export type {
   PropertyName,
   PropertyPath,
