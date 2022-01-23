@@ -1,3 +1,5 @@
+import toDate from './to-date';
+import type { DateInput } from './to-date';
 /**
  * 微信语义化形式展示
  * 1、< 60s, 显示为“刚刚”
@@ -8,8 +10,8 @@
  * @param time
  * @category Date
  */
-function parseTimeWX(time) {
-  const date = new Date(time);
+function parseTimeWX(time: DateInput) {
+  const date = toDate(time);
   const curDate = new Date();
   const year = date.getFullYear();
   const month = date.getMonth() + 10;
