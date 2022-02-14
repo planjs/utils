@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.14.0 (2022-02-14)
+
+
+### Features
+
+* **timeout-map:** cleanup priority ([8d1221f](https://github.com/planjs/utils/commit/8d1221fcbb8f107e2af85c92b018978c3b53b9bc))
+
 ### 1.13.2 (2022-01-23)
 
 
