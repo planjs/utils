@@ -6,6 +6,11 @@ type TimeoutMapConstructorOptions = {
    * @default undefined not Control
    */
   maxLength?: number;
+  /**
+   * Priority cleaning type
+   * @default filo
+   */
+  clearUpPriority?: 'shortPeriod' | 'longPeriod' | 'fifo' | 'filo';
 };
 
 type TimeoutMapOptions<K, V> = TimeoutMapConstructorOptions & {
@@ -50,6 +55,7 @@ class TimeoutMap<K, V> extends Map<K, V> {
     if (options) {
       this._options = {
         passiveDeletion: true,
+        clearUpPriority: 'filo',
         ...options,
       };
     }
@@ -165,10 +171,29 @@ class TimeoutMap<K, V> extends Map<K, V> {
   }
 
   private _cleanOverLimitElement() {
-    // TODO Prioritize the clearing of fast-expiring
     if (this._options.maxLength !== undefined && super.size > this._options.maxLength) {
-      const limitKeys = [...super.keys()].slice(0, super.size - this._options.maxLength);
-      limitKeys.forEach((key) => {
+      const invalidKeys: K[] = [];
+      const sortKeys = () =>
+        [...super.keys()].sort(
+          (a, b) =>
+            (this._keyArgs.get(a)?.expirationTime || 0) -
+            (this._keyArgs.get(b)?.expirationTime || 0),
+        );
+      switch (this._options.clearUpPriority) {
+        case 'filo':
+          invalidKeys.push(...[...super.keys()].slice(this._options.maxLength, super.size));
+          break;
+        case 'fifo':
+          invalidKeys.push(...[...super.keys()].slice(0, super.size - this._options.maxLength));
+          break;
+        case 'longPeriod':
+          invalidKeys.push(...sortKeys().slice(this._options.maxLength, super.size));
+          break;
+        case 'shortPeriod':
+          invalidKeys.push(...sortKeys().slice(0, super.size - this._options.maxLength));
+          break;
+      }
+      invalidKeys.forEach((key) => {
         const arg = this._keyArgs.get(key);
         if (arg) {
           arg.options?.onOverLimit?.(key, super.get(key)!, this._keyArgs.get(key)!, this);
