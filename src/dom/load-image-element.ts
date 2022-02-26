@@ -5,7 +5,7 @@
  * @return {Promise<HTMLImageElement>}
  * @category Dom
  */
-export function loadImageElement(
+function loadImageElement(
   src: string,
   crossOrigin: string | null = 'anonymous',
 ): Promise<HTMLImageElement> {
