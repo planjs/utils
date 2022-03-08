@@ -13,8 +13,9 @@ export class AbortController {
   signal = new AbortSignal();
 
   abort = () => {
-    const ev = new Event('abort');
-    this.signal.dispatchEvent(ev);
+    const abortEvent = new Event('abort');
+
+    this.signal.dispatchEvent(abortEvent);
     this.signal.aborted = true;
   };
 }
@@ -45,13 +46,10 @@ class AbortablePromise<T> extends Promise<T> {
     onRejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null,
   ): AbortablePromise<TResult1 | TResult2>;
   then(onFulfilled, onRejected) {
-    return new AbortablePromise<T>((resolve, reject, signal) => {
+    return new AbortablePromise<T>((resolve, reject) => {
       const onSettled = (fn, value, callback) => {
         if ('function' === typeof callback) {
           value = callback(value);
-          if (value instanceof AbortablePromise) {
-            Object.assign(signal, value.abortController.signal);
-          }
         }
         fn(value);
       };
@@ -63,7 +61,7 @@ class AbortablePromise<T> extends Promise<T> {
   }
 
   catch<TResult = never>(
-    onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
+    onRejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null,
   ): AbortablePromise<T | TResult>;
   catch(onRejected) {
     return this.then(undefined, onRejected);
