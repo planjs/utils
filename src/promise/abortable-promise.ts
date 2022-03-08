@@ -50,6 +50,7 @@ class AbortablePromise<T> extends Promise<T> {
       const onSettled = (fn, value, callback) => {
         if ('function' === typeof callback) {
           value = callback(value);
+          return resolve(value);
         }
         fn(value);
       };
@@ -77,43 +78,22 @@ class AbortablePromise<T> extends Promise<T> {
   }
 
   static all<T>(values: readonly (T | PromiseLike<T>)[]): AbortablePromise<T[]> {
-    return new AbortablePromise((resolve, reject, signal) => {
-      watchPromisesAbort(values, signal);
+    return new AbortablePromise((resolve, reject) => {
       Promise.all(values).then(resolve, reject);
     });
   }
 
   static race<T>(values: readonly T[]): AbortablePromise<T extends PromiseLike<infer U> ? U : T> {
-    return new AbortablePromise((resolve, reject, signal) => {
-      watchPromisesAbort(values, signal);
+    return new AbortablePromise((resolve, reject) => {
       Promise.race(values).then(resolve, reject);
     });
   }
 
   static resolve<T>(value: T | PromiseLike<T>): AbortablePromise<T> {
-    return new AbortablePromise((resolve, reject, signal) => {
-      watchPromiseAbort(value, signal);
+    return new AbortablePromise((resolve, reject) => {
       Promise.resolve(value).then(resolve, reject);
     });
   }
-}
-
-function watchPromiseAbort(promise, signal) {
-  signal.onabort = () => {
-    if (promise instanceof AbortablePromise) {
-      promise.abort().catch((error) => error);
-    }
-  };
-}
-
-function watchPromisesAbort(promises, signal) {
-  signal.onabort = () => {
-    promises.forEach((promise) => {
-      if (promise instanceof AbortablePromise) {
-        promise.abort().catch((error) => error);
-      }
-    });
-  };
 }
 
 export default AbortablePromise;
