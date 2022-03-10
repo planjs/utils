@@ -6,3 +6,4 @@ node_modules/
 typings/
 *.tsbuildinfo
 /coverage/
+/fixtures/dist/

@@ -30,4 +30,6 @@ export { default as pTry } from './p-try';
 export { default as promisify } from './promisify';
 export { default as sequenceChain } from './sequence-chain';
 
+export { default as AbortablePromise, AbortError, AbortSignal } from './abortable-promise';
+
 export type { PromiseFN } from './type';

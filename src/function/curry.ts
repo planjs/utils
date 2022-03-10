@@ -68,9 +68,8 @@ function curry(fn: AnyFn, depth: number = fn.length): AnyFn {
   return function (...args) {
     if (args.length && args.length < depth) {
       return curry(fn.bind(null, ...args), depth - args.length);
-    } else {
-      return fn.call(null, ...args);
     }
+    return fn.call(null, ...args);
   };
 }
 
