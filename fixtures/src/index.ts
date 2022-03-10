@@ -9,6 +9,6 @@ const promise = new AbortablePromise((resolve, reject) => {}).then(
   },
 );
 
-promise.abort().finally(() => {
+promise.abort().then(() => {
   console.log(promise);
 });
