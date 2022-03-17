@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.15.3 (2022-03-17)
+
+
+### Bug Fixes
+
+* **memoize:** 主动清理过期数据 ([67438fe](https://github.com/planjs/utils/commit/67438fe9b5c5488f7f12c3d8d34df0b555c5a6ec))
+
 ### 1.15.2 (2022-03-10)
 
 ### 1.15.1 (2022-03-10)
