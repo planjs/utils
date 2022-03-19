@@ -27,7 +27,7 @@ function memoize<FnType extends AnyPromiseFN>(
 
     if (timeoutMs) {
       memos.forEach((item, k) => {
-        if (item.expiration > Date.now()) {
+        if (item.expiration < Date.now()) {
           memos.delete(k);
         }
       });
@@ -35,10 +35,6 @@ function memoize<FnType extends AnyPromiseFN>(
 
     if (!timeoutMs || memos.has(key)) {
       return memos.get(key)!.value;
-    }
-
-    if (queues.has(key)) {
-      return await queues.get(key)!;
     }
 
     const promise = fn(...args);
