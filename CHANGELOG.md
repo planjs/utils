@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.15.4 (2022-03-19)
+
+
+### Bug Fixes
+
+* **memoize:** add jest ([30a4810](https://github.com/planjs/utils/commit/30a4810a93ed04b2b0112efd98d8b4ad89a141a8))
+
 ### 1.15.3 (2022-03-17)
 
 
