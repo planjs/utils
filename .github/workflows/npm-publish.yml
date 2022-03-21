@@ -6,6 +6,8 @@ name: publish
 on:
   push:
     branches: [master]
+    paths:
+      - src/**
 
 jobs:
   build:
