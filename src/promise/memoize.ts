@@ -24,17 +24,14 @@ function memoize<FnType extends AnyPromiseFN>(
 
   const returnFn = (async (...args: Parameters<FnType>): Promise<ThenReturn<FnType>> => {
     const key = harsher(...args);
-
-    if (timeoutMs) {
-      memos.forEach((item, k) => {
-        if (item.expiration < Date.now()) {
-          memos.delete(k);
-        }
-      });
+    if (memos.has(key)) {
+      if (!timeoutMs || Date.now() < memos.get(key)!.expiration) {
+        return memos.get(key)!.value;
+      }
     }
 
-    if (!timeoutMs || memos.has(key)) {
-      return memos.get(key)!.value;
+    if (queues.has(key)) {
+      return await queues.get(key)!;
     }
 
     const promise = fn(...args);
