@@ -3,7 +3,8 @@
  * @param v
  * @category Is
  */
-function isDef(v) {
+
+function isDef<T extends string | number | boolean | object | Array<any> | symbol>(v): v is T {
   return v !== undefined && v !== null;
 }
 
