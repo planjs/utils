@@ -93,7 +93,6 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@planjs/fabric": "^0.0.85",
     "@types/jest": "^26.0.23",
-    "babel-eslint": "^10.1.0",
     "babel-jest": "^27.0.5",
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.1.1",
