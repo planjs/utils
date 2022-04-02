@@ -12,7 +12,7 @@ function get<T>(
       return undefined;
     }
 
-    current = current[paths[i] as keyof T];
+    current = current[paths[i] as keyof Dictionary<T>];
   }
 
   return current;
