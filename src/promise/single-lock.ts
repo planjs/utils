@@ -12,10 +12,9 @@ function singleLock<T = any>() {
   function lock() {
     if (locked) {
       return new Promise<T>((resolve, reject) => queue.push(resolve, reject));
-    } else {
-      locked = true;
-      return Promise.resolve();
     }
+    locked = true;
+    return Promise.resolve();
   }
 
   function unLock<T>(args: T) {

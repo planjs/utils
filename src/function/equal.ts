@@ -34,7 +34,7 @@ function equal(a: any, b: any): boolean {
       // @ts-ignore
       length = a.length;
       // @ts-ignore
-      if (length != b.length) return false;
+      if (length !== b.length) return false;
       for (i = length; i-- !== 0; ) if (a[i] !== b[i]) return false;
       return true;
     }
@@ -60,6 +60,7 @@ function equal(a: any, b: any): boolean {
     return true;
   }
 
+  // eslint-disable-next-line no-self-compare
   return a !== a && b !== b;
 }
 

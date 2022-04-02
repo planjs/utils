@@ -16,7 +16,7 @@ export function parsePassTime(startTime: number) {
   if (day) return day + '天前';
   if (hour) return hour + '小时前';
   if (min) return min + '分钟前';
-  else return '刚刚';
+  return '刚刚';
 }
 
 export default parsePassTime;
