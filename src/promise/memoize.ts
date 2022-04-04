@@ -18,8 +18,10 @@ function memoize<FnType extends AnyPromiseFN>(
   harsher: (...args: Parameters<FnType>) => any = (...args) => args[0],
   timeoutMs?: number,
 ): MemoizeReturnType<FnType> {
-  const memos: Map<ReturnType<typeof harsher>, { value: ThenReturn<FnType>; expiration: number }> =
-    new Map();
+  const memos: Map<
+    ReturnType<typeof harsher>,
+    { value: ThenReturn<FnType>; expiration: number }
+  > = new Map();
   const queues: Map<ReturnType<typeof harsher>, Promise<ThenReturn<FnType>>> = new Map();
 
   const returnFn = (async (...args: Parameters<FnType>): Promise<ThenReturn<FnType>> => {

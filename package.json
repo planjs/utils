@@ -36,6 +36,7 @@
   "scripts": {
     "build": "stan-builder",
     "doc": "typedoc --gitRevision master",
+    "preinstall": "npx only-allow pnpm",
     "lint:fix": "eslint --fix --ext js,ts src",
     "prepare": "yarn build",
     "prepublishOnly": "npm run release",
@@ -91,7 +92,7 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^11.0.0",
-    "@planjs/fabric": "^0.0.85",
+    "@planjs/fabric": "^0.0.91-alpha.0",
     "@types/jest": "^26.0.23",
     "babel-jest": "^27.0.5",
     "commitizen": "^4.2.4",
