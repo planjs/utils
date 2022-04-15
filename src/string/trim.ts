@@ -21,3 +21,11 @@ export function trimStart(str: string) {
 export function trimEnd(str: string) {
   return str.replace(/(\s*$)/g, '');
 }
+
+/**
+ * 去除前后空格
+ * @param str
+ */
+export function trim(str: string) {
+  return str.replace(/^\s+|\s+$/gm, '');
+}
