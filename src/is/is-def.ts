@@ -4,7 +4,9 @@
  * @category Is
  */
 
-function isDef<T extends string | number | boolean | object | Array<any> | symbol>(v): v is T {
+function isDef<T extends string | number | boolean | object | bigint | Array<any> | symbol>(
+  v,
+): v is T {
   return v !== undefined && v !== null;
 }
 

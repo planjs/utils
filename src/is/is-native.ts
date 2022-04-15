@@ -17,7 +17,9 @@ function isNative(value) {
   const reNative = RegExp(
     '^' +
       String(toString)
+        // eslint-disable-next-line no-useless-escape
         .replace(/[.*+?^${}()|[\]\/\\]/g, '\\$&')
+        // eslint-disable-next-line no-useless-escape
         .replace(/toString|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') +
       '$',
   );
