@@ -118,7 +118,6 @@ class Event {
     arg4: T4,
     arg5: T5,
   ): this;
-
   trigger<T1, T2, T3, T4, T5, T6>(
     event: string,
     arg1: T1,
@@ -129,7 +128,6 @@ class Event {
     arg6: T6,
     ...rest: any[]
   ): this;
-
   trigger(events): this {
     let event, node, calls, tail;
     if (!(calls = this.callbacks)) {

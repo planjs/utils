@@ -106,6 +106,18 @@ export const REG_WINDOWS_FILE_PATH = /^[a-zA-Z]:\\(?:\w+\\)*\w+\.\w+$/;
 export const REG_BANK_CARD_NUM = /^[1-9]\d{9,29}$/;
 
 /**
+ * 匹配中文
+ * @category RegExp
+ */
+export const REG_CN = /[\u4e00-\u9fa5]$/;
+
+/**
+ * 匹配英文
+ * @category RegExp
+ */
+export const REG_EN = /[a-zA-Z]$/;
+
+/**
  * 中文名
  * @category RegExp
  */
