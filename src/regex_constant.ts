@@ -112,6 +112,12 @@ export const REG_BANK_CARD_NUM = /^[1-9]\d{9,29}$/;
 export const REG_CN = /[\u4e00-\u9fa5]$/;
 
 /**
+ * 不包含中文
+ * @category RegExp
+ */
+export const REG_NO_CN = /[^\u00-\uFF]/;
+
+/**
  * 匹配英文
  * @category RegExp
  */
