@@ -51,15 +51,8 @@ function pipe<A, B, C, D, E, F, G, H, I, J>(
   hi: (h: H) => I,
   ij: (i: I) => J,
 ): (a: A) => J;
-function pipe(...fns: Array<Function>): Function {
-  const len = fns.length - 1;
-  return function (this: any, x: any) {
-    let y = x;
-    for (let i = 0; i <= len; i++) {
-      y = fns[i].call(this, y);
-    }
-    return y;
-  };
+function pipe(...fns) {
+  return (value) => fns.reduce((acc, fn) => fn(acc), value);
 }
 
 export default pipe;
