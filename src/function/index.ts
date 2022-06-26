@@ -21,3 +21,5 @@ export { default as tryCatch } from './try-catch';
 
 export { default as curry } from './curry';
 export { default as uncurry } from './uncurry';
+export { default as compose } from './compose';
+export { default as pipe } from './pipe';
