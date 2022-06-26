@@ -38,7 +38,7 @@
     "doc": "typedoc --gitRevision master",
     "preinstall": "npx only-allow pnpm",
     "lint:fix": "eslint --fix --ext js,ts src",
-    "prepare": "pnpm build",
+    "prepare": "npx husky install && pnpm build",
     "prepublishOnly": "pnpm release",
     "prepush": "git-branch-is master && pnpm doc",
     "release": "./scripts/release.sh",
@@ -46,17 +46,6 @@
     "start": "stan-builder -w",
     "test": "jest -u",
     "watch:doc": "typedoc --watch --preserveWatchOutput"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
@@ -99,10 +88,10 @@
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^4.2.5",
+    "husky": "^8.0.1",
     "jest": "^26.4.2",
     "lint-staged": "^10.2.13",
-    "stan-builder": "^0.16.2",
+    "stan-builder": "^0.18.2",
     "standard-version": "^9.3.1",
     "ts-jest": "^26.3.0",
     "typedoc": "^0.20.36",
