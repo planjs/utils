@@ -36,7 +36,6 @@
   "scripts": {
     "build": "stan-builder",
     "doc": "typedoc --gitRevision master",
-    "preinstall": "npx only-allow pnpm",
     "lint:fix": "eslint --fix --ext js,ts src",
     "prepare": "npx husky install && pnpm build",
     "prepublishOnly": "pnpm release",
