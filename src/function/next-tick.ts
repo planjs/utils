@@ -5,17 +5,17 @@ import type { AnyFn } from '../type';
 
 function _nextTick(): (callback: Function, ...args: any[]) => void {
   // nodejs
-  if (typeof process === 'object' && process && isFunction(process.nextTick)) {
+  if (isFunction(typeof process === 'object' && process && process.nextTick)) {
     return process.nextTick;
   }
 
-  if (isFunction(queueMicrotask)) {
+  if (isFunction(typeof queueMicrotask == 'function' && queueMicrotask)) {
     return function (cb) {
       queueMicrotask(ensureCallable(cb));
     };
   }
 
-  if (isFunction(setImmediate)) {
+  if (isFunction(typeof setImmediate === 'function' && setImmediate)) {
     return function (cb, ...args) {
       setImmediate(ensureCallable<AnyFn>(cb), ...args);
     };
