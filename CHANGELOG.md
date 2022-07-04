@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.15.9 (2022-07-04)
+
+
+### Bug Fixes
+
+* ssr queueMicrotask error ([076a628](https://github.com/planjs/utils/commit/076a628a1e6183176e6634c54b545d67b3711724))
+
 ### 1.15.8 (2022-07-04)
 
 ### 1.15.7 (2022-06-26)
