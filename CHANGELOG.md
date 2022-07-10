@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.15.10 (2022-07-10)
+
+
+### Bug Fixes
+
+* next-tick iife ([218cc8c](https://github.com/planjs/utils/commit/218cc8c9af49bab1bfbd73d6dae1e791b4f81787))
+
 ### 1.15.9 (2022-07-04)
 
 
