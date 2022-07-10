@@ -24,18 +24,8 @@ const _globalThis = check(typeof globalThis == 'object' && globalThis);
 const _self = check(typeof self == 'object' && self);
 
 /**
- * func this
- */
-const _fnThis =
-  (function () {
-    // @ts-ignore
-    return this;
-    // eslint-disable-next-line no-new-func
-  })() || Function('return this')();
-
-/**
  * 全局对象
  */
-const root = _globalThis || _window || _global || _self || _fnThis;
+const root = _globalThis || _window || _global || _self || Function('return this')();
 
 export default root;
