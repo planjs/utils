@@ -17,7 +17,7 @@ export function ensure(condition: boolean, msg: string): asserts condition {
  * @return fn 如果fn是函数，则返回函数，否则报错
  */
 export function ensureCallable<T extends Function = any>(fn: any): T {
-  if (isFunction(fn)) throw new TypeError(fn + ' is not a function');
+  if (!isFunction(fn)) throw new TypeError(fn + ' is not a function');
   return fn;
 }
 
