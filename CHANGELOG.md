@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.15.12 (2022-07-26)
+
+
+### Bug Fixes
+
+* debug error ([864b3e1](https://github.com/planjs/utils/commit/864b3e1f6258c2efadd7044680b3cc8fa223d5a8))
+
 ### 1.15.11 (2022-07-10)
 
 
