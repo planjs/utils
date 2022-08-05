@@ -15,7 +15,9 @@ export { default as downloadFile } from './download-file';
 export { default as requestAnimationFrame } from './requestAnimationFrame';
 export { default as cancelAnimationFrame } from './cancelAnimationFrame';
 export { default as structuralClone } from './structural-clone';
+export { shim as documentShim } from './document';
+export { shim as windowShim } from './window';
 
 export { default as openWindow } from './open-window';
 export { default as asyncWorker } from './async-worker';
-export * from './cookie';
+export { setCookie, getCookie, delCookie } from './cookie';
