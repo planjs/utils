@@ -1,3 +1,4 @@
+import global from '../global';
 import { ssrDocument } from './document';
 import requestAnimationFrame from './requestAnimationFrame';
 import cancelAnimationFrame from './cancelAnimationFrame';
@@ -57,6 +58,10 @@ function extend(target: any = {}, src: any = {}) {
   });
 }
 
+/**
+ * 程序入口处调用
+ * 使用global代替window
+ */
 export function shim() {
   return extend(global, ssrWindow);
 }

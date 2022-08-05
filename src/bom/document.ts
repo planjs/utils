@@ -1,3 +1,5 @@
+import global from '../global';
+
 export const ssrDocument = {
   body: {},
   addEventListener() {},
@@ -49,6 +51,13 @@ export const ssrDocument = {
   },
 };
 
+/**
+ * 程序入口处调用
+ * 使用global.document代替document
+ */
 export function shim() {
-  if (!global.document) global.document = ssrDocument as unknown as Document;
+  if (!global.document) {
+    global.document = ssrDocument;
+  }
+  return global.document;
 }
