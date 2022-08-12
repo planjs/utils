@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.15.15 (2022-08-12)
+
+
+### Bug Fixes
+
+* compose types ([819e6b0](https://github.com/planjs/utils/commit/819e6b09994bba513f80cba97556e66bc4de9299))
+
 ### 1.15.14 (2022-08-12)
 
 ### 1.15.13 (2022-08-05)
