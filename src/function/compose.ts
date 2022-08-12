@@ -1,7 +1,7 @@
 type Fn<V, R> = (x: V) => R;
-// @ts-expect-error T is an array :troll:
-type Q<T, V> = (...args: T) => V;
+type Q<T, V> = (arg: T) => V;
 
+function compose<T, V0>(fn1: Q<T, V0>): Q<T, V0>;
 function compose<T, V0, V1>(fn1: Fn<V0, V1>, fn0: Q<T, V0>): Q<T, V1>;
 function compose<T, V0, V1, V2>(fn2: Fn<V1, V2>, fn1: Fn<V0, V1>, fn0: Q<T, V0>): Q<T, V2>;
 function compose<T, V0, V1, V2, V3>(
