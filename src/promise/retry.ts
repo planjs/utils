@@ -1,5 +1,6 @@
 import type { BaseRetryOption } from './type';
 import delay from './delay';
+import isFunction from '../is/is-Function';
 
 export interface RetryOption extends BaseRetryOption {
   /**
@@ -22,11 +23,13 @@ function retry<T extends Function>(fn: T, retryOption: RetryOption): T {
       `Could not complete function within ${retryOption.maxAttempts} attempts`,
     );
     let retries = retryOption.maxAttempts!;
+    let attempts = 0;
     while (retries !== undefined ? retries : true) {
       try {
         if (retries !== undefined) {
           --retries;
         }
+        ++attempts;
         return await fn(...args);
       } catch (err) {
         if (retryOption.isRetryable && !retryOption.isRetryable(err)) {
@@ -35,7 +38,10 @@ function retry<T extends Function>(fn: T, retryOption: RetryOption): T {
         lastErr = err;
       }
       if (retryOption.delayMs) {
-        await delay(retryOption.delayMs);
+        const delayMs = isFunction(retryOption.delayMs)
+          ? retryOption.delayMs(attempts) || 0
+          : retryOption.delayMs;
+        await delay(delayMs);
       }
     }
     throw lastErr;

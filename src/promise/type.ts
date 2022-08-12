@@ -15,5 +15,5 @@ export interface BaseRetryOption {
   /**
    * 重试间隔
    */
-  delayMs?: number;
+  delayMs?: number | ((attempts: number) => number);
 }
