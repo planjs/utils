@@ -11,3 +11,4 @@ export { default as arrayEachRight } from './each-right';
 export { default as arraySplice } from './array-splice';
 export { default as arraySum } from './array-sum';
 export { default as arrayAverage } from './array-average';
+export { default as arrayify } from './arrayify';
