@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.16.0 (2022-08-22)
+
+
+### Features
+
+* add utils ([6a40ded](https://github.com/planjs/utils/commit/6a40ded210a6827fb2224179bf1e7c6b6bce816b))
+
 ### 1.15.15 (2022-08-12)
 
 
