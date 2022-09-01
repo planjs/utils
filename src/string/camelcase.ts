@@ -2,7 +2,6 @@
  * 转换为驼峰
  * @param str
  * @example
- * @example
  * hello-word -> helloWord
  * hello_word -> helloWord
  * hello.word -> helloWord

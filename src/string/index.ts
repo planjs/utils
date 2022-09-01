@@ -5,3 +5,6 @@ export { default as decamelize } from './decamelize';
 export { default as capitalize } from './capitalize';
 export { default as format } from './format';
 export { trimAll, trimStart, trimEnd } from './trim';
+export { default as tryParse } from './try-parse';
+export { default as stripHtmlTags } from './strip-html-tags';
+export { default as invertCase } from './invert-case';

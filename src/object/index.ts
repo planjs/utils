@@ -6,4 +6,3 @@ export { default as createDict } from './create-dict';
 export { default as copyDict } from './copy-dict';
 export { default as toPlanObject } from './to-plan-object';
 export { default as toObjectArray } from './to-object-array';
-export { default as tryParse } from './try-parse';

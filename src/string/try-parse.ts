@@ -1,14 +1,14 @@
 /**
- * JSON.parse字符串，只会返回对象
+ * JSON.parse字符串
  * @param str
  * @param defaultVal
- * @category Object
  */
 function tryParse<T extends any>(str: string, defaultVal?: T): T {
+  if (str == null) return defaultVal!;
   try {
     return JSON.parse(str);
   } catch (err) {}
-  return defaultVal! || ({} as T);
+  return defaultVal!;
 }
 
 export default tryParse;
