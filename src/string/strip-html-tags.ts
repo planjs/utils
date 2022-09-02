@@ -22,7 +22,7 @@ type stripHtmlTagsOption = {
  * @example
  * stripHtmlTags('<p>hello <a>word</a></p>'); // => 'hello word'
  * stripHtmlTags('<p>hello <a>word</a></p>', { blocked: ['p'] }); // => 'hello <a>word</a>'
- * stripTags('<p>hello</p>', { blocked: ['p'], replaceWith: '**' }); // => '**hello**'
+ * stripHtmlTags('<p>hello</p>', { blocked: ['p'], replaceWith: '**' }); // => '**hello**'
  */
 function stripHtmlTags(str: string, options: stripHtmlTagsOption = {}): string {
   if (!str) return '';
