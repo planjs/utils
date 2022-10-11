@@ -1,6 +1,6 @@
-import { format } from '../src';
+import { format } from '../../src';
 
-describe('string', () => {
+describe('strings', () => {
   test('format', () => {
     expect(format('hello {0}', 'bob')).toBe('hello bob');
     expect(format('hello {0}', { 0: 'bob' })).toBe('hello bob');

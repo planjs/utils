@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@babel/runtime': ^7.15.4
+  '@babel/runtime': ^7.19.4
   '@commitlint/cli': ^9.1.2
   '@commitlint/config-conventional': ^11.0.0
   '@planjs/fabric': ^0.0.91-alpha.0
@@ -31,7 +31,7 @@ specifiers:
   typescript: 4.2.4
 
 dependencies:
-  '@babel/runtime': 7.18.3
+  '@babel/runtime': 7.19.4
   '@types/lodash.clonedeep': 4.5.7
   '@types/lodash.debounce': 4.0.7
   '@types/lodash.throttle': 4.1.7
@@ -1542,8 +1542,8 @@ packages:
       regenerator-runtime: 0.13.9
     dev: true
 
-  /@babel/runtime/7.18.3:
-    resolution: {integrity: sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==}
+  /@babel/runtime/7.19.4:
+    resolution: {integrity: sha512-EXpLCrk55f+cYqmHsSR+yD/0gAIMxxA9QK9lnQWzhMCvt+YmoBN7Zx94s++Kv0+unHk39vxNO8t+CMA2WSS3wA==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
@@ -1601,7 +1601,7 @@ packages:
     engines: {node: '>=v8.17.0'}
     hasBin: true
     dependencies:
-      '@babel/runtime': 7.18.3
+      '@babel/runtime': 7.19.4
       '@commitlint/format': 9.1.2
       '@commitlint/lint': 9.1.2
       '@commitlint/load': 9.1.2
@@ -2230,7 +2230,7 @@ packages:
   /@planjs/utils/1.15.6:
     resolution: {integrity: sha512-tpBrgZEJiuukTLcvOVwBI4Zw25NaINIgS1Axdwr+TdB17JHq1mOENB8hJtnstO7cjBiLBbRs5iWeDRpPY+BIpg==}
     dependencies:
-      '@babel/runtime': 7.18.3
+      '@babel/runtime': 7.19.4
       '@types/lodash.clonedeep': 4.5.7
       '@types/lodash.debounce': 4.0.7
       '@types/lodash.throttle': 4.1.7
@@ -3289,7 +3289,7 @@ packages:
     resolution: {integrity: sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==}
     engines: {node: '>=6.0'}
     dependencies:
-      '@babel/runtime': 7.18.3
+      '@babel/runtime': 7.19.4
       '@babel/runtime-corejs3': 7.18.3
     dev: true
 
@@ -3559,7 +3559,7 @@ packages:
     resolution: {integrity: sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg==}
     engines: {node: '>=10', npm: '>=6'}
     dependencies:
-      '@babel/runtime': 7.18.3
+      '@babel/runtime': 7.19.4
       cosmiconfig: 7.0.1
       resolve: 1.22.1
     dev: true
@@ -3681,7 +3681,7 @@ packages:
       '@babel/preset-env': 7.18.2_@babel+core@7.18.5
       '@babel/preset-react': 7.17.12_@babel+core@7.18.5
       '@babel/preset-typescript': 7.17.12_@babel+core@7.18.5
-      '@babel/runtime': 7.18.3
+      '@babel/runtime': 7.19.4
       babel-plugin-macros: 3.1.0
       babel-plugin-transform-react-remove-prop-types: 0.4.24
     transitivePeerDependencies:
@@ -5529,7 +5529,7 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
     dependencies:
-      '@babel/runtime': 7.18.3
+      '@babel/runtime': 7.19.4
       aria-query: 4.2.2
       array-includes: 3.1.5
       ast-types-flow: 0.0.7
@@ -10291,7 +10291,7 @@ packages:
   /regenerator-transform/0.15.0:
     resolution: {integrity: sha512-LsrGtPmbYg19bcPHwdtmXwbW+TqNvtY4riE3P83foeHRroMbH6/2ddFBfab3t7kbzc7v7p4wbkIecHImqt0QNg==}
     dependencies:
-      '@babel/runtime': 7.18.3
+      '@babel/runtime': 7.19.4
     dev: true
 
   /regex-not/1.0.2:
@@ -11106,7 +11106,7 @@ packages:
       '@babel/preset-react': 7.17.12_@babel+core@7.18.5
       '@babel/preset-typescript': 7.17.12_@babel+core@7.18.5
       '@babel/register': 7.17.7_@babel+core@7.18.5
-      '@babel/runtime': 7.18.3
+      '@babel/runtime': 7.19.4
       '@rollup/plugin-alias': 3.1.9_rollup@2.79.0
       '@rollup/plugin-babel': 5.3.1_jdaoa65bmisq6k35ttf2mhrvqe
       '@rollup/plugin-commonjs': 22.0.2_rollup@2.79.0
