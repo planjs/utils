@@ -7,12 +7,17 @@ type stripHtmlTagsOption = {
    * Array of allowed tags
    * @default []
    */
-  allowed?: string;
+  allowed?: string[] | string;
   /**
    * Array of blocked tags
    * @default []
    */
-  blocked?: string;
+  blocked?: string[] | string;
+  /**
+   * Array of deleted tags
+   * @default []
+   */
+  deleted?: string[] | string;
 };
 
 /**
@@ -29,10 +34,20 @@ function stripHtmlTags(str: string, options: stripHtmlTagsOption = {}): string {
 
   const tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi;
   const commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+  const tagWithContent =
+    /<([a-z][a-z0-9]*)\b[^<]*(?:(?!<\/([a-z][a-z0-9]*)>)<[^<]*)*<\/([a-z][a-z0-9]*)>/gi;
 
   const replaceWith = options.replaceWith || '';
   const allowed = options.allowed;
   const blocked = options.blocked;
+  const deleted = options.deleted;
+
+  const replaceContent = function ($0, $1) {
+    if (deleted!.includes($1.toLowerCase())) {
+      return '';
+    }
+    return $0;
+  };
 
   const replaceTags = function ($0, $1) {
     if (blocked) {
@@ -46,7 +61,11 @@ function stripHtmlTags(str: string, options: stripHtmlTagsOption = {}): string {
   let after = String(str);
   while (true) {
     const before = after;
-    after = before.replace(commentsAndPhpTags, replaceWith).replace(tags, replaceTags);
+    after = before.replace(commentsAndPhpTags, replaceWith);
+    if (deleted?.length) {
+      after = after.replace(tagWithContent, replaceContent);
+    }
+    after = after.replace(tags, replaceTags);
 
     if (before === after) {
       return after;
