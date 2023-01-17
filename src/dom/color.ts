@@ -1,3 +1,5 @@
+import { isDigit } from '../is';
+
 /**
  * hex color 转化为 rgba
  * @param hex
@@ -6,7 +8,7 @@
  * @category Dom
  * TODO support hex8
  */
-export function hexColorToRgba(hex: string, opacity?: number) {
+export function hexColorToRgba(hex: string, opacity?: number | string) {
   let c: any;
   if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
     c = hex.substring(1).split('');
@@ -14,7 +16,7 @@ export function hexColorToRgba(hex: string, opacity?: number) {
       c = [c[0], c[0], c[1], c[1], c[2], c[2]];
     }
     c = '0x' + c.join('');
-    if (typeof opacity !== 'number') {
+    if (!isDigit(opacity)) {
       return `rgb(${[(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',')})`;
     }
     return `rgba(${[(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',')},${opacity})`;

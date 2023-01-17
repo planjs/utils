@@ -4,6 +4,9 @@ describe('bom/color', () => {
   it('hexColorToRgba', () => {
     expect(hexColorToRgba('#000')).toBe('rgb(0,0,0)');
     expect(hexColorToRgba('#000000')).toBe('rgb(0,0,0)');
+    expect(hexColorToRgba('#000000', 1)).toBe('rgba(0,0,0,1)');
+    expect(hexColorToRgba('#000000', '0.1')).toBe('rgba(0,0,0,0.1)');
+    expect(hexColorToRgba('#000000', 'a')).toBe('rgb(0,0,0)');
   });
 
   it('rgbaColorToHex', () => {
