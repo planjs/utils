@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.18.1 (2023-01-17)
+
+
+### Bug Fixes
+
+* **hexColorToRgba:** opacity support string number ([be29e01](https://github.com/planjs/utils/commit/be29e01d2885cc60218e65db8dad025e43f5aaca))
+
 ## 1.18.0 (2022-10-19)
 
 
