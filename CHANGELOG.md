@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.18.2 (2023-06-08)
+
+
+### Bug Fixes
+
+* async-pool isPriority semantic problem ([85c8586](https://github.com/planjs/utils/commit/85c8586b8448d9d4256ca82e00ffbbf12e670041))
+
 ### 1.18.1 (2023-01-17)
 
 
