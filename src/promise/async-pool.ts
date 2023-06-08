@@ -46,9 +46,9 @@ function asyncPool(option: AsyncPoolOption) {
     return new Promise<T>((resolve, reject) => {
       const _fn = () => fn().then(resolve, reject);
       if (opts?.isPriority) {
-        queue.unshift(_fn);
-      } else {
         queue.push(_fn);
+      } else {
+        queue.unshift(_fn);
       }
       next();
     });
