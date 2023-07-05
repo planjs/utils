@@ -26,6 +26,7 @@ export { default as isPromise } from './is-Promise';
 export { default as isSymbol } from './is-Symbol';
 export { default as isDate } from './is-Date';
 export { default as isInfinite } from './is-Infinite';
+export { default as isIterable } from './is-Iterable';
 
 export { default as isWindow } from './is-Window';
 export { default as isFile } from './is-File';
