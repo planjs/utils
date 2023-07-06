@@ -12,7 +12,7 @@ async function delay<T>(delayTimeMs: number, value: T): Promise<T>;
 async function delay<T>(delayTimeMs: number): Promise<void>;
 async function delay<T>(delayTime: number, value?: T): Promise<void | T> {
   if (delayTime <= 17) {
-    return new Promise((resolve) => requestAnimationFrame(() => resolve()));
+    return new Promise((resolve) => requestAnimationFrame(() => resolve(value)));
   }
   return new Promise((resolve) => setTimeout(() => resolve(value), delayTime));
 }

@@ -1,4 +1,4 @@
-import { memoize, delay } from '../src/promise';
+import { memoize, delay } from '../../src/promise';
 
 describe('promise/memoize', () => {
   test('cache 1000ms', async () => {

@@ -1,4 +1,4 @@
-import { timeout, delay } from '../src/promise';
+import { timeout, delay } from '../../src/promise';
 
 describe('promise/timeout', () => {
   test('resolves appropriate value when function finishes first', async () => {
