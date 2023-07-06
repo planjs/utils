@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.18.4 (2023-07-06)
+
+
+### Bug Fixes
+
+* **delay:** resolve value ([2af4076](https://github.com/planjs/utils/commit/2af4076eaf8acf5cb2832b3d4f2b350238185182))
+
 ### 1.18.3 (2023-07-05)
 
 ### 1.18.2 (2023-06-08)
